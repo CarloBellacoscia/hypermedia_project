@@ -1,12 +1,12 @@
 const express = require('express')
 const app = express()
-const { Sequelize } = require("sequelize")
+const { Sequelize, DataTypes } = require("sequelize")
 const initialize = require('./initialize').default
 app.use(express.json())
-const DataTypes = Sequelize
+
 
 // Development
-const database = new Sequelize("postgres://postgres:postgre@localhost:5432/MI_Guardi")
+const database = new Sequelize("postgres://postgres:postgre@localhost:5432/mi_guardi")
 
 // Production (use this code when deploying to production in Heroku)
 // const pg = require('pg')
@@ -19,33 +19,12 @@ const database = new Sequelize("postgres://postgres:postgre@localhost:5432/MI_Gu
 
 
 // Function that will initialize the connection to the database
-/* async function initializeDatabaseConnection() {
-    await database.authenticate()
-    const Cat = database.define("cat", {
-        name: DataTypes.STRING,
-        description: DataTypes.STRING,
-        breed: DataTypes.STRING,
-        img: DataTypes.STRING,
-    })
-    const Location  = database.define("location", {
-        name: DataTypes.STRING,
-        city: DataTypes.STRING,
-    })
-    Location.hasMany(Cat)
-    Cat.belongsTo(Location)
-    await database.sync({ force: true })
-    return {
-        Cat,
-        Location
-    }
-} */
-
 async function initializeDatabaseConnection() {
   await database.authenticate()
   const Event = database.define("event", {
     name: DataTypes.STRING,
-    start_date: DataTypes.STRING,
-    end_date: DataTypes.STRING,
+    start_date: DataTypes.DATE,
+    end_date: DataTypes.DATE,
     description: DataTypes.STRING,
     site: DataTypes.STRING,
     img: DataTypes.STRING,
@@ -75,8 +54,8 @@ async function initializeDatabaseConnection() {
     img: DataTypes.STRING,
     duration: DataTypes.STRING,
   })
-  Itinerary.belongsToMany(PointOfInterest, {through: "JoinPoints"})
-  PointOfInterest.belongsToMany(Itinerary, {through: "JoinPoints"})
+  Itinerary.belongsToMany(PointOfInterest, {through: "join_points"})
+  PointOfInterest.belongsToMany(Itinerary, {through: "join_points"})
 
 
   await database.sync({ force: true })
