@@ -35,7 +35,7 @@ export default async (models) => {
       name: "Farmacia Loreto",
       description: "curiamo le coltellate di piazzale Loreto",
       gps: "246' 2414'' ",
-      site: "coltelli.com",
+      site: "lame.net",
       img: "https://fs.i3lab.group/hypermedia/cats/maine-coon.jpg"
     }
   ]
