@@ -1,11 +1,12 @@
 const express = require('express')
 const app = express()
-const { Sequelize, DataTypes } = require("sequelize")
+const { Sequelize } = require("sequelize")
 const initialize = require('./initialize').default
 app.use(express.json())
+const DataTypes = Sequelize
 
 // Development
-const database = new Sequelize("postgres://postgres:postgres@localhost:5432/hyp")
+const database = new Sequelize("postgres://postgres:postgre@localhost:5432/MI_Guardi")
 
 // Production (use this code when deploying to production in Heroku)
 // const pg = require('pg')
@@ -18,7 +19,7 @@ const database = new Sequelize("postgres://postgres:postgres@localhost:5432/hyp"
 
 
 // Function that will initialize the connection to the database
-async function initializeDatabaseConnection() {
+/* async function initializeDatabaseConnection() {
     await database.authenticate()
     const Cat = database.define("cat", {
         name: DataTypes.STRING,
@@ -37,12 +38,60 @@ async function initializeDatabaseConnection() {
         Cat,
         Location
     }
+} */
+
+async function initializeDatabaseConnection() {
+  await database.authenticate()
+  const Event = database.define("event", {
+    name: DataTypes.STRING,
+    start_date: DataTypes.STRING,
+    end_date: DataTypes.STRING,
+    description: DataTypes.STRING,
+    site: DataTypes.STRING,
+    img: DataTypes.STRING,
+  })
+
+  const PointOfInterest = database.define("point_of_interest", {
+    name: DataTypes.STRING,
+    description: DataTypes.STRING,
+    gps: DataTypes.STRING,
+    site: DataTypes.STRING,
+    img: DataTypes.STRING,
+  })
+  PointOfInterest.hasMany(Event)
+  Event.belongsTo(PointOfInterest)
+
+  const Service = database.define("service", {
+    name: DataTypes.STRING,
+    description: DataTypes.STRING,
+    gps: DataTypes.STRING,
+    site: DataTypes.STRING,
+    img: DataTypes.STRING,
+  })
+
+  const Itinerary = database.define("itinerary", {
+    name: DataTypes.STRING,
+    description: DataTypes.STRING,
+    img: DataTypes.STRING,
+    duration: DataTypes.STRING,
+  })
+  Itinerary.belongsToMany(PointOfInterest, {through: "JoinPoints"})
+  PointOfInterest.belongsToMany(Itinerary, {through: "JoinPoints"})
+
+
+  await database.sync({ force: true })
+  return {
+    Event,
+    PointOfInterest,
+    Service,
+    Itinerary
+  }
 }
 
 // With this line, our server will know how to parse any incoming request
 // that contains some JSON in the body
 
-const pageContentObject = {
+ const pageContentObject = {
     index: {
         title: "Homepage",
         image: "https://fs.i3lab.group/hypermedia/images/index.jpeg",
@@ -62,7 +111,7 @@ async function runMainApi() {
     const models = await initializeDatabaseConnection()
     await initialize(models)
 
-    app.get('/page-info/:topic', (req, res) => {
+     app.get('/page-info/:topic', (req, res) => {
         const { topic } = req.params
         const result = pageContentObject[topic]
         return res.json(result)
