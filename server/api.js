@@ -58,7 +58,7 @@ async function initializeDatabaseConnection() {
   PointOfInterest.belongsToMany(Itinerary, {through: "join_points"})
 
 
-  await database.sync({ force: true })
+  await database.sync({ force: false })
   return {
     Event,
     PointOfInterest,
@@ -88,7 +88,7 @@ async function initializeDatabaseConnection() {
 
 async function runMainApi() {
     const models = await initializeDatabaseConnection()
-    await initialize(models)
+    // await initialize(models)
 
      app.get('/page-info/:topic', (req, res) => {
         const { topic } = req.params

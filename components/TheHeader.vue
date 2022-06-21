@@ -1,6 +1,8 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light px-3 header">
-    <a class="navbar-brand" href="/">The Cat Shelter</a>
+    <a class="navbar-brand mylogo" href="/"
+      ><span class="low-highlight"> MI</span>GUARDI</a
+    >
     <button
       class="navbar-toggler"
       type="button"
@@ -14,7 +16,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarToggler">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
         <li
           v-for="(navItem, navItemIndex) of headerList"
           :key="`navItem${navItemIndex}`"
@@ -24,19 +26,94 @@
             {{ navItem.name }}
           </nuxt-link>
         </li>
+
+        <li>
+          <div class="form-outline">
+            <input
+              type="search"
+              id="form1"
+              class="form-control"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </div> </li>
       </ul>
     </div>
   </nav>
+
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Archivo:wght@100&display=swap');
+
+
+
 .header {
-  background: orange;
+  background: #505050;
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  margin-top: -50px;
+
+  /*  border-radius: 0 0 15px 15px;*/
 }
-.logo {
+
+.nav-item {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+
+.navbar-collapse {
+  padding-left: 20px;
+  padding-right: 100px;
+  background-color: #505050d0;
+}
+
+.navbar-light .navbar-nav .nav-link {
   color: white;
-  font-size: 32px;
 }
+
+.navbar-light .nav-link:hover {
+  color: white;
+  background: linear-gradient(
+    180deg,
+    transparent 60%,
+    #d70000 60%,
+    #d70000 90%,
+    transparent 80%
+  );
+}
+
+.form-outline{
+  padding-bottom:10px;
+}
+
+
+.low-highlight {
+  background: linear-gradient(
+    180deg,
+    transparent 60%,
+    #d70000 60%,
+    #d70000 90%,
+    transparent 80%
+  );
+}
+.mylogo {
+  color: white;
+  padding-left: 50px;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 74px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
 </style>
 
 <script>
@@ -46,15 +123,23 @@ export default {
     return {
       headerList: [
         {
-          name: 'Home',
-          path: '/',
+          name: 'Events',
+          path: '/events',
         },
         {
-          name: 'List',
-          path: '/list',
+          name: 'Point Of Interest',
+          path: '/poi',
         },
         {
-          name: 'About',
+          name: 'Services',
+          path: '/services',
+        },
+        {
+          name: 'Itineraries',
+          path: '/itineraries',
+        },
+        {
+          name: 'About MI',
           path: '/about',
         },
       ],
