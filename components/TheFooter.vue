@@ -90,13 +90,13 @@ export default {
 
 .navbar-light .nav-link:hover {
   color: white;
-  background: linear-gradient(
+ /* background: linear-gradient(
     180deg,
     transparent 60%,
     #d70000 60%,
     #d70000 90%,
     transparent 80%
-  );
+  );*/
 }
 
 .navbar-text {
@@ -104,7 +104,7 @@ export default {
   position: absolute;
   width: 180px;
   height: 20px;
-  margin-left: 10px;
+  padding-left: 10px;
   margin-top: -5px;
   font-family: 'Archivo Narrow', sans-serif;
   font-style: normal;
@@ -149,10 +149,6 @@ export default {
   display: flex;
   align-items: center;
   text-align: center;
-}
-
-.form-outline{
-  padding-bottom:10px;
 }
 
 

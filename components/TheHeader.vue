@@ -26,7 +26,7 @@
             {{ navItem.name }}
           </nuxt-link>
         </li>
-
+        <div style="padding-right: 40px"/>
         <li>
           <div class="form-outline">
             <input
@@ -45,8 +45,6 @@
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Archivo:wght@100&display=swap');
-
-
 
 .header {
   background: #505050;
@@ -113,6 +111,8 @@
   align-items: center;
   text-align: center;
 }
+
+
 
 </style>
 
