@@ -1,40 +1,34 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light px-3 footer">
-    <a class="navbar-brand mylogo" href="/"
-    ><span class="low-highlight"> MI</span>GUARDI</a
-    >
+  <div class="footer">
+    <div class="first-row">
+      <div class="my-brand">
+        <a class="my-logo" href="/"
+          ><span class="low-highlight"> MI</span>GUARDI</a
+        >
+        <p class="my-motto">A City like MI<br />require attention</p>
+      </div>
 
-    <p class="navbar-text">
-    A City like MI<br>require attention
-    </p>
-
-    <p class="navbar-copyright">
-      Hypermedia Applications 2022 - Carlo Bellacoscia - Gregorio Barzasi
-    </p>
-
-    <p class="navbar-language">
-      English
-    </p>
-
-    <div id="navbarToggler" class="collapse navbar-collapse">
-      <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+      <div class="my-list">
         <li
           v-for="(navItem, navItemIndex) of footerList"
           :key="`navItem${navItemIndex}`"
-          class="nav-item"
+          class="my-item"
         >
-          <nuxt-link :to="navItem.path" class="nav-link">
+          <nuxt-link :to="navItem.path" class="my-link">
             {{ navItem.name }}
           </nuxt-link>
         </li>
-      </ul>
+      </div>
+
+      <div class="my-language"><p>English</p></div>
     </div>
-  </nav>
+    <div class="copyright">
+      Hypermedia Applications 2022 - Carlo Bellacoscia - Gregorio Barzasi
+    </div>
+  </div>
 </template>
 
-.footer {
-
-}
+.footer { }
 <script>
 export default {
   name: 'TheFooter',
@@ -63,93 +57,96 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Archivo:wght@100&display=swap');
 
 .footer {
-  background: #505050;
-  height: 158px;
+  background-color: #252525;
+  height: 161px;
   width: 100%;
-  position: relative;
-  margin-bottom: 0px;
+  position: absolute;
+  bottom: auto;
+  min-width: 660px;
 
 }
 
-.nav-item {
+.first-row {
+  display: grid;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  grid-template-columns: 20% 60% 20%;
+}
+
+.my-logo {
+  margin-left: 0;
+  margin-top: 0;
+  color: white;
   font-family: 'Archivo Narrow', sans-serif;
   font-style: normal;
-  font-weight: 600;
-  font-size: 25px;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 33px;
+  text-decoration: none;
 }
 
-.navbar-collapse {
-  padding-left: 35%;
-  padding-right: 45%;
-  background-color: #505050d0;
-}
-
-.navbar-light .navbar-nav .nav-link {
-  color: white;
-}
-
-.navbar-light .nav-link:hover {
-  color: white;
- /* background: linear-gradient(
-    180deg,
-    transparent 60%,
-    #d70000 60%,
-    #d70000 90%,
-    transparent 80%
-  );*/
-}
-
-.navbar-text {
-  color: white;
-  position: absolute;
-  width: 180px;
-  height: 20px;
-  padding-left: 10px;
-  margin-top: -5px;
+.my-motto {
+  margin-top:5px;
+  color: #cccccc;
+  margin-left: 0;
+  line-height: 20px;
   font-family: 'Archivo Narrow', sans-serif;
   font-style: normal;
   font-weight: 100;
   font-size: 20px;
-  line-height: 100%;
-  display: flex;
-  align-items: center;
-  text-align: left;
 }
 
-.navbar-copyright {
-  color: #D9D9D9;
-  position: absolute;
-  height: 29px;
-  margin-left: 38%;
-  margin-right: 42%;
-  margin-top: 150px;
+.my-list {
+  display: flex;
+  justify-content: center;
+}
+
+.my-item {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+  float: left;
+  list-style-type: none;
+  text-align: center;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.my-link {
+  color: #cccccc;
+  text-decoration: none;
+}
+
+.my-link:hover {
+  color: white;
+}
+
+.copyright {
+  color:  rgb(255,255,255,0.3);
+  background-color: rgb(0,0,0,0.3);
   font-family: 'Archivo Narrow', sans-serif;
   font-style: italic;
   font-weight: 100;
   font-size: 15px;
-  line-height: 100%;
-  display: flex;
-  align-items: center;
+
+  line-height: 25px;
   text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
-.navbar-language {
+.my-language {
   color: white;
-  position: absolute;
-  width: 85px;
-  height: 22px;
-  margin-left: 90%;
-  margin-top: 107px;
   font-family: 'Archivo Narrow', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 22px;
-  display: flex;
-  align-items: center;
-  text-align: center;
+  text-align: right;
 }
-
 
 .low-highlight {
   background: linear-gradient(
@@ -160,24 +157,4 @@ export default {
     transparent 80%
   );
 }
-
-.mylogo {
-  color: white;
-  position: absolute;
-  width: 235px;
-  height: 80px;
-  margin-left: 10px;
-  margin-top: -100px;
-  font-family: 'Archivo Narrow', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 40px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-
 </style>
-
-

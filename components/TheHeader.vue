@@ -47,11 +47,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Archivo:wght@100&display=swap');
 
 .header {
-  background: #505050;
+  background-color: #252525;
   height: 80px;
   width: 100%;
   position: fixed;
-  margin-top: -50px;
+  left:0;
+  top:0;
   z-index: 1000;
   /*  border-radius: 0 0 15px 15px;*/
 }
@@ -63,12 +64,12 @@
   font-size: 25px;
 }
 
-
 .navbar-collapse {
   padding-left: 20px;
   padding-right: 100px;
-  background-color: #505050d0;
+  background-color: #252525;
 }
+
 
 .navbar-light .navbar-nav .nav-link {
   color: white;
