@@ -1,9 +1,12 @@
 
 export default {
     methods: {
-        formatMyDate(val){
-
-            return "Date: " + val
-        }
+        formatDate(val){
+          const temp= val.toString().slice(0,10).split('-')
+          const month = temp[1];
+          const day = temp[2];
+          // const year = temp[0];
+        return  day +'/'+month
+      }
     }
 }

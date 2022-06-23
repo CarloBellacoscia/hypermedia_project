@@ -1,14 +1,16 @@
 <template>
-  <div class="card">
+  <div class="my-card">
     <nuxt-link :to="`/${category}/${id}`" style="text-decoration: none">
-      <div
-        class="card-image"
-        :style="{ 'background-image': 'url(' + img + ')' }"
-      >
-        <div class="card-box-shadow">
-          <div class="card-body">
-            <h5 class="card-title">{{ name }}</h5>
-            <p class="card-date">{{ subtitle }}</p>
+      <div class="my-container">
+        <div
+          class="my-card-image"
+          :style="{ 'background-image': 'url(' + img + ')' }"
+        >
+          <div class="my-card-box-shadow">
+            <div class="my-card-body">
+              <h5 class="my-card-title">{{ name }}</h5>
+              <p class="my-card-sub">{{ subtitle }}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -19,36 +21,43 @@
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
 
-.card {
-  width: 440px;
-  height: 440px;
+.my-card {
+  width: 400px;
+  height: 400px;
   border: 2px solid lightgray;
 }
-.card:hover {
+.my-card:hover {
   border: 2px solid #d70000;
 }
-.card-box-shadow {
+.my-card-box-shadow {
   position: relative;
-  width: 400px;
+  top: 300px;
+  left: 10px;
+  width: 370px;
   height: 80px;
-  left: 20px;
-  top: 330px;
   background: rgba(0, 0, 0, 0.6);
 }
-.card-image {
-  background-position: center;
+.my-container {
+  margin: 4px 10px 10px -10px;
+  height: 390px;
+  width: 390px;
+}
+.my-card-image {
+  z-index: 0;
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
-  height: 440px;
+  height: 100%;
+  width: 100%;
 }
 
-.card-title {
+.my-card-title {
   position: relative;
   width: 380px;
   height: 20px;
   left: 10px;
   right: 10px;
-  top: 0px;
+  top: 10px;
 
   font-family: 'Archivo', sans-serif;
   font-weight: 400;
@@ -56,20 +65,14 @@
   line-height: 33px;
   color: #fff;
 }
-.card-date {
+.my-card-sub {
   position: relative;
-  width: 380px;
-  height: 20px;
-  left: 10px;
-  right: 10px;
-  top: 5px;
-  /*background-color: #D9D9D9f0;*/
-
   font-family: 'Archivo', sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 22px;
-
+  top: 13px;
+  left: 10px;
   color: #d9d9d9;
 }
 </style>

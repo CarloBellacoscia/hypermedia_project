@@ -10,8 +10,7 @@
         class="col-sm-2 m-2"
         :name="event.name"
         :img="event.img"
-        :start_date="event.start_date.toString().slice(0,10)"
-        :end_date="event.start_date.toString().slice(0,10)"
+        :subtitle="formatDate(event.start_date) +' - '+formatDate(event.end_date)"
 
       />
     </div>
@@ -19,12 +18,14 @@
 </template>
 
 <script>
+import CommonMixin from '~/mixins/common'
 import Card from '~/components/GenericCard.vue'
 export default {
   name: 'EventPage',
   components: {
     Card,
   },
+  mixins: [CommonMixin],
   data() {
     return {
       // catList: []
