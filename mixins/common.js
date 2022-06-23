@@ -7,6 +7,9 @@ export default {
           const day = temp[2];
           // const year = temp[0];
         return  day +'/'+month
+      },
+      formatMyDate(val){
+        return  "Date:" + val
       }
     }
 }
