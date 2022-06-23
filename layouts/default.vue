@@ -20,8 +20,9 @@ export default {
 </script>
 
 <style>
+/*
 *, ::after, ::before {
   box-sizing: inherit;
 }
-
+*/
 </style>

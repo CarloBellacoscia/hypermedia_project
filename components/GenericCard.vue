@@ -8,7 +8,7 @@
         <div class="card-box-shadow">
           <div class="card-body">
             <h5 class="card-title">{{ name }}</h5>
-            <p class="card-date">{{ start_date }} - {{ end_date }}</p>
+            <p class="card-date">{{ subtitle }}</p>
           </div>
         </div>
       </div>
@@ -94,27 +94,9 @@ export default {
       type: String,
       required: true,
     },
-
-    // only for events
-    start_date: {
+    subtitle: {
       type: String,
-      required: false,
-    },
-    end_date: {
-      type: String,
-      required: false,
-    },
-
-    // position to be updated
-
-    gps: {
-      type: String,
-      required: false,
-    },
-    // only for itinerary
-    duration: {
-      type: String,
-      required: false,
+      required: true,
     },
   },
   methods: {

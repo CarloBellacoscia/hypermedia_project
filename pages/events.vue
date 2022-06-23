@@ -4,7 +4,7 @@
     <div class="row mt-3">
       <card
         v-for="(event, eventIndex) of eventList"
-        :category="'event'"
+        :category="'events_details'"
         :id="event.id"
         :key="`event-index-${eventIndex}`"
         class="col-sm-2 m-2"

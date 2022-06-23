@@ -43,7 +43,7 @@ export default {
   mixins: [CommonMixin],
   async asyncData({ route, $axios }) {
     const { id } = route.params
-    const { data } = await $axios.get('/api/event/' + id)
+    const { data } = await $axios.get('/api/events_details/' + id)
     return {
       name: data.name,
       start_date: data.start_date,

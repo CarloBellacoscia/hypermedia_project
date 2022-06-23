@@ -3,20 +3,21 @@
     <h1 class="display-4">Services</h1>
     <div class="row mt-3">
       <card
-        v-for="(event, eventIndex) of eventList"
+        v-for="(ser, serIndex) of serList"
         class="col-sm-2 m-2"
-        :key="`event-index-${eventIndex}`"
-        :id="event.id"
-        :name="event.name"
-        :img="event.img"
-        :start_date="event.start_date"
+        :category="'services_details'"
+        :key="`services-index-${serIndex}`"
+        :id="ser.id"
+        :name="ser.name"
+        :subtitle = "ser.gps"
+        :img="ser.img"
       />
     </div>
   </div>
 </template>
 
 <script>
-import Card from '~/components/Card.vue'
+import Card from '~/components/GenericCard.vue'
 export default {
   name: 'ServicesPage',
   components: {
@@ -32,7 +33,7 @@ export default {
     // const { data } = await $axios.get('http://localhost:3000/api/cats')
     const { data } = await $axios.get('/api/services')
     return {
-      eventList: data,
+      serList: data,
     }
   },
 

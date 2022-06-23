@@ -66,8 +66,8 @@ export default {
   background: #505050;
   height: 158px;
   width: 100%;
-  position: absolute;
-  margin-top: 1746px;
+  position: relative;
+  margin-bottom: 0px;
 
 }
 
@@ -119,7 +119,6 @@ export default {
 .navbar-copyright {
   color: #D9D9D9;
   position: absolute;
-  width: 1512px;
   height: 29px;
   margin-left: 38%;
   margin-right: 42%;

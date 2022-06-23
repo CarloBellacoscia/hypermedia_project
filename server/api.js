@@ -108,12 +108,6 @@ async function runMainApi() {
         return res.json(result)
     })
 
-    app.get('/event/:id', async (req, res) => {
-        const id = +req.params.id
-        const result = await models.Event.findOne({ where: { id }, include: [{model: models.PointOfInterest}] })
-        return res.json(result)
-    })
-
     // HTTP GET api that returns all the events in our actual database
     app.get("/events", async (req, res) => {
         const result = await models.Event.findAll()
@@ -130,6 +124,13 @@ async function runMainApi() {
         return res.json(filtered)
     })
 
+
+  app.get('/events_details/:id', async (req, res) => {
+    const id = +req.params.id
+    const result = await models.Event.findOne({ where: { id }, include: [{model: models.PointOfInterest}] })
+    return res.json(result)
+  })
+
   // HTTP GET api that returns all the services in our actual database
   app.get("/services", async (req, res) => {
     const result = await models.Service.findAll()
@@ -145,6 +146,12 @@ async function runMainApi() {
       })
     }
     return res.json(filtered)
+  })
+
+  app.get('/services_details/:id', async (req, res) => {
+    const id = +req.params.id
+    const result = await models.Service.findOne({ where: { id } })
+    return res.json(result)
   })
 
   // HTTP GET api that returns all the points of interest in our actual database
@@ -184,6 +191,12 @@ async function runMainApi() {
       })
     }
     return res.json(filtered)
+  })
+
+  app.get('/itineraries_details/:id', async (req, res) => {
+    const id = +req.params.id
+    const result = await models.Itinerary.findOne({ where: { id } })
+    return res.json(result)
   })
 
 

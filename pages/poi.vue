@@ -5,12 +5,11 @@
       <card
         v-for="(poi, poiIndex) of poiList"
         class="col-sm-2 m-2"
+        :category="'poi_details'"
         :key="`poi-index-${poiIndex}`"
         :id="poi.id"
         :name="poi.name"
-        :description="poi.description"
-        :gps = "poi.gps"
-        :site = "poi.site"
+        :subtitle = "poi.gps"
         :img="poi.img"
       />
     </div>
@@ -18,7 +17,7 @@
 </template>
 
 <script>
-import Card from '~/components/PointOfInterestCard.vue'
+import Card from '~/components/GenericCard.vue'
 export default {
   name: 'PointsOfInterestPage',
   components: {
