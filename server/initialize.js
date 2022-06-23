@@ -1,15 +1,4 @@
 export default async (models) => {
-  const eventList = [
-    {
-      name: "Miami",
-      start_date: "2022-05-26",
-      end_date: "2022-05-29",
-      description: "bello",
-      site: "Magnolia",
-      img: "https://fs.i3lab.group/hypermedia/cats/siberian.jpg"
-    }
-  ]
-
 
   const poiList = [
     {
@@ -18,6 +7,19 @@ export default async (models) => {
       gps: "2131' 14315'' ",
       site: "duomo.net",
       img: "https://fs.i3lab.group/hypermedia/cats/birman.jpg"
+    }
+  ]
+  const poi0 = await models.PointOfInterest.create(poiList[0])
+
+  const eventList = [
+    {
+      name: "Miami",
+      start_date: "2022-05-26",
+      end_date: "2022-05-29",
+      description: "bello",
+      site: "Magnolia",
+      img: "https://fs.i3lab.group/hypermedia/cats/siberian.jpg",
+      pointOfInterestId: poi0.id
     }
   ]
 

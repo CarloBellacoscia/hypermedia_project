@@ -65,7 +65,7 @@ export default {
   },
   methods: {
     backToList() {
-      this.$router.push('/events')
+      this.$router.push('/details_ev')
     },
   },
 }

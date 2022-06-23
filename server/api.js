@@ -114,7 +114,7 @@ async function runMainApi() {
         return res.json(result)
     })
 
-    // HTTP GET api that returns all the cats in our actual database
+    // HTTP GET api that returns all the events in our actual database
     app.get("/events", async (req, res) => {
         const result = await models.Event.findAll()
         const filtered = []
@@ -129,6 +129,58 @@ async function runMainApi() {
         }
         return res.json(filtered)
     })
+
+  // HTTP GET api that returns all the services in our actual database
+  app.get("/services", async (req, res) => {
+    const result = await models.Service.findAll()
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        name: element.name,
+        description: element.description,
+        gps: element.gps,
+        site: element.site,
+        img: element.img,
+        id: element.id,
+      })
+    }
+    return res.json(filtered)
+  })
+
+  // HTTP GET api that returns all the points of interest in our actual database
+  app.get("/poi", async (req, res) => {
+    const result = await models.PointOfInterest.findAll()
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        name: element.name,
+        description: element.description,
+        gps: element.gps,
+        site: element.site,
+        img: element.img,
+        id: element.id,
+      })
+    }
+    return res.json(filtered)
+  })
+
+  // HTTP GET api that returns all the itineraries in our actual database
+  app.get("/itineraries", async (req, res) => {
+    const result = await models.Itinerary.findAll()
+    const filtered = []
+    for (const element of result) {
+      filtered.push({
+        name: element.name,
+        description: element.description,
+        img: element.img,
+        duration: element.duration,
+        id: element.id,
+      })
+    }
+    return res.json(filtered)
+  })
+
+
 
     // HTTP POST api, that will push (and therefore create) a new element in
     // our actual database
