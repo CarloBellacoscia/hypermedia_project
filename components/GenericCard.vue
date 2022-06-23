@@ -1,7 +1,6 @@
 <template>
   <div class="card">
-  <nuxt-link :to="`/event/${id}`" style="text-decoration:none">
-
+    <nuxt-link :to="`/${category}/${id}`" style="text-decoration: none">
       <div
         class="card-image"
         :style="{ 'background-image': 'url(' + img + ')' }"
@@ -9,13 +8,12 @@
         <div class="card-box-shadow">
           <div class="card-body">
             <h5 class="card-title">{{ name }}</h5>
-            <p class="card-date">{{start_date}}</p>
+            <p class="card-date">{{ start_date }} - {{ end_date }}</p>
           </div>
         </div>
       </div>
-  </nuxt-link>
+    </nuxt-link>
   </div>
-
 </template>
 
 <style scoped>
@@ -29,7 +27,7 @@
 .card:hover {
   border: 2px solid #d70000;
 }
-.card-box-shadow{
+.card-box-shadow {
   position: relative;
   width: 400px;
   height: 80px;
@@ -44,7 +42,7 @@
   height: 440px;
 }
 
-.card-title{
+.card-title {
   position: relative;
   width: 380px;
   height: 20px;
@@ -56,9 +54,9 @@
   font-weight: 400;
   font-size: 30px;
   line-height: 33px;
-  color: #FFF;
+  color: #fff;
 }
-.card-date{
+.card-date {
   position: relative;
   width: 380px;
   height: 20px;
@@ -72,26 +70,15 @@
   font-size: 20px;
   line-height: 22px;
 
-  color: #D9D9D9;
-
+  color: #d9d9d9;
 }
-
-
 </style>
 
 <script>
 export default {
-  name: 'EventCardComponent',
+  name: 'GenericCardComponent',
   props: {
-    name: {
-      type: String,
-      required: true,
-    },
-    start_date: {
-      type: String,
-      required: true,
-    },
-    img: {
+    category: {
       type: String,
       required: true,
     },
@@ -99,10 +86,40 @@ export default {
       type: Number,
       required: true,
     },
+    name: {
+      type: String,
+      required: true,
+    },
+    img: {
+      type: String,
+      required: true,
+    },
+
+    // only for events
+    start_date: {
+      type: String,
+      required: false,
+    },
+    end_date: {
+      type: String,
+      required: false,
+    },
+
+    // position to be updated
+
+    gps: {
+      type: String,
+      required: false,
+    },
+    // only for itinerary
+    duration: {
+      type: String,
+      required: false,
+    },
   },
   methods: {
     goToDetails() {
-      this.$router.push(`/event/${this.id}`)
+      this.$router.push(`/${this.category}/${this.id}`)
     },
   },
 }

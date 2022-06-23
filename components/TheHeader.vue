@@ -52,7 +52,7 @@
   width: 100%;
   position: fixed;
   margin-top: -50px;
-
+  z-index: 1000;
   /*  border-radius: 0 0 15px 15px;*/
 }
 
