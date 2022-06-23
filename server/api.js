@@ -164,6 +164,12 @@ async function runMainApi() {
     return res.json(filtered)
   })
 
+  app.get('/poi_details/:id', async (req, res) => {
+    const id = +req.params.id
+    const result = await models.PointOfInterest.findOne({ where: { id } })
+    return res.json(result)
+  })
+
   // HTTP GET api that returns all the itineraries in our actual database
   app.get("/itineraries", async (req, res) => {
     const result = await models.Itinerary.findAll()

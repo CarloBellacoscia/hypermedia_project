@@ -3,20 +3,22 @@
     <h1 class="display-4">Points of Interest</h1>
     <div class="row mt-3">
       <card
-        v-for="(event, eventIndex) of eventList"
+        v-for="(poi, poiIndex) of poiList"
         class="col-sm-2 m-2"
-        :key="`event-index-${eventIndex}`"
-        :id="event.id"
-        :name="event.name"
-        :img="event.img"
-        :start_date="event.start_date"
+        :key="`poi-index-${poiIndex}`"
+        :id="poi.id"
+        :name="poi.name"
+        :description="poi.description"
+        :gps = "poi.gps"
+        :site = "poi.site"
+        :img="poi.img"
       />
     </div>
   </div>
 </template>
 
 <script>
-import Card from '~/components/Card.vue'
+import Card from '~/components/PointOfInterestCard.vue'
 export default {
   name: 'PointsOfInterestPage',
   components: {
@@ -32,7 +34,7 @@ export default {
     // const { data } = await $axios.get('http://localhost:3000/api/cats')
     const { data } = await $axios.get('/api/poi')
     return {
-      eventList: data,
+      poiList: data,
     }
   },
 
