@@ -4,9 +4,9 @@
     <div class="row mt-3">
       <card
         v-for="(event, eventIndex) of eventList"
-        class="col-sm-2 m-2"
-        :key="`event-index-${eventIndex}`"
         :id="event.id"
+        :key="`event-index-${eventIndex}`"
+        class="col-sm-2 m-2"
         :name="event.name"
         :img="event.img"
         :start_date="event.start_date"

@@ -9,7 +9,7 @@
       <p class="card-text">
         niente
       </p>
-      <nuxt-link :to="`/events/${id}`">
+      <nuxt-link :to="`/event/${id}`">
         <div class="btn btn-primary btn-orange">See Details</div>
       </nuxt-link>
     </div>
@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     goToDetails() {
-      this.$router.push(`/events/${this.id}`)
+       this.$router.push(`/event/${this.id}`)
     },
   },
 }
