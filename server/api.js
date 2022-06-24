@@ -32,7 +32,7 @@ async function initializeDatabaseConnection() {
 
   const PointOfInterest = database.define("point_of_interest", {
     name: DataTypes.STRING,
-    description: DataTypes.STRING,
+    description: DataTypes.STRING(1024),
     gps: DataTypes.STRING,
     site: DataTypes.STRING,
     img: DataTypes.STRING,
@@ -48,21 +48,25 @@ async function initializeDatabaseConnection() {
     img: DataTypes.STRING,
   })
 
+  const JoinPoints = database.define("join_points", {
+  })
+
   const Itinerary = database.define("itinerary", {
     name: DataTypes.STRING,
     description: DataTypes.STRING,
     img: DataTypes.STRING,
     duration: DataTypes.STRING,
   })
-  Itinerary.belongsToMany(PointOfInterest, {through: "join_points"})
-  PointOfInterest.belongsToMany(Itinerary, {through: "join_points"})
+  Itinerary.belongsToMany(PointOfInterest, {through: JoinPoints})
+  PointOfInterest.belongsToMany(Itinerary, {through: JoinPoints})
 
 
-  await database.sync({ force: false })
+  await database.sync({ force: true })
   return {
     Event,
     PointOfInterest,
     Service,
+    JoinPoints,
     Itinerary
   }
 }
@@ -100,7 +104,7 @@ async function initializeDatabaseConnection() {
 
 async function runMainApi() {
     const models = await initializeDatabaseConnection()
-    // await initialize(models)
+    await initialize(models)
 
      app.get('/page-info/:topic', (req, res) => {
         const { topic } = req.params
