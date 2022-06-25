@@ -11,8 +11,27 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'CustomPage',
+  props: {
+    title: {
+      type: String,
+      required: true,
+    },
+    image: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+  },
+}
+</script>
+
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Archivo:wght@100&display=swap');
 
 img {
   height: 300px;
@@ -54,23 +73,3 @@ p {
 }
 
 </style>
-
-<script>
-export default {
-  name: 'CustomPage',
-  props: {
-    title: {
-      type: String,
-      required: true,
-    },
-    image: {
-      type: String,
-      required: true,
-    },
-    description: {
-      type: String,
-      required: true,
-    },
-  },
-}
-</script>

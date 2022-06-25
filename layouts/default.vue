@@ -1,3 +1,4 @@
+<!--suppress CssUnknownTarget -->
 <template>
   <div class="main-page">
     <the-header />
@@ -20,6 +21,8 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Archivo:wght@100&display=swap');
 /*
 *, ::after, ::before {
   box-sizing: inherit;

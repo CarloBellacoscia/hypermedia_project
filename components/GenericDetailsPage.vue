@@ -18,75 +18,9 @@
   </div>
 </template>
 
-<style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Archivo:wght@100&display=swap');
-img {
-  height: 300px;
-}
-.info {
-  margin-left: 70%;
-}
-
-.image {
-  padding-left: 3%;
-}
-
-.details {
-  padding-left: 55%;
-}
-
-.page {
-  text-align: center;
-  max-width: 800px;
-  color: black;
-  font-family: 'Archivo Narrow', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 55px;
-  line-height: 74px;
-  display: flex;
-}
-
-.first-row {
-  display: grid;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  grid-template-columns: 20% 60% 20%;
-}
-
-.details {
-  paddint-left: 50%;
-}
-
-.text {
-  text-align: center;
-  max-width: 100%;
-  color: black;
-  font-family: 'Archivo Narrow', sans-serif;
-  font-style: normal;
-  font-size: 24px;
-  display: flex;
-}
-
-p {
-  text-align: left;
-}
-
-.low-highlight {
-  background: linear-gradient(
-    180deg,
-    transparent 60%,
-    #d70000 60%,
-    #d70000 90%,
-    transparent 80%
-  );
-}
-</style>
-
 <script>
 export default {
-  name: 'DetailsPage',
+  name: 'GenericDetailsPage',
   props: {
     name: {
       type: String,
@@ -127,3 +61,61 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+
+img {
+  height: 300px;
+}
+.details {
+  padding-left: 55%;
+}
+
+.page {
+  text-align: center;
+  max-width: 800px;
+  color: black;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 74px;
+  display: flex;
+}
+
+.first-row {
+  display: grid;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  grid-template-columns: 20% 60% 20%;
+}
+
+.details {
+  padding-left: 50%;
+}
+
+.text {
+  text-align: center;
+  max-width: 100%;
+  color: black;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-style: normal;
+  font-size: 24px;
+  display: flex;
+}
+
+p {
+  text-align: left;
+}
+
+.low-highlight {
+  background: linear-gradient(
+    180deg,
+    transparent 60%,
+    #d70000 60%,
+    #d70000 90%,
+    transparent 80%
+  );
+}
+</style>

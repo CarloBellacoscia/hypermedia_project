@@ -15,7 +15,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarToggler">
+    <div id="navbarToggler" class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
         <li
           v-for="(navItem, navItemIndex) of headerList"
@@ -30,8 +30,8 @@
         <li>
           <div class="form-outline">
             <input
-              type="search"
               id="form1"
+              type="search"
               class="form-control"
               placeholder="Search"
               aria-label="Search"
@@ -43,8 +43,39 @@
 
 </template>
 
+<script>
+export default {
+  name: 'TheHeader',
+  data() {
+    return {
+      headerList: [
+        {
+          name: 'Events',
+          path: '/events',
+        },
+        {
+          name: 'Point Of Interest',
+          path: '/poi',
+        },
+        {
+          name: 'Services',
+          path: '/services',
+        },
+        {
+          name: 'Itineraries',
+          path: '/itineraries',
+        },
+        {
+          name: 'About MI',
+          path: '/about',
+        },
+      ],
+    }
+  },
+}
+</script>
+
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Archivo:wght@100&display=swap');
 
 .header {
   background-color: #252525;
@@ -116,35 +147,3 @@
 
 
 </style>
-
-<script>
-export default {
-  name: 'TheHeader',
-  data() {
-    return {
-      headerList: [
-        {
-          name: 'Events',
-          path: '/events',
-        },
-        {
-          name: 'Point Of Interest',
-          path: '/poi',
-        },
-        {
-          name: 'Services',
-          path: '/services',
-        },
-        {
-          name: 'Itineraries',
-          path: '/itineraries',
-        },
-        {
-          name: 'About MI',
-          path: '/about',
-        },
-      ],
-    }
-  },
-}
-</script>

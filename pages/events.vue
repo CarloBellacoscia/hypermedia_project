@@ -4,9 +4,9 @@
     <div class="row mt-3">
       <card
         v-for="(event, eventIndex) of eventList"
-        :category="'events_details_test'"
         :id="event.id"
         :key="`event-index-${eventIndex}`"
+        :category="'events_details'"
         class="col-sm-2 m-2"
         :name="event.name"
         :img="event.img"
@@ -26,11 +26,6 @@ export default {
     Card,
   },
   mixins: [CommonMixin],
-  data() {
-    return {
-      // catList: []
-    }
-  },
   // Note: This happens on backend (server) side
   async asyncData({ $axios }) {
     // const { data } = await $axios.get('http://localhost:3000/api/cats')
@@ -39,6 +34,7 @@ export default {
       eventList: data,
     }
   },
+
   // Note: This would happen on frontend (client) side
   // async mounted() {
   //   const { data } = await this.$axios.get('/api/cats')

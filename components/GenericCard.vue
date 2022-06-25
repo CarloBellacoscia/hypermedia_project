@@ -18,8 +18,40 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: 'GenericCardComponent',
+  props: {
+    category: {
+      type: String,
+      required: true,
+    },
+    id: {
+      type: Number,
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    img: {
+      type: String,
+      required: true,
+    },
+    subtitle: {
+      type: String,
+      required: true,
+    },
+  },
+  methods: {
+    goToDetails() {
+      this.$router.push(`/${this.category}/${this.id}`)
+    },
+  },
+}
+</script>
+
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
 
 .my-card {
   width: 400px;
@@ -76,36 +108,3 @@
   color: #d9d9d9;
 }
 </style>
-
-<script>
-export default {
-  name: 'GenericCardComponent',
-  props: {
-    category: {
-      type: String,
-      required: true,
-    },
-    id: {
-      type: Number,
-      required: true,
-    },
-    name: {
-      type: String,
-      required: true,
-    },
-    img: {
-      type: String,
-      required: true,
-    },
-    subtitle: {
-      type: String,
-      required: true,
-    },
-  },
-  methods: {
-    goToDetails() {
-      this.$router.push(`/${this.category}/${this.id}`)
-    },
-  },
-}
-</script>
