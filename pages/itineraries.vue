@@ -1,6 +1,8 @@
 <template>
   <div class="page container mt-5">
-    <h1 class="display-4">Itineraries</h1>
+    <h1 class="page">
+      <span class="low-highlight">Itineraries</span>
+    </h1>
     <div class="row mt-3">
       <card
         v-for="(it, itIndex) of itList"
@@ -38,3 +40,24 @@ export default {
   // },
 }
 </script>
+
+<style scoped>
+.page {
+  text-align: left;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 74px;
+}
+
+.low-highlight {
+  background: linear-gradient(
+    180deg,
+    transparent 60%,
+    #d70000 60%,
+    #d70000 90%,
+    transparent 80%
+  );
+}
+</style>

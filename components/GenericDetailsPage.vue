@@ -7,9 +7,30 @@
       <div class="first-row">
         <img :src="image" alt="" />
         <div class="details">
-          <p class="text">
-            {{ label1 }}<br />{{ value1 }}<br /><br />{{ label2 }}<br />{{ value2 }}<br /><br />{{ label3 }}<br />{{ value3 }}
-          </p>
+          <div v-if="start_date">
+            <p class="label">Start Date:<br /></p>
+            <p class="text">{{ start_date }}<br /></p>
+          </div>
+          <div v-if="end_date">
+            <p class="label">End Date:<br /></p>
+            <p class="text">{{ end_date }}<br /></p>
+          </div>
+          <div v-if="duration">
+            <p class="label">Duration:<br /></p>
+            <p class="text">{{ duration }}<br /></p>
+          </div>
+          <div v-if="gps">
+            <p class="label">GPS:<br /></p>
+            <p class="text">{{ gps }}<br /></p>
+          </div>
+          <div v-if="neigh">
+            <p class="label">Neighborhood:<br /></p>
+            <p class="text">{{ neigh }}<br /></p>
+          </div>
+          <div v-if="site">
+            <p class="label">Site:<br /></p>
+            <p class="text">{{ site }}<br /></p>
+          </div>
         </div>
       </div>
       <hr class="my-4" />
@@ -34,30 +55,30 @@ export default {
       type: String,
       required: true,
     },
-    label1: {
+    start_date: {
       type: String,
-      required: true,
+      required: false,
     },
-    label2: {
+    end_date: {
       type: String,
-      required: true,
+      required: false,
     },
-    label3: {
+    site: {
       type: String,
-      required: true,
+      required: false,
     },
-    value1: {
+    duration: {
       type: String,
-      required: true,
+      required: false,
     },
-    value2: {
+    gps: {
       type: String,
-      required: true,
+      required: false,
     },
-    value3: {
+    neigh: {
       type: String,
-      required: true,
-    }
+      required: false,
+    },
   },
 }
 </script>
@@ -102,6 +123,17 @@ img {
   font-family: 'Archivo Narrow', sans-serif;
   font-style: normal;
   font-size: 24px;
+  display: flex;
+}
+
+.label {
+  text-align: left;
+  max-width: 100%;
+  color: black;
+  font-family: 'Archivo Narrow', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
   display: flex;
 }
 
