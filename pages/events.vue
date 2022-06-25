@@ -4,7 +4,7 @@
     <div class="row mt-3">
       <card
         v-for="(event, eventIndex) of eventList"
-        :category="'events_details'"
+        :category="'events_details_test'"
         :id="event.id"
         :key="`event-index-${eventIndex}`"
         class="col-sm-2 m-2"
@@ -39,13 +39,10 @@ export default {
       eventList: data,
     }
   },
-
   // Note: This would happen on frontend (client) side
   // async mounted() {
   //   const { data } = await this.$axios.get('/api/cats')
   //   this.catList = data
   // },
 }
-
-
 </script>
