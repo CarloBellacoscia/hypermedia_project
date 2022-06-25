@@ -5,36 +5,36 @@
         <span class="low-highlight">{{ name }}</span>
       </h1>
       <div class="first-row">
-        <img :src="image" alt="" />
+        <img :src="image" alt="Picture of the subject of this page." />
         <div class="details">
           <div v-if="start_date">
-            <p class="label">Start Date:<br /></p>
-            <p class="text">{{ start_date }}<br /></p>
+            <h2 class="label">Start Date:<br /></h2>
+            <h3 class="text">{{ start_date }}<br /></h3>
           </div>
           <div v-if="end_date">
-            <p class="label">End Date:<br /></p>
-            <p class="text">{{ end_date }}<br /></p>
+            <h2 class="label">End Date:<br /></h2>
+            <h3 class="text">{{ end_date }}<br /></h3>
           </div>
           <div v-if="duration">
-            <p class="label">Duration:<br /></p>
-            <p class="text">{{ duration }}<br /></p>
+            <h2 class="label">Duration:<br /></h2>
+            <h3 class="text">{{ duration }}<br /></h3>
           </div>
           <div v-if="gps">
-            <p class="label">GPS:<br /></p>
-            <p class="text">{{ gps }}<br /></p>
+            <h2 class="label">GPS:<br /></h2>
+            <h3 class="text">{{ gps }}<br /></h3>
           </div>
           <div v-if="neigh">
-            <p class="label">Neighborhood:<br /></p>
-            <p class="text">{{ neigh }}<br /></p>
+            <h2 class="label">Neighborhood:<br /></h2>
+            <h3 class="text">{{ neigh }}<br /></h3>
           </div>
           <div v-if="site">
-            <p class="label">Site:<br /></p>
-            <p class="text">{{ site }}<br /></p>
+            <h2 class="label">Site:<br /></h2>
+            <h3 class="text">{{ site }}<br /></h3>
           </div>
         </div>
       </div>
       <hr class="my-4" />
-      <p class="text">{{ description }}</p>
+      <h3 class="text">{{ description }}</h3>
     </div>
   </div>
 </template>
@@ -86,7 +86,10 @@ export default {
 <style scoped>
 
 img {
+  width: 200%;
+  max-width: 500px;
   height: 300px;
+  object-fit: cover;
 }
 .details {
   padding-left: 55%;
