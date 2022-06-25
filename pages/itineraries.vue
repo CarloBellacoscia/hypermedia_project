@@ -4,13 +4,13 @@
     <div class="row mt-3">
       <card
         v-for="(it, itIndex) of itList"
-        class="col-sm-2 m-2"
-        :category="'itineraries_details'"
-        :key="`it-index-${itIndex}`"
         :id="it.id"
+        :key="`it-index-${itIndex}`"
+        :category="'itineraries_details'"
+        class="col-sm-2 m-2"
         :name="it.name"
         :img="it.img"
-        :subtitle="it.gps"
+        :duration="it.duration"
       />
     </div>
   </div>

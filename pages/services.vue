@@ -4,12 +4,12 @@
     <div class="row mt-3">
       <card
         v-for="(ser, serIndex) of serList"
+        :id="ser.id"
+        :key="`services-index-${serIndex}`"
         class="col-sm-2 m-2"
         :category="'services_details'"
-        :key="`services-index-${serIndex}`"
-        :id="ser.id"
         :name="ser.name"
-        :subtitle = "ser.gps"
+        :position = "ser.neigh"
         :img="ser.img"
       />
     </div>
@@ -23,17 +23,17 @@ export default {
   components: {
     Card,
   },
-  data() {
-    return {
-      // catList: []
-    }
-  },
   // Note: This happens on backend (server) side
   async asyncData({ $axios }) {
     // const { data } = await $axios.get('http://localhost:3000/api/cats')
     const { data } = await $axios.get('/api/services')
     return {
       serList: data,
+    }
+  },
+  data() {
+    return {
+      // catList: []
     }
   },
 

@@ -2,8 +2,8 @@
 <template>
   <div class="main-page">
     <the-header />
-    <nuxt style="padding-top:60px; min-height: 84vh" />
-    <the-footer />
+    <nuxt style="padding-top:60px; min-height: 79vh" />
+    <the-footer style="margin-top: 50px"/>
   </div>
 </template>
 

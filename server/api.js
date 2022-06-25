@@ -9,12 +9,12 @@ app.use(express.json())
 const database = new Sequelize("postgres://postgres:postgres@localhost:5432/mi_guardi")
 
 // Production (use this code when deploying to production in Heroku)
- /*const pg = require('pg')
+ /* const pg = require('pg')
  pg.defaults.ssl = true
  const database = new Sequelize(process.env.DATABASE_URL, {
    ssl: true,
    dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
- })*/
+ }) */
 
 
 
@@ -34,6 +34,7 @@ async function initializeDatabaseConnection() {
     name: DataTypes.STRING,
     description: DataTypes.STRING(1024),
     gps: DataTypes.STRING,
+    neigh: DataTypes.STRING,
     site: DataTypes.STRING,
     img: DataTypes.STRING,
   })
@@ -44,6 +45,7 @@ async function initializeDatabaseConnection() {
     name: DataTypes.STRING,
     description: DataTypes.STRING,
     gps: DataTypes.STRING,
+    neigh: DataTypes.STRING,
     site: DataTypes.STRING,
     img: DataTypes.STRING,
   })
@@ -114,8 +116,9 @@ async function runMainApi() {
 
     // HTTP GET api that returns all the events in our actual database
     app.get("/events", async (req, res) => {
-        const result = await models.Event.findAll()
+        const result = await models.Event.findAll({include: [{model: models.PointOfInterest}] })
         const filtered = []
+      // console.log(JSON.stringify(result, null, 2))
         for (const element of result) {
             filtered.push({
                 name: element.name,
@@ -123,6 +126,7 @@ async function runMainApi() {
                 start_date: element.start_date,
                 end_date: element.end_date,
                 id: element.id,
+                position: element.point_of_interest.name,
             })
         }
         return res.json(filtered)

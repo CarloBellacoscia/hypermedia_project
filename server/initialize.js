@@ -1,9 +1,24 @@
 export default async (models) => {
   const poiList = [
     {
+      name: 'Circolo Magnolia',
+      description: "Il Magnolia è un'associazione ARCI no profit che ha creato per il propri associati e " +
+        "tesserati ARCI un locale situato all’interno del parco dell’Idroscalo che, dalla sua nascita nel " +
+        "2005, si è sempre distinto per la programmazione musicale, inclusiva e costante lungo tutta la stagione " +
+        "annuale, proponendo di volta in volta concerti e serate per i propri soci, richiamando sul proprio palco artisti" +
+        " di fama nazionale ed internazionale. Prendete in mano la programmazione invernale o estiva del circolo e mettetela " +
+        "di fianco ai più blasonati club di Berlino," +
+        " Londra, Amsterdam, Barcellona. Scoprirete con sommo stupore che si assomigliano terribilmente. ",
+      gps: "2131' 14315'' ",
+      neigh: "Idroscalo",
+      site: 'http://www.circolomagnolia.it/',
+      img: 'https://zero-media.s3.amazonaws.com/uploads/2015/05/575491c9-d065-42e2-b1e0-14fcd873a41d.jpg',
+    },
+    {
       name: 'Duomo',
       description: "l'èbellalamadunnina",
       gps: "2131' 14315'' ",
+      neigh: "Piazza Duomo",
       site: 'https://www.duomomilano.it/it/',
       img: 'https://duomo.shbcdn.com/blobs/variants/f/8/7/f/f87f8370-813f-459b-a887-fc05029349f0_xl.jpg',
     },
@@ -15,6 +30,7 @@ export default async (models) => {
         'divenuto da poco Duca di Milano, sui resti di una precedente fortificazione medievale del XIV secolo nota come' +
         ' Castello di Porta Giovia. ',
       gps: "2131' 14315'' ",
+      neigh: "Castello",
       site: 'https://www.milanocastello.it/',
       img: 'https://www.milanocastello.it/sites/all/themes/sforzesco/images/sforzesco_edificio.jpg',
     },
@@ -27,12 +43,14 @@ export default async (models) => {
         ' Esile e trasparente, vera “sfida” architettonica, viene eretta a tempo di record, in soli due mesi e mezzo nel 1933,' +
         ' in occasione della V mostra Triennale, insieme a sei grandi “archi isolati”, temporanei, progettati da Sironi. Milano acquista così l’esclusiva europea di una “esposizione internazionale triennale delle arti decorative e industriali moderne e della architettura moderna”. ',
       gps: "2131' 14315'' ",
+      neigh: "Sempione",
       site: 'https://museobranca.it/torre-branca-2/',
       img: 'https://museobranca.it/wp-content/uploads/2014/01/Torre-Branca-A4-345x230.jpg',
     },
   ]
-  const duomoPoi = await models.PointOfInterest.create(poiList[0])
-  const torrePoi = await models.PointOfInterest.create(poiList[1])
+  const magnoliaPoi = await models.PointOfInterest.create(poiList[0])
+  // const duomoPoi = await models.PointOfInterest.create(poiList[1])
+  const torrePoi = await models.PointOfInterest.create(poiList[2])
 
 
   const eventList = [
@@ -41,9 +59,9 @@ export default async (models) => {
       start_date: '2022-05-26',
       end_date: '2022-05-29',
       description: 'bello',
-      site: 'Magnolia',
-      img: 'https://fs.i3lab.group/hypermedia/cats/siberian.jpg',
-      pointOfInterestId: duomoPoi.id,
+      site: 'https://www.miamifestival.it/2022/index.php',
+      img: 'https://imbruttito.com/images/miamifestival2018-600x340.jpg?p=16x9&s=a9dc40eeab659d4e4ea9c7089fc2c16d',
+      pointOfInterestId: magnoliaPoi.id,
     },
     {
       name: 'Notte in Branca',
@@ -60,7 +78,7 @@ export default async (models) => {
     {
       name: 'Tour Arte',
       description: 'fa caldo',
-      img: 'https://upload.wikimedia.org/wikipedia/commons/2/2b/Interior_of_Il_Duomo%2C_Milan.jpg',
+      img: 'https://libreriamo.it/wp-content/uploads/2018/12/galleria-vittorio-emanuele-1-1.jpg',
       duration: '1 Pomeriggio',
     },
   ]
@@ -68,9 +86,10 @@ export default async (models) => {
 
   const serviceList = [
     {
-      name: 'Farmacia Loreto',
+      name: 'Farmacia Cavallo',
       description: 'curiamo le coltellate di piazzale Loreto',
       gps: "246' 2414'' ",
+      neigh: "Loreto",
       site: 'lame.net',
       img: 'https://fs.i3lab.group/hypermedia/cats/maine-coon.jpg',
     },

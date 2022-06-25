@@ -6,12 +6,13 @@
         v-for="(event, eventIndex) of eventList"
         :id="event.id"
         :key="`event-index-${eventIndex}`"
-        :category="'events_details'"
         class="col-sm-2 m-2"
+        :category="'events_details'"
+
         :name="event.name"
         :img="event.img"
-        :subtitle="formatDate(event.start_date) +' - '+formatDate(event.end_date)"
-
+        :date="formatDate(event.start_date) +' - '+formatDate(event.end_date)"
+        :position="event.position"
       />
     </div>
   </div>
