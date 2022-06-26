@@ -2,6 +2,8 @@
   <generic-details-page
     :name="name"
     :image="img"
+    :alt_image="alt_img"
+    :neigh="neigh"
     :description="description"
     :site="site"
     :duration="duration"
@@ -25,7 +27,10 @@ export default {
       duration: data.duration,
       description: data.description,
       site: data.site,
+      alt_img: data.alt_img,
       img: data.img,
+      neigh: data.neigh,
+
     }
   },
   head(){

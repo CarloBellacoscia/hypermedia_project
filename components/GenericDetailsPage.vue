@@ -5,7 +5,7 @@
         <span class="low-highlight">{{ name }}</span>
       </h1>
       <div class="first-row">
-        <img :src="image" alt="Picture of the subject of this page." />
+        <img :src="image" :alt="alt_image" />
         <div class="details">
           <div v-if="start_date">
             <h2 class="label">Start Date:<br /></h2>
@@ -18,10 +18,6 @@
           <div v-if="duration">
             <h2 class="label">Duration:<br /></h2>
             <h3 class="text">{{ duration }}<br /></h3>
-          </div>
-          <div v-if="gps">
-            <h2 class="label">GPS:<br /></h2>
-            <h3 class="text">{{ gps }}<br /></h3>
           </div>
           <div v-if="neigh">
             <h2 class="label">Neighborhood:<br /></h2>
@@ -48,6 +44,10 @@ export default {
       required: true,
     },
     image: {
+      type: String,
+      required: true,
+    },
+    alt_image: {
       type: String,
       required: true,
     },
@@ -122,7 +122,7 @@ img {
 .text {
   text-align: center;
   max-width: 100%;
-  color: black;
+  color: #252525;
   font-family: 'Archivo Narrow', sans-serif;
   font-style: normal;
   font-size: 24px;
@@ -145,12 +145,12 @@ p {
 }
 
 .low-highlight {
-  background: linear-gradient(
+  /*background: linear-gradient(
     180deg,
     transparent 60%,
     #d70000 60%,
     #d70000 90%,
     transparent 80%
-  );
+  );*/
 }
 </style>

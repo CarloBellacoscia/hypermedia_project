@@ -13,6 +13,7 @@
         :name="poi.name"
         :position="poi.neigh"
         :img="poi.img"
+        :alt_img="poi.alt_img"
       />
     </div>
   </div>

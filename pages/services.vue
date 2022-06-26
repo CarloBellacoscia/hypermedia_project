@@ -13,6 +13,7 @@
         :name="ser.name"
         :position = "ser.neigh"
         :img="ser.img"
+        :img_alt="ser.alt_img"
       />
     </div>
   </div>
@@ -29,6 +30,7 @@ export default {
   async asyncData({ $axios }) {
     // const { data } = await $axios.get('http://localhost:3000/api/cats')
     const { data } = await $axios.get('/api/services')
+    console.log(data)
     return {
       serList: data,
     }
@@ -58,12 +60,12 @@ export default {
 }
 
 .low-highlight {
-  background: linear-gradient(
+ /* background: linear-gradient(
     180deg,
     transparent 60%,
     #d70000 60%,
     #d70000 90%,
     transparent 80%
-  );
+  );*/
 }
 </style>

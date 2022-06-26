@@ -13,6 +13,8 @@ export default async (models) => {
       neigh: "Idroscalo",
       site: 'http://www.circolomagnolia.it/',
       img: 'https://zero-media.s3.amazonaws.com/uploads/2015/05/575491c9-d065-42e2-b1e0-14fcd873a41d.jpg',
+      alt_img: "people hanging out outside under lamp",
+
     },
     {
       name: 'Duomo',
@@ -21,6 +23,8 @@ export default async (models) => {
       neigh: "Piazza Duomo",
       site: 'https://www.duomomilano.it/it/',
       img: 'https://duomo.shbcdn.com/blobs/variants/f/8/7/f/f87f8370-813f-459b-a887-fc05029349f0_xl.jpg',
+      alt_img: "duomo di milano at day",
+
     },
     {
       name: 'Castello Sforzesco',
@@ -33,6 +37,8 @@ export default async (models) => {
       neigh: "Castello",
       site: 'https://www.milanocastello.it/',
       img: 'https://www.milanocastello.it/sites/all/themes/sforzesco/images/sforzesco_edificio.jpg',
+      alt_img: "drone photo of castello sforzesco",
+
     },
     {
       name: 'Torre Branca',
@@ -46,6 +52,8 @@ export default async (models) => {
       neigh: "Sempione",
       site: 'https://museobranca.it/torre-branca-2/',
       img: 'https://museobranca.it/wp-content/uploads/2014/01/Torre-Branca-A4-345x230.jpg',
+      alt_img: "torre branca light up at night",
+
     },
   ]
   const magnoliaPoi = await models.PointOfInterest.create(poiList[0])
@@ -61,6 +69,7 @@ export default async (models) => {
       description: 'bello',
       site: 'https://www.miamifestival.it/2022/index.php',
       img: 'https://imbruttito.com/images/miamifestival2018-600x340.jpg?p=16x9&s=a9dc40eeab659d4e4ea9c7089fc2c16d',
+      alt_img: "crowd at a live event",
       pointOfInterestId: magnoliaPoi.id,
     },
     {
@@ -70,6 +79,7 @@ export default async (models) => {
       description: '“Divenuta inagibile, la Torre andò “fuori servizio” nel 1972.',
       site: 'https://museobranca.it/torre-branca-2/',
       img: 'https://museobranca.it/wp-content/uploads/2014/01/TorreBranca-Notturna-345x230.jpg',
+      alt_img: "torre branca with night sky",
       pointOfInterestId: torrePoi.id,
     },
   ]
@@ -79,6 +89,7 @@ export default async (models) => {
       name: 'Tour Arte',
       description: 'fa caldo',
       img: 'https://libreriamo.it/wp-content/uploads/2018/12/galleria-vittorio-emanuele-1-1.jpg',
+      alt_img: "vittorio emanuele gallery",
       duration: '1 Pomeriggio',
     },
   ]
@@ -91,7 +102,8 @@ export default async (models) => {
       gps: "246' 2414'' ",
       neigh: "Loreto",
       site: 'lame.net',
-      img: 'https://fs.i3lab.group/hypermedia/cats/maine-coon.jpg',
+      img: 'https://besport.org/sportmedicina/wp-content/uploads/2010/09/1440267109puertas-de-farmacia.jpg',
+      alt_img: 'farmacy seen from outside'
     },
   ]
 

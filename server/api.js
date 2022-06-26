@@ -28,6 +28,7 @@ async function initializeDatabaseConnection() {
     description: DataTypes.STRING,
     site: DataTypes.STRING,
     img: DataTypes.STRING,
+    alt_img: DataTypes.STRING,
   })
 
   const PointOfInterest = database.define("point_of_interest", {
@@ -37,6 +38,8 @@ async function initializeDatabaseConnection() {
     neigh: DataTypes.STRING,
     site: DataTypes.STRING,
     img: DataTypes.STRING,
+    alt_img: DataTypes.STRING,
+
   })
   PointOfInterest.hasMany(Event)
   Event.belongsTo(PointOfInterest)
@@ -48,6 +51,8 @@ async function initializeDatabaseConnection() {
     neigh: DataTypes.STRING,
     site: DataTypes.STRING,
     img: DataTypes.STRING,
+    alt_img: DataTypes.STRING,
+
   })
 
   const JoinPoints = database.define("join_points", {
@@ -56,8 +61,9 @@ async function initializeDatabaseConnection() {
   const Itinerary = database.define("itinerary", {
     name: DataTypes.STRING,
     description: DataTypes.STRING,
-    img: DataTypes.STRING,
     duration: DataTypes.STRING,
+    img: DataTypes.STRING,
+    alt_img: DataTypes.STRING,
   })
   Itinerary.belongsToMany(PointOfInterest, {through: JoinPoints})
   PointOfInterest.belongsToMany(Itinerary, {through: JoinPoints})
@@ -123,6 +129,7 @@ async function runMainApi() {
             filtered.push({
                 name: element.name,
                 img: element.img,
+                alt_img: element.alt_img,
                 start_date: element.start_date,
                 end_date: element.end_date,
                 id: element.id,
@@ -148,8 +155,10 @@ async function runMainApi() {
         name: element.name,
         description: element.description,
         gps: element.gps,
+        neigh: element.neigh,
         site: element.site,
         img: element.img,
+        alt_img: element.alt_img,
         id: element.id,
       })
     }
@@ -173,6 +182,8 @@ async function runMainApi() {
         gps: element.gps,
         site: element.site,
         img: element.img,
+        alt_img: element.alt_img,
+        neigh: element.neigh,
         id: element.id,
       })
     }
@@ -194,6 +205,7 @@ async function runMainApi() {
         name: element.name,
         description: element.description,
         img: element.img,
+        alt_img: element.alt_img,
         duration: element.duration,
         id: element.id,
       })

@@ -2,6 +2,8 @@
   <generic-details-page
     :name="name"
     :image="img"
+    :alt_image="alt_img"
+    :neigh="neigh"
     :description="description"
     :site="site"
     :gps="gps"
@@ -26,6 +28,8 @@ export default {
       gps: data.gps,
       site: data.site,
       img: data.img,
+      alt_img: data.alt_img,
+      neigh: data.neigh,
     }
   },
   head(){
