@@ -82,6 +82,16 @@ export default async (models) => {
       alt_img: "torre branca with night sky",
       pointOfInterestId: torrePoi.id,
     },
+    {
+      name: 'Neve in Branca',
+      start_date: '2022-01-22',
+      end_date: '2022-01-22',
+      description: '“Divenuta inagibile, la Torre andò “fuori servizio” nel 1972.',
+      site: 'https://museobranca.it/torre-branca-2/',
+      img: 'https://museobranca.it/wp-content/uploads/2014/01/TorreBranca-Notturna-345x230.jpg',
+      alt_img: "torre branca with night sky",
+      pointOfInterestId: torrePoi.id,
+    },
   ]
 
   const itList = [

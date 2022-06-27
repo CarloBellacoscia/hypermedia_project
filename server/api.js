@@ -9,12 +9,12 @@ app.use(express.json())
 const database = new Sequelize("postgres://postgres:postgres@localhost:5432/mi_guardi")
 
 // Production (use this code when deploying to production in Heroku)
- /* const pg = require('pg')
- pg.defaults.ssl = true
- const database = new Sequelize(process.env.DATABASE_URL, {
-   ssl: true,
-   dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
- }) */
+/* const pg = require('pg')
+pg.defaults.ssl = true
+const database = new Sequelize(process.env.DATABASE_URL, {
+  ssl: true,
+  dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
+}) */
 
 
 
@@ -82,62 +82,160 @@ async function initializeDatabaseConnection() {
 // With this line, our server will know how to parse any incoming request
 // that contains some JSON in the body
 
- const pageContentObject = {
-    index: {
-        title: "Homepage",
-        image: "https://fs.i3lab.group/hypermedia/images/index.jpeg",
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et tincidunt elit, in finibus elit. Aliquam nec posuere sem, at faucibus erat. Suspendisse iaculis lorem id odio placerat bibendum. Suspendisse potenti. Sed quis efficitur erat. Pellentesque non velit ipsum. Maecenas finibus felis a magna auctor finibus. Mauris tincidunt nibh sit amet ante consectetur, non cursus elit feugiat.
+const pageContentObject = {
+  index: {
+    title: "Homepage",
+    image: "https://fs.i3lab.group/hypermedia/images/index.jpeg",
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et tincidunt elit, in finibus elit. Aliquam nec posuere sem, at faucibus erat. Suspendisse iaculis lorem id odio placerat bibendum. Suspendisse potenti. Sed quis efficitur erat. Pellentesque non velit ipsum. Maecenas finibus felis a magna auctor finibus. Mauris tincidunt nibh sit amet ante consectetur, non cursus elit feugiat.
         Integer vitae elit at nunc lacinia egestas. Etiam nec sagittis lorem. Phasellus consectetur mauris eget neque posuere, vitae sagittis massa congue. Etiam vitae eleifend odio, sit amet tempus ex. Ut semper feugiat erat, id consequat elit volutpat sed. Curabitur vel arcu at risus vehicula blandit in ut nunc. In nec pellentesque tellus. Maecenas vitae purus lacinia, tristique elit vitae, interdum est. Ut feugiat nulla et vestibulum efficitur. Suspendisse potenti. Duis ex dolor, vestibulum a leo eu, dapibus elementum ipsum. Curabitur euismod rhoncus nulla ac interdum. Mauris vulputate viverra scelerisque. Mauris ullamcorper tempus eros.`
-    },
-    about: {
-        title: "About",
-        image: "https://fs.i3lab.group/hypermedia/images/about.jpeg",
-        description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et tincidunt elit, in finibus elit. Aliquam nec posuere sem, at faucibus erat. Suspendisse iaculis lorem id odio placerat bibendum. Suspendisse potenti. Sed quis efficitur erat. Pellentesque non velit ipsum. Maecenas finibus felis a magna auctor finibus. Mauris tincidunt nibh sit amet ante consectetur, non cursus elit feugiat.
+  },
+  about: {
+    title: "About",
+    image: "https://fs.i3lab.group/hypermedia/images/about.jpeg",
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et tincidunt elit, in finibus elit. Aliquam nec posuere sem, at faucibus erat. Suspendisse iaculis lorem id odio placerat bibendum. Suspendisse potenti. Sed quis efficitur erat. Pellentesque non velit ipsum. Maecenas finibus felis a magna auctor finibus. Mauris tincidunt nibh sit amet ante consectetur, non cursus elit feugiat.
         Integer vitae elit at nunc lacinia egestas. Etiam nec sagittis lorem. Phasellus consectetur mauris eget neque posuere, vitae sagittis massa congue. Etiam vitae eleifend odio, sit amet tempus ex. Ut semper feugiat erat, id consequat elit volutpat sed. Curabitur vel arcu at risus vehicula blandit in ut nunc. In nec pellentesque tellus. Maecenas vitae purus lacinia, tristique elit vitae, interdum est. Ut feugiat nulla et vestibulum efficitur. Suspendisse potenti. Duis ex dolor, vestibulum a leo eu, dapibus elementum ipsum. Curabitur euismod rhoncus nulla ac interdum. Mauris vulputate viverra scelerisque. Mauris ullamcorper tempus eros.`
-    },
-   contact: {
-     title: "Contact",
-     image: "https://fs.i3lab.group/hypermedia/images/about.jpeg",
-     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et tincidunt elit, in finibus elit. Aliquam nec posuere sem, at faucibus erat. Suspendisse iaculis lorem id odio placerat bibendum. Suspendisse potenti. Sed quis efficitur erat. Pellentesque non velit ipsum. Maecenas finibus felis a magna auctor finibus. Mauris tincidunt nibh sit amet ante consectetur, non cursus elit feugiat.
+  },
+  contact: {
+    title: "Contact",
+    image: "https://fs.i3lab.group/hypermedia/images/about.jpeg",
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et tincidunt elit, in finibus elit. Aliquam nec posuere sem, at faucibus erat. Suspendisse iaculis lorem id odio placerat bibendum. Suspendisse potenti. Sed quis efficitur erat. Pellentesque non velit ipsum. Maecenas finibus felis a magna auctor finibus. Mauris tincidunt nibh sit amet ante consectetur, non cursus elit feugiat.
         Integer vitae elit at nunc lacinia egestas. Etiam nec sagittis lorem. Phasellus consectetur mauris eget neque posuere, vitae sagittis massa congue. Etiam vitae eleifend odio, sit amet tempus ex. Ut semper feugiat erat, id consequat elit volutpat sed. Curabitur vel arcu at risus vehicula blandit in ut nunc. In nec pellentesque tellus. Maecenas vitae purus lacinia, tristique elit vitae, interdum est. Ut feugiat nulla et vestibulum efficitur. Suspendisse potenti. Duis ex dolor, vestibulum a leo eu, dapibus elementum ipsum. Curabitur euismod rhoncus nulla ac interdum. Mauris vulputate viverra scelerisque. Mauris ullamcorper tempus eros.`
-   },
-   faq: {
-     title: "FAQ",
-     image: "https://fs.i3lab.group/hypermedia/images/about.jpeg",
-     description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et tincidunt elit, in finibus elit. Aliquam nec posuere sem, at faucibus erat. Suspendisse iaculis lorem id odio placerat bibendum. Suspendisse potenti. Sed quis efficitur erat. Pellentesque non velit ipsum. Maecenas finibus felis a magna auctor finibus. Mauris tincidunt nibh sit amet ante consectetur, non cursus elit feugiat.
+  },
+  faq: {
+    title: "FAQ",
+    image: "https://fs.i3lab.group/hypermedia/images/about.jpeg",
+    description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et tincidunt elit, in finibus elit. Aliquam nec posuere sem, at faucibus erat. Suspendisse iaculis lorem id odio placerat bibendum. Suspendisse potenti. Sed quis efficitur erat. Pellentesque non velit ipsum. Maecenas finibus felis a magna auctor finibus. Mauris tincidunt nibh sit amet ante consectetur, non cursus elit feugiat.
         Integer vitae elit at nunc lacinia egestas. Etiam nec sagittis lorem. Phasellus consectetur mauris eget neque posuere, vitae sagittis massa congue. Etiam vitae eleifend odio, sit amet tempus ex. Ut semper feugiat erat, id consequat elit volutpat sed. Curabitur vel arcu at risus vehicula blandit in ut nunc. In nec pellentesque tellus. Maecenas vitae purus lacinia, tristique elit vitae, interdum est. Ut feugiat nulla et vestibulum efficitur. Suspendisse potenti. Duis ex dolor, vestibulum a leo eu, dapibus elementum ipsum. Curabitur euismod rhoncus nulla ac interdum. Mauris vulputate viverra scelerisque. Mauris ullamcorper tempus eros.`
-   },
+  },
 }
 
 
 async function runMainApi() {
-    const models = await initializeDatabaseConnection()
-    await initialize(models)
+  const models = await initializeDatabaseConnection()
+  await initialize(models)
 
-     app.get('/page-info/:topic', (req, res) => {
-        const { topic } = req.params
-        const result = pageContentObject[topic]
-        return res.json(result)
-    })
+  app.get('/page-info/:topic', (req, res) => {
+    const { topic } = req.params
+    const result = pageContentObject[topic]
+    return res.json(result)
+  })
 
-    // HTTP GET api that returns all the events in our actual database
-    app.get("/events", async (req, res) => {
-        const result = await models.Event.findAll({include: [{model: models.PointOfInterest}] })
-        const filtered = []
-      // console.log(JSON.stringify(result, null, 2))
-        for (const element of result) {
-            filtered.push({
-                name: element.name,
-                img: element.img,
-                alt_img: element.alt_img,
-                start_date: element.start_date,
-                end_date: element.end_date,
-                id: element.id,
-                position: element.point_of_interest.name,
-            })
-        }
-        return res.json(filtered)
-    })
+  // HTTP GET api that returns all the events in our actual database
+  app.get("/events", async (req, res) => {
+    const result = await models.Event.findAll({include: [{model: models.PointOfInterest}] })
+    const filtered = []
+    // console.log(JSON.stringify(result, null, 2))
+    for (const element of result) {
+      filtered.push({
+        name: element.name,
+        img: element.img,
+        alt_img: element.alt_img,
+        start_date: element.start_date,
+        end_date: element.end_date,
+        id: element.id,
+        position: element.point_of_interest.name,
+      })
+    }
+    return res.json(filtered)
+  })
+
+  // HTTP GET api that returns all the events in our actual database
+  /* app.get("/Events", async (req, res) => {
+    const result = await models.Event.findAll({include: [{model: models.PointOfInterest}] })
+    const summerStart = new Date('2022-06-21')
+    const summerEnd = new Date('2022-09-21')
+    const winterStart = new Date('2022-12-21')
+    const winterEnd = new Date('2022-03-21')
+    const filtered = []
+    const all = []
+    const summer = []
+    const winter = []
+    // console.log(JSON.stringify(result, null, 2))
+    for (const element of result) {
+      const date = new Date(element.start_date)
+      if(date >= summerStart && date <= summerEnd){
+        summer.push({
+          name: element.name,
+          img: element.img,
+          alt_img: element.alt_img,
+          start_date: element.start_date,
+          end_date: element.end_date,
+          id: element.id,
+          position: element.point_of_interest.name,
+        })
+      }
+      if(date >= winterStart || date <= winterEnd){
+        winter.push({
+          name: element.name,
+          img: element.img,
+          alt_img: element.alt_img,
+          start_date: element.start_date,
+          end_date: element.end_date,
+          id: element.id,
+          position: element.point_of_interest.name,
+        })
+      }
+      all.push({
+        name: element.name,
+        img: element.img,
+        alt_img: element.alt_img,
+        start_date: element.start_date,
+        end_date: element.end_date,
+        id: element.id,
+        position: element.point_of_interest.name,
+      })
+    }
+    filtered.push(all,summer,winter)
+    return res.json(filtered)
+  })
+
+  // HTTP GET api that returns all the summer events in our actual database
+  app.get("/summer_events", async (req, res) => {
+    const start = new Date('2022-06-21')
+    const end = new Date('2022-09-21')
+    const result = await models.Event.findAll({include: [{model: models.PointOfInterest}]})
+    const filtered = []
+    // console.log(JSON.stringify(result, null, 2))
+    for (const element of result) {
+      const date = new Date(element.start_date)
+      if(date >= start && date <= end){
+        filtered.push({
+          name: element.name,
+          img: element.img,
+          alt_img: element.alt_img,
+          start_date: element.start_date,
+          end_date: element.end_date,
+          id: element.id,
+          position: element.point_of_interest.name,
+        })
+      }
+    }
+    return res.json(filtered)
+  })
+
+  // HTTP GET api that returns all the summer events in our actual database
+  app.get("/winter_events", async (req, res) => {
+    const start = new Date('2022-12-21')
+    const end = new Date('2022-03-21')
+    const result = await models.Event.findAll({include: [{model: models.PointOfInterest}]})
+    const filtered = []
+    // console.log(JSON.stringify(result, null, 2))
+    for (const element of result) {
+      const date = new Date(element.start_date)
+      if(date >= start || date <= end){
+        filtered.push({
+          name: element.name,
+          img: element.img,
+          alt_img: element.alt_img,
+          start_date: element.start_date,
+          end_date: element.end_date,
+          id: element.id,
+          position: element.point_of_interest.name,
+        })
+      }
+    }
+    return res.json(filtered)
+  }) */
 
 
   app.get('/events_details/:id', async (req, res) => {
@@ -221,13 +319,13 @@ async function runMainApi() {
 
 
 
-    // HTTP POST api, that will push (and therefore create) a new element in
-    // our actual database
-    app.post("/cats", async (req, res) => {
-        const { body } = req
-        await models.Cat.create(body);
-        return res.sendStatus(200)
-    })
+  // HTTP POST api, that will push (and therefore create) a new element in
+  // our actual database
+  app.post("/cats", async (req, res) => {
+    const { body } = req
+    await models.Cat.create(body);
+    return res.sendStatus(200)
+  })
 }
 
 runMainApi()
