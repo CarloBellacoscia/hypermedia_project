@@ -2,53 +2,21 @@
   <div>
     <div class="page container mt-5">
       <h1 class="page">
-        <span class="low-highlight">All Events</span>
+        {{title}}
       </h1>
+      <div class="selector">
+      <button @click="all()">All</button>
+      <button @click="season(3,'This Spring')">Spring</button>
+      <button @click="season(6,'This Summer')">Summer</button>
+      <button @click="season(9,'This Fall')">Fall</button>
+      <button @click="season(12,'This Winter')">Winter</button>
+      </div>
+
+
       <div class="row mt-3">
         <card
           v-for="(event, eventIndex) of eventList"
-          :id="event.id"
-          :key="`event-index-${eventIndex}`"
-          class="col-sm-2 m-2"
-          :category="'events_details'"
-          :name="event.name"
-          :img="event.img"
-          :alt_img="event.alt_img"
-          :date="
-            formatDate(event.start_date) + ' - ' + formatDate(event.end_date)
-          "
-          :position="event.position"
-        />
-      </div>
-    </div>
-    <div class="page container mt-5">
-      <h1 class="page">
-        <span class="low-highlight">Summer Events</span>
-      </h1>
-      <div class="row mt-3">
-        <card
-          v-for="(event, eventIndex) of summerList"
-          :id="event.id"
-          :key="`event-index-${eventIndex}`"
-          class="col-sm-2 m-2"
-          :category="'events_details'"
-          :name="event.name"
-          :img="event.img"
-          :alt_img="event.alt_img"
-          :date="
-            formatDate(event.start_date) + ' - ' + formatDate(event.end_date)
-          "
-          :position="event.position"
-        />
-      </div>
-    </div>
-    <div class="page container mt-5">
-      <h1 class="page">
-        <span class="low-highlight">Winter Events</span>
-      </h1>
-      <div class="row mt-3">
-        <card
-          v-for="(event, eventIndex) of winterList"
+          v-show="new Date (event.start_date) >= initial_date && new Date (event.start_date) <= final_date "
           :id="event.id"
           :key="`event-index-${eventIndex}`"
           class="col-sm-2 m-2"
@@ -78,40 +46,46 @@ export default {
   // Note: This happens on backend (server) side
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/events')
-    /* const [data, summer, winter] = await $axios.all([
-      $axios.get('/api/events'),
-      $axios.get('/api/summer_events'),
-      $axios.get('/api/winter_events'),
-    ]) */
-    const summer = []
-    const winter = []
-    const summerStart = new Date('2022-06-21')
-    const summerEnd = new Date('2022-09-21')
-    const winterStart = new Date('2022-12-21')
-    const winterEnd = new Date('2022-03-21')
-    for (const element of data){
-      const date = new Date(element.start_date)
-      if(date >= summerStart && date <= summerEnd){
-        summer.push(element)
-      } else if(date >= winterStart || date <= winterEnd){
-        winter.push(element)
-      }
-    }
     return {
       eventList: data,
-      summerList: summer,
-      winterList: winter,
     }
   },
-  // Note: This would happen on frontend (client) side
-  // async mounted() {
-  //   const { data } = await this.$axios.get('/api/cats')
-  //   this.catList = data
-  // },
+  data() {
+    return {
+      initial_date: new Date().setFullYear(0),
+      final_date: new Date().setFullYear(new Date().getFullYear() + 1000),
+      title: "All Events"
+    }
+  },
+  methods: {
+    // i compute the seasons summing 3 to the moth i pass to the method
+   season (month, title){
+     this.initial_date = new Date().setMonth(month-1,1)
+     this.final_date = new Date().setMonth(month+2,0)
+     this.title = title
+   },
+    all (){
+      this.initial_date = new Date().setFullYear(0)
+      this.final_date = new Date().setFullYear(new Date().getFullYear() + 1000)
+      this.title = "All Events"
+    },
+
+   },
 }
 </script>
 
 <style scoped>
+.selector{
+  background-color: #cccccc;
+  font-size: 35px;
+  line-height: 40px;
+  position:sticky;
+  top:80px;
+  z-index: 1000;
+  padding: 10px 0 10px 30px;
+  margin-left: -30px
+
+}
 .page {
   text-align: left;
   font-family: 'Archivo Narrow', sans-serif;
@@ -119,14 +93,5 @@ export default {
   font-weight: 700;
   font-size: 55px;
   line-height: 74px;
-}
-.low-highlight {
-  background: linear-gradient(
-    180deg,
-    transparent 60%,
-    #d70000 60%,
-    #d70000 90%,
-    transparent 80%
-  );
 }
 </style>

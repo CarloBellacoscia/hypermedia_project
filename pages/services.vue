@@ -1,7 +1,7 @@
 <template>
   <div class="page container mt-5">
     <h1 class="page">
-      <span class="low-highlight">Services</span>
+      Services
     </h1>
     <div class="row mt-3">
       <card
@@ -13,7 +13,7 @@
         :name="ser.name"
         :position = "ser.neigh"
         :img="ser.img"
-        :img_alt="ser.alt_img"
+        :alt_img="ser.alt_img"
       />
     </div>
   </div>
@@ -30,7 +30,6 @@ export default {
   async asyncData({ $axios }) {
     // const { data } = await $axios.get('http://localhost:3000/api/cats')
     const { data } = await $axios.get('/api/services')
-    console.log(data)
     return {
       serList: data,
     }
@@ -57,15 +56,5 @@ export default {
   font-weight: 700;
   font-size: 55px;
   line-height: 74px;
-}
-
-.low-highlight {
- /* background: linear-gradient(
-    180deg,
-    transparent 60%,
-    #d70000 60%,
-    #d70000 90%,
-    transparent 80%
-  );*/
 }
 </style>

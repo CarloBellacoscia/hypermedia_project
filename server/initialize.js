@@ -63,7 +63,7 @@ export default async (models) => {
 
   const eventList = [
     {
-      name: 'Miami',
+      name: 'Miami Primavera',
       start_date: '2022-05-26',
       end_date: '2022-05-29',
       description: 'bello',
@@ -73,7 +73,37 @@ export default async (models) => {
       pointOfInterestId: magnoliaPoi.id,
     },
     {
-      name: 'Notte in Branca',
+      name: 'Notte in Branca Autunno',
+      start_date: '2022-09-22',
+      end_date: '2022-09-22',
+      description: '“Divenuta inagibile, la Torre andò “fuori servizio” nel 1972.',
+      site: 'https://museobranca.it/torre-branca-2/',
+      img: 'https://museobranca.it/wp-content/uploads/2014/01/TorreBranca-Notturna-345x230.jpg',
+      alt_img: "torre branca with night sky",
+      pointOfInterestId: torrePoi.id,
+    },
+    {
+      name: 'Natale In Duomo Inverno',
+      start_date: '2022-12-24',
+      end_date: '2022-12-25',
+      description: '“Divenuta inagibile, la Torre andò “fuori servizio” nel 1972.',
+      site: 'https://museobranca.it/torre-branca-2/',
+      img: 'https://museobranca.it/wp-content/uploads/2014/01/TorreBranca-Notturna-345x230.jpg',
+      alt_img: "torre branca with night sky",
+      pointOfInterestId: torrePoi.id,
+    },
+    {
+      name: 'inverno 2023',
+      start_date: '2023-01-22',
+      end_date: '2023-01-22',
+      description: '“Divenuta inagibile, la Torre andò “fuori servizio” nel 1972.',
+      site: 'https://museobranca.it/torre-branca-2/',
+      img: 'https://museobranca.it/wp-content/uploads/2014/01/TorreBranca-Notturna-345x230.jpg',
+      alt_img: "torre branca with night sky",
+      pointOfInterestId: torrePoi.id,
+    },
+    {
+      name: 'estate 2022',
       start_date: '2022-08-22',
       end_date: '2022-08-22',
       description: '“Divenuta inagibile, la Torre andò “fuori servizio” nel 1972.',
@@ -82,16 +112,7 @@ export default async (models) => {
       alt_img: "torre branca with night sky",
       pointOfInterestId: torrePoi.id,
     },
-    {
-      name: 'Neve in Branca',
-      start_date: '2022-01-22',
-      end_date: '2022-01-22',
-      description: '“Divenuta inagibile, la Torre andò “fuori servizio” nel 1972.',
-      site: 'https://museobranca.it/torre-branca-2/',
-      img: 'https://museobranca.it/wp-content/uploads/2014/01/TorreBranca-Notturna-345x230.jpg',
-      alt_img: "torre branca with night sky",
-      pointOfInterestId: torrePoi.id,
-    },
+
   ]
 
   const itList = [

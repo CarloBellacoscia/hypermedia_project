@@ -2,7 +2,7 @@
   <div class="container mt-5">
     <div class="jumbotron">
       <h1 class="page">
-        <span class="low-highlight">{{ title }}</span>
+        {{ title }}
       </h1>
       <img :src="image" alt="" />
       <hr class="my-4" />
@@ -62,14 +62,5 @@ p {
   display: flex;
 }
 
-.low-highlight {
-  background: linear-gradient(
-    180deg,
-    transparent 60%,
-    #d70000 60%,
-    #d70000 90%,
-    transparent 80%
-  );
-}
 
 </style>
