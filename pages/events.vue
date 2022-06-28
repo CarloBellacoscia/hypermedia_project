@@ -5,7 +5,10 @@
         {{title}}
       </h1>
       <div class="selector">
-      <button @click="all()">All</button>
+      <button style="margin-right: 20px" @click="all()">All</button>
+      <button @click="today()">Today</button>
+      <button style="margin-right: 20px" @click="tomorrow()">Tomorrow</button>
+
       <button @click="season(3,'This Spring')">Spring</button>
       <button @click="season(6,'This Summer')">Summer</button>
       <button @click="season(9,'This Fall')">Fall</button>
@@ -60,21 +63,39 @@ export default {
   methods: {
     // i compute the seasons summing 3 to the moth i pass to the method
    season (month, title){
-     this.initial_date = new Date().setMonth(month-1,1)
-     this.final_date = new Date().setMonth(month+2,0)
+     this.initial_date = new Date(new Date().setMonth(month-1,1)).setHours(0,0,0)
+     this.final_date = new Date(new Date().setMonth(month+2,0)).setHours(23,59,59)
      this.title = title
+     this.log()
    },
     all (){
       this.initial_date = new Date().setFullYear(0)
       this.final_date = new Date().setFullYear(new Date().getFullYear() + 1000)
       this.title = "All Events"
     },
-
+    today (){
+      this.initial_date = new Date().setHours(0,0,0)
+      this.final_date = new Date().setHours(24,0,0)
+      this.title = "Today"
+      this.log()
+    },
+    tomorrow (){
+      this.initial_date = new Date().setHours(24,0,0)
+      this.final_date = new Date().setHours(48,0,0)
+      this.title = "Tomorrow"
+      this.log()
+    },
+    log (){
+      console.log(new Date(this.initial_date))
+      console.log(new Date(this.final_date))
+    },
    },
 }
 </script>
 
 <style scoped>
+
+
 .selector{
   background-color: #cccccc;
   font-size: 35px;
@@ -84,7 +105,6 @@ export default {
   z-index: 1000;
   padding: 10px 0 10px 30px;
   margin-left: -30px
-
 }
 .page {
   text-align: left;
