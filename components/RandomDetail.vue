@@ -2,13 +2,13 @@
   <div class="container mt-5">
     <div class="title-row"><h1>Discover MI</h1></div>
     <nuxt-link :to="`/poi_details/${id}`" style="text-decoration: none">
-      <div class="content-row">
+      <div class="row content-row">
         <div class="img-box">
           <img class="my-image" :src="img" :alt="altImg" />
         </div>
         <div class="details-box">
-          <h1 style="text-decoration: none">{{ title }}</h1>
-          <p style="text-decoration: none">{{ description }}</p>
+          <h1 >{{ title }}</h1>
+          <p >{{ description }}</p>
         </div>
       </div>
     </nuxt-link>
@@ -50,13 +50,24 @@ export default {
 
 <style scoped>
 .container {
+
 }
 
+
 .content-row {
-  display: grid;
+  display: flex;
   background-color: #d9d9d9;
   grid-template-columns: 30% 70%;
 }
+
+@media only screen and (max-width: 900px) {
+ .content-row {
+    display: block;
+    justify-content: center;
+    padding: 10px 10px 10px 10px;
+ }
+}
+
 
 .title-row {
 }
@@ -71,13 +82,15 @@ export default {
 }
 
 .img-box {
-  position: relative;
   margin: 10px 10px 10px 10px;
+
+  position: relative;
   width: 360px;
   height: 210px;
 }
 
 .details-box {
-  padding: 10px 10px 10px 10px;
+  margin: 10px 10px 10px 10px;
+
 }
 </style>

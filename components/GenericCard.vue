@@ -94,9 +94,8 @@ export default {
   position: relative;
   width: 400px;
   height: 400px;
-  border: 2px solid lightgray;
 }
-.my-card:hover {
+.my-card-image:hover {
   border: 2px solid #d70000;
 }
 .my-card-box-shadow {
@@ -121,6 +120,8 @@ export default {
   height: 390px;
   width: 390px;
   object-fit: cover;
+  border: 2px solid lightgray;
+
 }
 
 .my-card-title {

@@ -20,7 +20,7 @@
         </li>
       </div>
 
-      <div class="my-language"><p>English</p></div>
+      <div class="my-language">English</div>
     </div>
     <div class="copyright">
       Hypermedia Applications 2022 - Carlo Bellacoscia - Gregorio Barzasi
@@ -61,8 +61,6 @@ export default {
   width: 100%;
   position: absolute;
   bottom: auto;
-  min-width: 660px;
-
 }
 
 .first-row {
@@ -96,9 +94,18 @@ export default {
   font-size: 20px;
 }
 
+
 .my-list {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .my-list {
+    display: block;
+    justify-content: center;
+    padding: 10px 10px 10px 10px;
+  }
 }
 
 .my-item {
