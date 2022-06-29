@@ -1,6 +1,6 @@
 <template>
   <div class="container mt-5">
-    <div class="title-row"><h1>Upcoming events</h1></div>
+    <div class="title-row"><h1>Upcoming events</h1> <nuxt-link to="/events"><h1 class="see-more" >See All ➔</h1></nuxt-link></div>
     <div class="row content-row">
       <card
         v-for="i of [0, 1, 2]"
@@ -41,9 +41,27 @@ export default {
 </script>
 
 <style scoped>
+.title-row{
+  display: flex;
 
+}
 
+.see-more{
+  text-decoration: none;
+  position: absolute;
+  right: 85px;
+}
+.see-more:hover{
+  background: linear-gradient(
+    180deg,
+    transparent 60%,
+    #d70000 60%,
+    #d70000 90%,
+    transparent 80%
+  );
+}
 .content-row {
+
   justify-content: center;
   margin: 0 0 0 0;
   background-color: #d9d9d9;

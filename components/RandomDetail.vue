@@ -84,7 +84,7 @@ export default {
 
 .img-box {
   margin: 10px 10px 10px 10px;
-
+  justify-content: center;
   position: relative;
   width: 360px;
   height: 210px;
