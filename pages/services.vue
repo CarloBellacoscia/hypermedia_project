@@ -1,6 +1,6 @@
 <template>
   <div class="page container mt-5">
-    <h1 class="page">
+    <h1>
       Services
     </h1>
     <div class="row mt-3">
@@ -49,12 +49,5 @@ export default {
 </script>
 
 <style scoped>
-.page {
-  text-align: left;
-  font-family: 'Archivo Narrow', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 55px;
-  line-height: 74px;
-}
+
 </style>

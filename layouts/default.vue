@@ -23,6 +23,7 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Archivo:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
 h1{
   font-family: 'Archivo', sans-serif;
@@ -35,7 +36,12 @@ h1{
 
 p{
   text-decoration: none;
+  text-align: left;
+  font-weight: 400;
   color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-size: 17px;
 }
 
 /*

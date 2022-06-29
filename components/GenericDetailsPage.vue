@@ -30,7 +30,7 @@
         </div>
       </div>
       <hr class="my-4" />
-      <h3 class="text">{{ description }}</h3>
+      <p>{{ description }}</p>
     </div>
   </div>
 </template>
@@ -140,17 +140,4 @@ img {
   display: flex;
 }
 
-p {
-  text-align: left;
-}
-
-.low-highlight {
-  /*background: linear-gradient(
-    180deg,
-    transparent 60%,
-    #d70000 60%,
-    #d70000 90%,
-    transparent 80%
-  );*/
-}
 </style>
