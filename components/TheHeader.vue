@@ -20,7 +20,7 @@
         <li
           v-for="(navItem, navItemIndex) of headerList"
           :key="`navItem${navItemIndex}`"
-          class="nav-item"
+          :class= "navItem.path==$route.path ?'nav-item low-highlight' : 'nav-item'"
         >
           <nuxt-link :to="navItem.path" class="nav-link">
             {{ navItem.name }}
@@ -72,6 +72,11 @@ export default {
       ],
     }
   },
+  methods:{
+      test (){
+        return false
+      }
+  }
 }
 </script>
 
