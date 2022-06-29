@@ -93,6 +93,13 @@ export default {
   /*  border-radius: 0 0 15px 15px;*/
 }
 
+.nav-item {
+  font-family: 'Archivo Narrow', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+}
+
 .navbar-collapse {
   padding-left: 20px;
   padding-right: 100px;
