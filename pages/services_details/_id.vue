@@ -1,22 +1,31 @@
 <template>
-  <generic-details-page
-    :name="name"
-    :image="img"
-    :alt_image="alt_img"
-    :neigh="neigh"
-    :description="description"
-    :site="site"
-    :gps="gps"
-  />
+  <div>
+    <generic-details-page
+      :name="name"
+      :image="img"
+      :alt_image="alt_img"
+      :neigh="neigh"
+      :description="description"
+      :site="site"
+      :gps="gps"
+    />
+    <div class="container mt-5">
+      <map-component
+        :place="formatPosition(name)"
+      />
+    </div>
+  </div>
 </template>
 
 <script>
 import GenericDetailsPage from '~/components/GenericDetailsPage.vue'
+import MapComponent from '~/components/Map.vue'
 import CommonMixin from "~/mixins/common";
 export default {
   name: 'DetailsPage',
   components: {
     GenericDetailsPage,
+    MapComponent,
   },
   mixins: [CommonMixin],
   async asyncData({ route, $axios }) {

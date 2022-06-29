@@ -1,21 +1,30 @@
 <template>
-  <generic-details-page
-    :name="name"
-    :image="img"
-    :alt_image="alt_img"
-    :neigh="neigh"
-    :description="description"
-    :site="site"
-    :duration="duration"
-  />
+  <div>
+    <generic-details-page
+      :name="name"
+      :image="img"
+      :alt_image="alt_img"
+      :neigh="neigh"
+      :description="description"
+      :site="site"
+      :duration="duration"
+    />
+    <div class="container mt-5">
+      <map-component
+        :place="formatPosition('Milano')"
+      />
+    </div>
+  </div>
 </template>
 
 <script>
 import GenericDetailsPage from '~/components/GenericDetailsPage.vue'
+import MapComponent from '~/components/Map.vue'
 import CommonMixin from "~/mixins/common";
 export default {
   name: 'DetailsPage',
   components: {
+    MapComponent,
     GenericDetailsPage,
   },
   mixins: [CommonMixin],
@@ -30,7 +39,6 @@ export default {
       alt_img: data.alt_img,
       img: data.img,
       neigh: data.neigh,
-
     }
   },
   head(){

@@ -58,26 +58,32 @@ export default {
     start_date: {
       type: String,
       required: false,
+      default: '',
     },
     end_date: {
       type: String,
       required: false,
+      default: '',
     },
     site: {
       type: String,
       required: false,
+      default: '',
     },
     duration: {
       type: String,
       required: false,
+      default: '',
     },
     gps: {
       type: String,
       required: false,
+      default: '',
     },
     neigh: {
       type: String,
       required: false,
+      default: '',
     },
   },
 }

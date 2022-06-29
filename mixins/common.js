@@ -13,6 +13,9 @@ export default {
       },
       formatMyDate(val){
         return  "Date:" + val
+      },
+      formatPosition(val){
+        return String(val).replaceAll(' ', '+')
       }
     }
 }

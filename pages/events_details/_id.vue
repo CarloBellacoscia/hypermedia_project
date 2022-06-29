@@ -10,7 +10,11 @@
     :start_date="formatDate(start_date)"
     :end_date="formatDate(end_date)"
    />
-  <map-component />
+    <div class="container mt-5">
+      <map-component
+        :place="formatPosition(position)"
+      />
+    </div>
   </div>
 </template>
 
@@ -37,7 +41,7 @@ export default {
       start_date: data.start_date,
       end_date: data.end_date,
       neigh: data.neigh,
-
+      position: data.point_of_interest.name,
     }
   },
   head() {
