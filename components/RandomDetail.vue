@@ -2,7 +2,7 @@
   <div class="container mt-5">
     <div class="title-row"><h1>Discover MI</h1></div>
     <nuxt-link :to="`/poi_details/${id}`" style="text-decoration: none">
-      <div class="row content-row">
+      <div class=" content-row">
         <div class="img-box">
           <img class="my-image" :src="img" :alt="altImg" />
         </div>
@@ -58,6 +58,7 @@ export default {
   display: flex;
   background-color: #d9d9d9;
   grid-template-columns: 30% 70%;
+
 }
 
 @media only screen and (max-width: 900px) {
