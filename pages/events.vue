@@ -98,8 +98,8 @@ export default {
 
 .selector{
   background-color: #cccccc;
-  font-size: 35px;
-  line-height: 40px;
+  font-size: 20px;
+  line-height: 25px;
   position:sticky;
   top:80px;
   z-index: 1000;
