@@ -58,33 +58,38 @@ export default {
     start_date: {
       type: String,
       required: false,
+      default: '',
     },
     end_date: {
       type: String,
       required: false,
+      default: '',
     },
     site: {
       type: String,
       required: false,
+      default: '',
     },
     duration: {
       type: String,
       required: false,
+      default: '',
     },
     gps: {
       type: String,
       required: false,
+      default: '',
     },
     neigh: {
       type: String,
       required: false,
+      default: '',
     },
   },
 }
 </script>
 
 <style scoped>
-
 img {
   width: 200%;
   max-width: 500px;
@@ -94,7 +99,6 @@ img {
 .details {
   padding-left: 55%;
 }
-
 .page {
   text-align: center;
   max-width: 800px;
@@ -106,7 +110,6 @@ img {
   line-height: 74px;
   display: flex;
 }
-
 .first-row {
   display: grid;
   padding-top: 20px;
@@ -114,11 +117,9 @@ img {
   padding-right: 20px;
   grid-template-columns: 20% 60% 20%;
 }
-
 .details {
   padding-left: 50%;
 }
-
 .text {
   text-align: center;
   max-width: 100%;
@@ -128,7 +129,6 @@ img {
   font-size: 24px;
   display: flex;
 }
-
 .label {
   text-align: left;
   max-width: 100%;
@@ -139,11 +139,9 @@ img {
   font-size: 28px;
   display: flex;
 }
-
 p {
   text-align: left;
 }
-
 .low-highlight {
   /*background: linear-gradient(
     180deg,

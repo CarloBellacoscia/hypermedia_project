@@ -148,7 +148,7 @@ export default async (models) => {
 
   const serviceList = [
     {
-      name: 'Farmacia Cavallo',
+      name: 'Farmacia Ambreck',
       description: 'curiamo le coltellate di piazzale Loreto',
       gps: "246' 2414'' ",
       neigh: "Loreto",
