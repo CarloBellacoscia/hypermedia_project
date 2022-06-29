@@ -1,6 +1,6 @@
 <template>
   <div>
-  <rand-detail :id="id" :title="title" :img="image" :alt_img="altImg" :description="description" />
+  <rand-detail :id="id" :title="title" :img="image" :alt-img="altImg" :description="description" />
   </div>
 </template>
 

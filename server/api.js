@@ -6,7 +6,8 @@ app.use(express.json())
 
 // Development
 const database = new Sequelize(
-  'postgres://postgres:postgres@localhost:5432/mi_guardi'
+  'postgres://postgres:postgres@localhost:5432/mi_guardi',
+  { logging: false }
 )
 
 // Production (use this code when deploying to production in Heroku)
@@ -172,7 +173,9 @@ async function runMainApi() {
 
   // HTTP GET api that returns all the points of interest in our actual database
   app.get('/poi', async (req, res) => {
-    const result = await models.PointOfInterest.findAll({ order: [['name', 'ASC']] })
+    const result = await models.PointOfInterest.findAll({
+      order: [['name', 'ASC']],
+    })
     const filtered = []
     for (const element of result) {
       filtered.push({
@@ -191,7 +194,9 @@ async function runMainApi() {
 
   // fetch a single poi randomly from the DB
   app.get('/rnd_poi', async (req, res) => {
-    const result = await models.PointOfInterest.findOne({ order: Sequelize.literal('random()') })
+    const result = await models.PointOfInterest.findOne({
+      order: Sequelize.literal('random()'),
+    })
     return res.json(result)
   })
 
@@ -221,6 +226,17 @@ async function runMainApi() {
   app.get('/itineraries_details/:id', async (req, res) => {
     const id = +req.params.id
     const result = await models.Itinerary.findOne({ where: { id } })
+    const poiList = await models.JoinPoints.findAll({
+      where: { itineraryId: result.id },
+      // include: [{ model: models.Itinerary }],
+    })
+    console.log(JSON.stringify(result, null, 2))
+    console.log(JSON.stringify(poiList, null, 2))
+    /* const temp = {
+      it: result,
+      poi_list: poiList,
+    } */
+
     return res.json(result)
   })
 

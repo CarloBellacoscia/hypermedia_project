@@ -57,7 +57,7 @@ export default async (models) => {
     },
   ]
   const magnoliaPoi = await models.PointOfInterest.create(poiList[0])
-  // const duomoPoi = await models.PointOfInterest.create(poiList[1])
+  const duomoPoi = await models.PointOfInterest.create(poiList[1])
   const torrePoi = await models.PointOfInterest.create(poiList[2])
 
 
@@ -163,10 +163,18 @@ export default async (models) => {
       itineraryId: arteIt.id,
       pointOfInterestId: torrePoi.id,
     },
+    {
+      itineraryId: arteIt.id,
+      pointOfInterestId: duomoPoi.id,
+    },
+    {
+      itineraryId: arteIt.id,
+      pointOfInterestId: magnoliaPoi.id,
+    },
   ]
   await models.Event.bulkCreate(eventList)
   await models.PointOfInterest.bulkCreate(poiList)
-  await models.Itinerary.bulkCreate(itList)
+  // await models.Itinerary.bulkCreate(itList)
   await models.Service.bulkCreate(serviceList)
   await models.JoinPoints.bulkCreate(joinList)
 
