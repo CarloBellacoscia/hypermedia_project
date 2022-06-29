@@ -20,7 +20,7 @@
         <li
           v-for="(navItem, navItemIndex) of headerList"
           :key="`navItem${navItemIndex}`"
-          :class= "navItem.path==$route.path ?'nav-item low-highlight' : 'nav-item'"
+          :class= "navItem.path===$route.path ?'nav-item low-highlight' : 'nav-item'"
         >
           <nuxt-link :to="navItem.path" class="nav-link">
             {{ navItem.name }}
@@ -91,13 +91,6 @@ export default {
   top:0;
   z-index: 1000;
   /*  border-radius: 0 0 15px 15px;*/
-}
-
-.nav-item {
-  font-family: 'Archivo Narrow', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 25px;
 }
 
 .navbar-collapse {

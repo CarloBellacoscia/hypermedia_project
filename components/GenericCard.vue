@@ -105,7 +105,7 @@ export default {
   left: 10px;
   width: 370px;
   height: 80px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
 }
 .my-container {
   position: absolute;
