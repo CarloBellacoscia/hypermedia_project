@@ -172,6 +172,7 @@ export default async (models) => {
       pointOfInterestId: magnoliaPoi.id,
     },
   ]
+
   await models.Event.bulkCreate(eventList)
   await models.PointOfInterest.bulkCreate(poiList)
   // await models.Itinerary.bulkCreate(itList)

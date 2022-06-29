@@ -21,25 +21,33 @@ const database = new Sequelize(process.env.DATABASE_URL, {
 // Function that will initialize the connection to the database
 async function initializeDatabaseConnection() {
   await database.authenticate()
-  const Event = database.define('event', {
-    name: DataTypes.STRING,
-    start_date: DataTypes.DATE,
-    end_date: DataTypes.DATE,
-    description: DataTypes.STRING,
-    site: DataTypes.STRING,
-    img: DataTypes.STRING,
-    alt_img: DataTypes.STRING,
-  })
+  const Event = database.define(
+    'event',
+    {
+      name: DataTypes.STRING,
+      start_date: DataTypes.DATE,
+      end_date: DataTypes.DATE,
+      description: DataTypes.STRING,
+      site: DataTypes.STRING,
+      img: DataTypes.STRING,
+      alt_img: DataTypes.STRING,
+    },
+    { timestamps: false }
+  )
 
-  const PointOfInterest = database.define('point_of_interest', {
-    name: DataTypes.STRING,
-    description: DataTypes.STRING(1024),
-    gps: DataTypes.STRING,
-    neigh: DataTypes.STRING,
-    site: DataTypes.STRING,
-    img: DataTypes.STRING,
-    alt_img: DataTypes.STRING,
-  })
+  const PointOfInterest = database.define(
+    'point_of_interest',
+    {
+      name: DataTypes.STRING,
+      description: DataTypes.STRING(1024),
+      gps: DataTypes.STRING,
+      neigh: DataTypes.STRING,
+      site: DataTypes.STRING,
+      img: DataTypes.STRING,
+      alt_img: DataTypes.STRING,
+    },
+    { timestamps: false }
+  )
   PointOfInterest.hasMany(Event)
   Event.belongsTo(PointOfInterest)
 
@@ -53,7 +61,7 @@ async function initializeDatabaseConnection() {
     alt_img: DataTypes.STRING,
   })
 
-  const JoinPoints = database.define('join_points', {})
+  const JoinPoints = database.define('join_points', {}, { timestamps: false })
 
   const Itinerary = database.define('itinerary', {
     name: DataTypes.STRING,
@@ -225,19 +233,33 @@ async function runMainApi() {
 
   app.get('/itineraries_details/:id', async (req, res) => {
     const id = +req.params.id
-    const result = await models.Itinerary.findOne({ where: { id } })
-    const poiList = await models.JoinPoints.findAll({
-      where: { itineraryId: result.id },
-      // include: [{ model: models.Itinerary }],
+    const result = await models.Itinerary.findOne({
+      where: { id },
+      include: [{ model: models.PointOfInterest }],
     })
-    console.log(JSON.stringify(result, null, 2))
-    console.log(JSON.stringify(poiList, null, 2))
-    /* const temp = {
-      it: result,
-      poi_list: poiList,
-    } */
+    const filtered = []
 
-    return res.json(result)
+    for (const element of result.point_of_interests) {
+      filtered.push({
+        name: element.name,
+        img: element.img,
+        alt_img: element.alt_img,
+        id: element.id,
+      })
+    }
+
+    const temp = {
+      id: result.id,
+      name: result.name,
+      description: result.description,
+      img: result.img,
+      alt_img: result.alt_img,
+      duration: result.duration,
+      point_of_interests: filtered,
+    }
+    console.log(JSON.stringify(temp, null, 2))
+
+    return res.json(temp)
   })
 
   // HTTP POST api, that will push (and therefore create) a new element in
