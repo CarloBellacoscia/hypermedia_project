@@ -10,9 +10,10 @@
       :gps="gps"
     />
     <div class="container mt-5">
-      <map-component
-        :place="formatPosition(name)"
-      />
+      <div class="row">
+        <map-component :place="formatPosition(name)" />
+        <join-component :it-list="itList" />
+      </div>
     </div>
   </div>
 </template>
@@ -20,12 +21,14 @@
 <script>
 import GenericDetailsPage from '~/components/GenericDetailsPage.vue'
 import MapComponent from '~/components/Map.vue'
-import CommonMixin from "~/mixins/common";
+import JoinComponent from '~/components/JoinTableCard'
+import CommonMixin from '~/mixins/common'
 export default {
   name: 'DetailsPage',
   components: {
     GenericDetailsPage,
     MapComponent,
+    JoinComponent,
   },
   mixins: [CommonMixin],
   async asyncData({ route, $axios }) {
@@ -39,14 +42,15 @@ export default {
       img: data.img,
       alt_img: data.alt_img,
       neigh: data.neigh,
+      itList: data.itineraries,
     }
   },
-  head(){
+  head() {
     return {
-      title: this.name
+      title: this.name,
     }
   },
-  mounted(){
+  mounted() {
     const date = new Date()
     // Example on hwo to use mixinx
     console.log(this.formatMyDate(date.toLocaleDateString()))

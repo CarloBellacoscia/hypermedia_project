@@ -10,9 +10,10 @@
       :duration="duration"
     />
     <div class="container mt-5">
-      <map-component
-        :place="formatPosition('Milano')"
-      />
+      <div class="first-row">
+        <map-component :place="formatPosition(poiList[0].name)" />
+        <join-component :poi-list="poiList" />
+      </div>
     </div>
   </div>
 </template>
@@ -20,12 +21,14 @@
 <script>
 import GenericDetailsPage from '~/components/GenericDetailsPage.vue'
 import MapComponent from '~/components/Map.vue'
-import CommonMixin from "~/mixins/common";
+import JoinComponent from '~/components/JoinTableCard'
+import CommonMixin from '~/mixins/common'
 export default {
   name: 'DetailsPage',
   components: {
     MapComponent,
     GenericDetailsPage,
+    JoinComponent,
   },
   mixins: [CommonMixin],
   async asyncData({ route, $axios }) {
@@ -39,14 +42,15 @@ export default {
       alt_img: data.alt_img,
       img: data.img,
       neigh: data.neigh,
+      poiList: data.point_of_interests,
     }
   },
-  head(){
+  head() {
     return {
-      title: this.name
+      title: this.name,
     }
   },
-  mounted(){
+  mounted() {
     const date = new Date()
     // Example on hwo to use mixinx
     console.log(this.formatMyDate(date.toLocaleDateString()))

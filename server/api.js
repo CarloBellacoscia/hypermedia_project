@@ -210,9 +210,34 @@ async function runMainApi() {
 
   app.get('/poi_details/:id', async (req, res) => {
     const id = +req.params.id
-    const result = await models.PointOfInterest.findOne({ where: { id } })
-    return res.json(result)
-  })
+    const result = await models.PointOfInterest.findOne({ where: { id },
+      include: [{ model: models.Itinerary }]
+    })
+
+    const filtered = []
+
+    for (const element of result.itineraries) {
+      filtered.push({
+        name: element.name,
+        img: element.img,
+        alt_img: element.alt_img,
+        id: element.id,
+      })
+    }
+
+    const temp = {
+      id: result.id,
+      name: result.name,
+      description: result.description,
+      site: result.site,
+      img: result.img,
+      alt_img: result.alt_img,
+      neigh: result.neigh,
+      itineraries: filtered,
+    }
+    // console.log(JSON.stringify(temp, null, 2))
+
+    return res.json(temp)  })
 
   // HTTP GET api that returns all the itineraries in our actual database
   app.get('/itineraries', async (req, res) => {
@@ -257,7 +282,7 @@ async function runMainApi() {
       duration: result.duration,
       point_of_interests: filtered,
     }
-    console.log(JSON.stringify(temp, null, 2))
+    // console.log(JSON.stringify(temp, null, 2))
 
     return res.json(temp)
   })
