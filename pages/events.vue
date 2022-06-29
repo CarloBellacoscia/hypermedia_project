@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="page container mt-5">
-      <h1 class="page">
+      <h1>
         {{title}}
       </h1>
       <div class="selector">
@@ -105,13 +105,5 @@ export default {
   z-index: 1000;
   padding: 10px 0 10px 30px;
   margin-left: -30px
-}
-.page {
-  text-align: left;
-  font-family: 'Archivo Narrow', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 55px;
-  line-height: 74px;
 }
 </style>

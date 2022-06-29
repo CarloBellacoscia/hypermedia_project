@@ -10,7 +10,7 @@
     :start_date="formatDate(start_date)"
     :end_date="formatDate(end_date)"
    />
-  <map-component/>
+  <map-component />
   </div>
 </template>
 

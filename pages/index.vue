@@ -1,24 +1,35 @@
 <template>
-  <custom-page :title="title" :image="image" :description="description" />
+  <div>
+  <rand-detail :id="id" :title="title" :img="image" :alt_img="altImg" :description="description" />
+  </div>
 </template>
 
 <script>
-import CustomPage from '~/components/CustomPage.vue'
+import RandDetail from '~/components/RandomDetail.vue'
 export default {
   name: 'IndexPage',
   components: {
-    CustomPage,
+    RandDetail,
   },
   async asyncData({ $axios }) {
-    const { data } = await $axios.get('/api/page-info/index')
-    const title = data.title
-    const image = data.image
+    const { data } = await $axios.get('/api/rnd_poi')
+    const id = data.id
+    const title = data.name
+    const image = data.img
+    const altImg = data.alt_img
     const description = data.description
     return {
+      id,
       title,
       description,
       image,
+      altImg,
     }
   },
 }
 </script>
+
+<style>
+
+
+</style>
