@@ -2,11 +2,7 @@
   <div class="my-card">
     <nuxt-link :to="`/${category}/${id}`" style="text-decoration: none">
       <div class="my-container">
-        <img
-          class="my-card-image"
-          :src="img"
-          :alt="alt_img"
-        />
+        <img class="my-card-image" :src="img" :alt="alt_img" />
         <div v-if="date" style="width: 270px" class="my-card-date">
           <img
             class="my-card-date-icon"
@@ -91,6 +87,8 @@ export default {
 
 <style scoped>
 .my-card {
+  top:0;
+  left: 0;
   position: relative;
   width: 400px;
   height: 400px;
@@ -100,28 +98,41 @@ export default {
 }
 .my-card-box-shadow {
   position: absolute;
-  top: 300px;
+  bottom: 10px;
   left: 10px;
   width: 370px;
   height: 80px;
   background: rgba(0, 0, 0, 0.7);
 }
+
 .my-container {
   position: absolute;
   margin: 4px 10px 10px -10px;
   height: 390px;
   width: 390px;
 }
+
 .my-card-image {
   position: absolute;
   z-index: 0;
-  top:0;
-  left:0;
+  bottom: 0;
+  left: 0;
   height: 390px;
   width: 390px;
   object-fit: cover;
   border: 2px solid lightgray;
+}
 
+@media only screen and (max-width: 990px) {
+  .my-container{
+    height: 240px;
+  }
+  .my-card-image{
+    height: 240px;
+  }
+  .my-card {
+    height: 250px;
+  }
 }
 
 .my-card-title {

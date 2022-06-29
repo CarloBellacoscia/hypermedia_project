@@ -44,8 +44,7 @@ export default {
 
 
 .content-row {
-  /*display: flex;
-  justify-content: center;*/
+  justify-content: center;
   margin: 0 0 0 0;
   background-color: #d9d9d9;
 }
