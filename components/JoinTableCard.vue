@@ -1,6 +1,6 @@
 <template>
-  <div class="small_row">
-    <div v-if="poiList" class="page container mt-5">
+  <div class="small-row">
+    <div v-if="poiList" class="page container">
       <h2 class="label">
         Traveling Stages:
       </h2>
@@ -18,7 +18,7 @@
         />
       </div>
     </div>
-    <div v-if="itList" class="page container mt-5">
+    <div v-if="itList" class="page container">
       <h2 class="label">
         Related Itineraries:
       </h2>
@@ -36,7 +36,7 @@
         />
       </div>
     </div>
-    <div v-if="poiItem" class="page container mt-5">
+    <div v-if="poiItem" class="page container">
       <h2 class="label">
         Associated Point of Interest:
       </h2>
@@ -91,18 +91,28 @@ export default {
   max-width: 50%;
 }
 
+.container{
+  max-width: 50%;
+}
 .grid-item {
   text-align: center;
 }
 
 .label {
-  text-align: left;
+  text-align: justify;
+  width: 500px;
 }
 
-.small_row{
+.small-row{
+  padding: 10px 10px 10px 10px;
   display: flex;
-  justify-content: center;
-  max-height: 20%;
 }
+
+@media only screen and (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: auto auto;
+  }
+}
+
 
 </style>

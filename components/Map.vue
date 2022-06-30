@@ -37,7 +37,6 @@ export default {
 }
 @media only screen and (max-width: 900px) {
   .map {
-    width: 50%;
     height: 300px;
     object-fit: cover;
   }

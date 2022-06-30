@@ -11,7 +11,7 @@
     />
     <div class="container mt-5">
       <div class="grid-container">
-        <div class="grid-item">
+        <div class="map-item">
           <map-component :place="formatPosition(poiList[0].name)" />
         </div>
         <div class="grid-item">
@@ -75,5 +75,17 @@ export default {
 
 .grid-item {
   text-align: center;
+  max-width: 50%;
+}
+
+.map-item {
+  text-align: center;
+  min-width: 50%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .grid-container {
+    grid-template-columns: auto;
+  }
 }
 </style>

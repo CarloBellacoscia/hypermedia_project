@@ -142,7 +142,7 @@ export default {
   height: 20px;
   left: 10px;
   right: 10px;
-  top: 10px;
+  top: 0;
 
   font-family: 'Archivo', sans-serif;
   font-weight: 400;
@@ -156,7 +156,7 @@ export default {
   font-weight: 400;
   font-size: 9px;
   line-height: 22px;
-  top: 46px;
+  top: 30px;
   left: 33px;
   color: #d9d9d9;
 }
