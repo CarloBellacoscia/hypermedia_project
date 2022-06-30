@@ -20,7 +20,7 @@
         <li
           v-for="(navItem, navItemIndex) of headerList"
           :key="`navItem${navItemIndex}`"
-          :class= "navItem.path===$route.path ?'nav-item low-highlight' : 'nav-item'"
+          :class= "navItem.path===$route.path.split('_')[0] ?'nav-item low-highlight' : 'nav-item'"
         >
           <nuxt-link :to="navItem.path" class="nav-link">
             {{ navItem.name }}

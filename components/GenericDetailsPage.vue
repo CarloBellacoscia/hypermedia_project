@@ -24,8 +24,7 @@
             <h3 class="text">{{ neigh }}<br /></h3>
           </div>
           <div v-if="site">
-            <h2 class="label">Site:<br /></h2>
-            <h3 class="text">{{ site }}<br /></h3>
+            <button class="button" @click="goToSite(site)">Site</button>
           </div>
         </div>
       </div>
@@ -81,11 +80,15 @@ export default {
       default: '',
     },
   },
+  methods: {
+    goToSite(site) {
+      window.open(site)
+    },
+  },
 }
 </script>
 
 <style scoped>
-
 img {
   width: 200%;
   max-width: 500px;
@@ -127,6 +130,13 @@ img {
   font-weight: bold;
   font-size: 28px;
   display: flex;
+}
+
+.button {
+  font-family: 'Archivo Narrow', sans-serif;
+  background-color: #d9d9d9;
+  font-size: 22px;
+  opacity: 80%;
 }
 
 </style>
