@@ -213,7 +213,7 @@ async function runMainApi() {
   app.get('/poi_details/:id', async (req, res) => {
     const id = +req.params.id
     const result = await models.PointOfInterest.findOne({ where: { id },
-      include: [{ model: models.Itinerary }]
+      include: [{ model: models.Itinerary }, {model: models.Event}]
     })
 
     const filtered = []
@@ -223,6 +223,21 @@ async function runMainApi() {
         name: element.name,
         img: element.img,
         alt_img: element.alt_img,
+        duration: element.duration,
+        id: element.id,
+      })
+    }
+
+    const filteredEvents = []
+
+    for (const element of result.events) {
+      filteredEvents.push({
+        name: element.name,
+        img: element.img,
+        alt_img: element.alt_img,
+        start_date: element.start_date,
+        end_date: element.end_date,
+        neigh: element.neigh,
         id: element.id,
       })
     }
@@ -236,6 +251,7 @@ async function runMainApi() {
       alt_img: result.alt_img,
       neigh: result.neigh,
       itineraries: filtered,
+      events: filteredEvents,
       place_id: result.place_id,
     }
     // console.log(JSON.stringify(temp, null, 2))
@@ -272,6 +288,7 @@ async function runMainApi() {
         name: element.name,
         img: element.img,
         alt_img: element.alt_img,
+        position: element.position,
         id: element.id,
         place_id: element.place_id,
       })

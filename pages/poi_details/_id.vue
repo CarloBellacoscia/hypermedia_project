@@ -14,7 +14,10 @@
           <map-component :mode="'place'" :position="position" />
         </div>
         <div class="grid-item">
-          <join-component :it-list="itList" />
+          <join-component
+            :it-list="itList"
+            :ev-list="evList"
+          />
         </div>
       </div>
     </div>
@@ -46,6 +49,7 @@ export default {
       alt_img: data.alt_img,
       neigh: data.neigh,
       itList: data.itineraries,
+      evList: data.events,
       position: data.place_id,
     }
   },

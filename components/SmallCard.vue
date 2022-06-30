@@ -147,17 +147,18 @@ export default {
   font-family: 'Archivo', sans-serif;
   font-weight: 400;
   font-size: 13px;
-  line-height: 33px;
+  line-height: 25px;
   color: #fff;
 }
 .my-card-sub {
   position: absolute;
   font-family: 'Archivo', sans-serif;
+  text-align: left;
   font-weight: 400;
   font-size: 9px;
-  line-height: 22px;
-  top: 30px;
-  left: 33px;
+  line-height: 15px;
+  top: 20px;
+  left: 10px;
   color: #d9d9d9;
 }
 
@@ -171,7 +172,7 @@ export default {
 
 .my-card-date-icon {
   position: absolute;
-  bottom: 7px;
+  bottom: 1px;
   left: 10px;
   max-height: 18px;
 }
@@ -181,16 +182,16 @@ export default {
   top: 5px;
   font-family: 'Archivo', sans-serif;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 12px;
+  line-height: 10px;
   color: #252525;
 }
 
 .my-card-date {
-  height: 30px;
+  height: 20px;
   position: absolute;
-  bottom: 90px;
-  right: 10px;
+  bottom: 50px;
+  right: 20px;
   background-color: rgba(217, 217, 217, 0.8);
   text-align: right;
 }

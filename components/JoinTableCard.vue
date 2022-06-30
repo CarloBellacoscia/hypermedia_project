@@ -36,9 +36,27 @@
         />
       </div>
     </div>
+    <div v-if="evList" class="page container">
+      <h2 class="label">
+        Events Hosted:
+      </h2>
+      <div class="grid-container">
+        <card
+          v-for="(ev, evIndex) of evList"
+          :id="ev.id"
+          :key="`it-index-${evIndex}`"
+          class="grid-item"
+          :category="'itineraries_details'"
+          :name="ev.name"
+          :img="ev.img"
+          :alt_img="ev.alt_img"
+          :duration="ev.duration"
+        />
+      </div>
+    </div>
     <div v-if="poiItem" class="page container">
       <h2 class="label">
-        Associated Point of Interest:
+        Position:
       </h2>
       <div class="grid-container">
         <card
@@ -75,6 +93,11 @@ export default {
       required: false,
       default: null,
     },
+    evList: {
+      type: Array,
+      required: false,
+      default: null,
+    },
     poiItem: {
       type: Object,
       required: false,
@@ -104,8 +127,9 @@ export default {
 }
 
 .small-row{
+  display: grid;
+  grid-template-columns: auto;
   padding: 10px 10px 10px 10px;
-  display: flex;
 }
 
 @media only screen and (max-width: 900px) {
