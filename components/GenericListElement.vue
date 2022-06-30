@@ -49,8 +49,8 @@ p{
   font-size: 20px;
 }
 .my-elem {
-  padding: 10px 10px 10px 10px;
-  min-height: 50px;
+  padding: 13px 10px 0 10px;
+  min-height: 10px;
   background-color: rgba(0,0,0,0.1);
   display: flex;
 }
