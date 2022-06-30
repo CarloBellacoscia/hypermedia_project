@@ -55,10 +55,59 @@ export default async (models) => {
       alt_img: "torre branca light up at night",
 
     },
+    {
+      name: 'Torre 5',
+      description:
+        'Negli anni ‘30 la città che sale costruisce il suo totem nella radura del Parco Sempione ' +
+        'Disegnata da Gio Ponti, la torre è considerata una vera opera d’arte, “in cui l’architettura moderna e ' +
+        'la tecnica nuova trovano un punto di contatto' +
+        ' Esile e trasparente, vera “sfida” architettonica, viene eretta a tempo di record, in soli due mesi e mezzo nel 1933,' +
+        ' in occasione della V mostra Triennale, insieme a sei grandi “archi isolati”, temporanei, progettati da Sironi. Milano acquista così l’esclusiva europea di una “esposizione internazionale triennale delle arti decorative e industriali moderne e della architettura moderna”. ',
+      gps: "2131' 14315'' ",
+      neigh: "Sempione",
+      site: 'https://museobranca.it/torre-branca-2/',
+      img: 'https://museobranca.it/wp-content/uploads/2014/01/Torre-Branca-A4-345x230.jpg',
+      alt_img: "torre branca light up at night",
+
+    },
+    {
+      name: 'Torre 6',
+      description:
+        'Negli anni ‘30 la città che sale costruisce il suo totem nella radura del Parco Sempione ' +
+        'Disegnata da Gio Ponti, la torre è considerata una vera opera d’arte, “in cui l’architettura moderna e ' +
+        'la tecnica nuova trovano un punto di contatto' +
+        ' Esile e trasparente, vera “sfida” architettonica, viene eretta a tempo di record, in soli due mesi e mezzo nel 1933,' +
+        ' in occasione della V mostra Triennale, insieme a sei grandi “archi isolati”, temporanei, progettati da Sironi. Milano acquista così l’esclusiva europea di una “esposizione internazionale triennale delle arti decorative e industriali moderne e della architettura moderna”. ',
+      gps: "2131' 14315'' ",
+      neigh: "Sempione",
+      site: 'https://museobranca.it/torre-branca-2/',
+      img: 'https://museobranca.it/wp-content/uploads/2014/01/Torre-Branca-A4-345x230.jpg',
+      alt_img: "torre branca light up at night",
+
+    },
+    {
+      name: 'Torre 7',
+      description:
+        'Negli anni ‘30 la città che sale costruisce il suo totem nella radura del Parco Sempione ' +
+        'Disegnata da Gio Ponti, la torre è considerata una vera opera d’arte, “in cui l’architettura moderna e ' +
+        'la tecnica nuova trovano un punto di contatto' +
+        ' Esile e trasparente, vera “sfida” architettonica, viene eretta a tempo di record, in soli due mesi e mezzo nel 1933,' +
+        ' in occasione della V mostra Triennale, insieme a sei grandi “archi isolati”, temporanei, progettati da Sironi. Milano acquista così l’esclusiva europea di una “esposizione internazionale triennale delle arti decorative e industriali moderne e della architettura moderna”. ',
+      gps: "2131' 14315'' ",
+      neigh: "Sempione",
+      site: 'https://museobranca.it/torre-branca-2/',
+      img: 'https://museobranca.it/wp-content/uploads/2014/01/Torre-Branca-A4-345x230.jpg',
+      alt_img: "torre branca light up at night",
+
+    },
   ]
   const magnoliaPoi = await models.PointOfInterest.create(poiList[0])
   const duomoPoi = await models.PointOfInterest.create(poiList[1])
   const torrePoi = await models.PointOfInterest.create(poiList[2])
+  const gen1 = await models.PointOfInterest.create(poiList[3])
+  const gen2 = await models.PointOfInterest.create(poiList[4])
+  const gen3 = await models.PointOfInterest.create(poiList[5])
+  const gen4 = await models.PointOfInterest.create(poiList[6])
 
 
   const eventList = [
@@ -184,6 +233,7 @@ export default async (models) => {
     },
   ]
 
+
   const joinList = [
     {
       itineraryId: arteIt1.id,
@@ -191,18 +241,26 @@ export default async (models) => {
     },
     {
       itineraryId: arteIt1.id,
-      pointOfInterestId: duomoPoi.id,
-    },
-    {
-      itineraryId: arteIt1.id,
       pointOfInterestId: magnoliaPoi.id,
     },
     {
-      itineraryId: arteIt2.id,
-      pointOfInterestId: torrePoi.id,
+      itineraryId: arteIt1.id,
+      pointOfInterestId: gen1.id,
     },
     {
-      itineraryId: arteIt2.id,
+      itineraryId: arteIt1.id,
+      pointOfInterestId: gen2.id,
+    },
+    {
+      itineraryId: arteIt1.id,
+      pointOfInterestId: gen3.id,
+    },
+    {
+      itineraryId: arteIt1.id,
+      pointOfInterestId: gen4.id,
+    },
+    {
+      itineraryId: arteIt1.id,
       pointOfInterestId: duomoPoi.id,
     },
     {
@@ -216,6 +274,14 @@ export default async (models) => {
     {
       itineraryId: arteIt4.id,
       pointOfInterestId: magnoliaPoi.id,
+    },
+    {
+      itineraryId: arteIt4.id,
+      pointOfInterestId: gen1.id,
+    },
+    {
+      itineraryId: arteIt4.id,
+      pointOfInterestId: duomoPoi.id,
     },
   ]
 

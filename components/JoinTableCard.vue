@@ -98,12 +98,11 @@ export default {
 .label {
   text-align: left;
 }
-</style>
 
-<style scoped>
 .small_row{
   display: flex;
   justify-content: center;
   max-height: 20%;
 }
+
 </style>
