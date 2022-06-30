@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Circolo Magnolia",
+    "description": "Il Magnolia è un'associazione ARCI no profit che ha creato per il propri associati e tesserati ARCI un locale situato all’interno del parco dell’Idroscalo che, dalla sua nascita nel 2005, si è sempre distinto per la programmazione musicale, inclusiva e costante lungo tutta la stagione annuale, proponendo di volta in volta concerti e serate per i propri soci, richiamando sul proprio palco artisti di fama nazionale ed internazionale. Prendete in mano la programmazione invernale o estiva del circolo e mettetela di fianco ai più blasonati club di Berlino, Londra, Amsterdam, Barcellona. Scoprirete con sommo stupore che si assomigliano terribilmente. ",
+    "place_id": "ChIJTS-qcR3GhkcRczwkCGKk89Y",
+    "neigh": "Idroscalo",
+    "site": "http://www.circolomagnolia.it/",
+    "img": "https://zero-media.s3.amazonaws.com/uploads/2015/05/575491c9-d065-42e2-b1e0-14fcd873a41d.jpg",
+    "alt_img": "people hanging out outside under lamp"
+  },
+  {
+    "name": "Duomo",
+    "description": "l'èbellalamadunnina",
+    "place_id": "ChIJoTZGw67GhkcREy4aECdOf6s",
+    "neigh": "Piazza Duomo",
+    "site": "https://www.duomomilano.it/it/",
+    "img": "https://duomo.shbcdn.com/blobs/variants/f/8/7/f/f87f8370-813f-459b-a887-fc05029349f0_xl.jpg",
+    "alt_img": "duomo di milano at day"
+  },
+  {
+    "name": "Castello Sforzesco",
+    "description": "Il Castello Sforzesco è un grande complesso fortificato situato a Milano poco fuori dal centro storico della città. Fu eretto nel XV secolo da Francesco Sforza, divenuto da poco Duca di Milano, sui resti di una precedente fortificazione medievale del XIV secolo nota come Castello di Porta Giovia. ",
+    "place_id": "ChIJPXupDrb8hkcRm8JyxGbdVmU",
+    "neigh": "Castello",
+    "site": "https://www.milanocastello.it/",
+    "img": "https://www.milanocastello.it/sites/all/themes/sforzesco/images/sforzesco_edificio.jpg",
+    "alt_img": "drone photo of castello sforzesco"
+  },
+  {
+    "name": "Torre Branca",
+    "description": "Negli anni ‘30 la città che sale costruisce il suo totem nella radura del Parco Sempione Disegnata da Gio Ponti, la torre è considerata una vera opera d’arte, “in cui l’architettura moderna e la tecnica nuova trovano un punto di contatto Esile e trasparente, vera “sfida” architettonica, viene eretta a tempo di record, in soli due mesi e mezzo nel 1933, in occasione della V mostra Triennale, insieme a sei grandi “archi isolati”, temporanei, progettati da Sironi. Milano acquista così l’esclusiva europea di una “esposizione internazionale triennale delle arti decorative e industriali moderne e della architettura moderna”. ",
+    "place_id": "ChIJrxs7lEXBhkcR4V5LMTSeSyQ",
+    "neigh": "Sempione",
+    "site": "https://museobranca.it/torre-branca-2/",
+    "img": "https://museobranca.it/wp-content/uploads/2014/01/Torre-Branca-A4-345x230.jpg",
+    "alt_img": "torre branca light up at night"
+  },
+  {
+    "name": "Torre Velasca X",
+    "description": "Negli anni ‘30 la città che sale costruisce il suo totem nella radura del Parco Sempione Disegnata da Gio Ponti, la torre è considerata una vera opera d’arte, “in cui l’architettura moderna e la tecnica nuova trovano un punto di contatto Esile e trasparente, vera “sfida” architettonica, viene eretta a tempo di record, in soli due mesi e mezzo nel 1933, in occasione della V mostra Triennale, insieme a sei grandi “archi isolati”, temporanei, progettati da Sironi. Milano acquista così l’esclusiva europea di una “esposizione internazionale triennale delle arti decorative e industriali moderne e della architettura moderna”. ",
+    "place_id": "ChIJCbcsr6nGhkcRS7kfPh2JCGQ",
+    "neigh": "Sempione",
+    "site": "https://museobranca.it/torre-branca-2/",
+    "img": "https://museobranca.it/wp-content/uploads/2014/01/Torre-Branca-A4-345x230.jpg",
+    "alt_img": "torre branca light up at night"
+  },
+  {
+    "name": "Triennale Milano X",
+    "description": "Negli anni ‘30 la città che sale costruisce il suo totem nella radura del Parco Sempione Disegnata da Gio Ponti, la torre è considerata una vera opera d’arte, “in cui l’architettura moderna e la tecnica nuova trovano un punto di contatto Esile e trasparente, vera “sfida” architettonica, viene eretta a tempo di record, in soli due mesi e mezzo nel 1933, in occasione della V mostra Triennale, insieme a sei grandi “archi isolati”, temporanei, progettati da Sironi. Milano acquista così l’esclusiva europea di una “esposizione internazionale triennale delle arti decorative e industriali moderne e della architettura moderna”. ",
+    "place_id": "ChIJRwVc7UXBhkcRIlGMal_aWHU",
+    "neigh": "Sempione",
+    "site": "https://museobranca.it/torre-branca-2/",
+    "img": "https://museobranca.it/wp-content/uploads/2014/01/Torre-Branca-A4-345x230.jpg",
+    "alt_img": "torre branca light up at night"
+  },
+  {
+    "name": "Politecnico Di Milano X",
+    "description": "Negli anni ‘30 la città che sale costruisce il suo totem nella radura del Parco Sempione Disegnata da Gio Ponti, la torre è considerata una vera opera d’arte, “in cui l’architettura moderna e la tecnica nuova trovano un punto di contatto Esile e trasparente, vera “sfida” architettonica, viene eretta a tempo di record, in soli due mesi e mezzo nel 1933, in occasione della V mostra Triennale, insieme a sei grandi “archi isolati”, temporanei, progettati da Sironi. Milano acquista così l’esclusiva europea di una “esposizione internazionale triennale delle arti decorative e industriali moderne e della architettura moderna”. ",
+    "place_id": "ChIJUxfRffbGhkcRdzNKd-H6MI4",
+    "neigh": "Sempione",
+    "site": "https://museobranca.it/torre-branca-2/",
+    "img": "https://museobranca.it/wp-content/uploads/2014/01/Torre-Branca-A4-345x230.jpg",
+    "alt_img": "torre branca light up at night"
+  }
+]

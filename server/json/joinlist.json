@@ -1,0 +1,30 @@
+[
+  {
+    "itineraryId": 1,
+    "pointOfInterestId": 1
+  },
+  {
+    "itineraryId": 2,
+    "pointOfInterestId": 2
+  },
+  {
+    "itineraryId": 3,
+    "pointOfInterestId": 1
+  },
+  {
+    "itineraryId": 4,
+    "pointOfInterestId": 1
+  },
+  {
+    "itineraryId": 4,
+    "pointOfInterestId": 2
+  },
+  {
+    "itineraryId": 4,
+    "pointOfInterestId": 3
+  },
+  {
+    "itineraryId": 4,
+    "pointOfInterestId": 4
+  }
+]

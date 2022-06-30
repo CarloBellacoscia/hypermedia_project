@@ -34,21 +34,27 @@ export default {
   },
   data(){
     return {
-      src: 'https://www.google.com/maps/embed/v1/',
+      src: '',
        key: 'AIzaSyDZ8TCwa4tSZdVGqzu7Ez1joVie69QJe64',
     }},
   mounted() {
     this.composeSrc()
   },
+  updated() {
+   // console.log(this.src)
+  },
   methods: {
     composeSrc(){
+      this.src='https://www.google.com/maps/embed/v1/'
       this.src+= this.mode + '?key=' + this.key
       console.log(this.src)
       if(this.mode==="place"){
         this.src+= '&q=place_id:' + this.position
       }else{
         const len = this.poiList.length
-        this.src+= '&mode=driving'
+        this.src+= '&mode=transit'
+        // this.src+= '&mode=driving'
+        // this.src+= '&mode=walking'
         this.src+= '&zoom=12'
         this.src+= '&origin=place_id:' + (this.poiList[0].place_id)
         this.src+= '&destination=place_id:' + (this.poiList[len-1].place_id)
