@@ -63,13 +63,15 @@ async function initializeDatabaseConnection() {
 
   const JoinPoints = database.define('join_points', {}, { timestamps: false })
 
+
   const Itinerary = database.define('itinerary', {
     name: DataTypes.STRING,
     description: DataTypes.STRING,
     duration: DataTypes.STRING,
     img: DataTypes.STRING,
     alt_img: DataTypes.STRING,
-  })
+  }  // DO NOT REMOVE TIMESTAMP, used in the homepage
+  )
   Itinerary.belongsToMany(PointOfInterest, { through: JoinPoints })
   PointOfInterest.belongsToMany(Itinerary, { through: JoinPoints })
 
@@ -241,7 +243,7 @@ async function runMainApi() {
 
   // HTTP GET api that returns all the itineraries in our actual database
   app.get('/itineraries', async (req, res) => {
-    const result = await models.Itinerary.findAll({ order: [['name', 'ASC']] })
+    const result = await models.Itinerary.findAll({ order: [['createdAt', 'DESC']] })
     const filtered = []
     for (const element of result) {
       filtered.push({

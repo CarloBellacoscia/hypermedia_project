@@ -137,14 +137,40 @@ export default async (models) => {
 
   const itList = [
     {
-      name: 'Tour Arte',
+      name: 'Tour Arte 1',
       description: 'fa caldo',
       img: 'https://libreriamo.it/wp-content/uploads/2018/12/galleria-vittorio-emanuele-1-1.jpg',
       alt_img: "vittorio emanuele gallery",
-      duration: '1 Pomeriggio',
+      duration: '7 giorni',
+    },
+    {
+      name: 'Tour Città Architettura 2',
+      description: 'fa caldo',
+      img: 'https://libreriamo.it/wp-content/uploads/2018/12/galleria-vittorio-emanuele-1-1.jpg',
+      alt_img: "vittorio emanuele gallery",
+      duration: '1 giorno',
+    },
+    {
+      name: 'Tour Futuro e Passato 3',
+      description: 'fa caldo',
+      img: 'https://libreriamo.it/wp-content/uploads/2018/12/galleria-vittorio-emanuele-1-1.jpg',
+      alt_img: "vittorio emanuele gallery",
+      duration: '3 giorni',
+    },
+    {
+      name: 'Tour Weekend Al Volo',
+      description: 'fa caldo',
+      img: 'https://libreriamo.it/wp-content/uploads/2018/12/galleria-vittorio-emanuele-1-1.jpg',
+      alt_img: "vittorio emanuele gallery",
+      duration: '3 giorno',
     },
   ]
-  const arteIt = await models.Itinerary.create(itList[0])
+  const arteIt1 = await models.Itinerary.create(itList[0])
+  const arteIt2 = await models.Itinerary.create(itList[1])
+  const arteIt3 = await models.Itinerary.create(itList[2])
+  const arteIt4 = await models.Itinerary.create(itList[3])
+
+
 
   const serviceList = [
     {
@@ -160,15 +186,35 @@ export default async (models) => {
 
   const joinList = [
     {
-      itineraryId: arteIt.id,
+      itineraryId: arteIt1.id,
       pointOfInterestId: torrePoi.id,
     },
     {
-      itineraryId: arteIt.id,
+      itineraryId: arteIt1.id,
       pointOfInterestId: duomoPoi.id,
     },
     {
-      itineraryId: arteIt.id,
+      itineraryId: arteIt1.id,
+      pointOfInterestId: magnoliaPoi.id,
+    },
+    {
+      itineraryId: arteIt2.id,
+      pointOfInterestId: torrePoi.id,
+    },
+    {
+      itineraryId: arteIt2.id,
+      pointOfInterestId: duomoPoi.id,
+    },
+    {
+      itineraryId: arteIt2.id,
+      pointOfInterestId: magnoliaPoi.id,
+    },
+    {
+      itineraryId: arteIt3.id,
+      pointOfInterestId: magnoliaPoi.id,
+    },
+    {
+      itineraryId: arteIt4.id,
       pointOfInterestId: magnoliaPoi.id,
     },
   ]
