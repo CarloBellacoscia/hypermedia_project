@@ -4,23 +4,66 @@
     allowfullscreen
     loading="lazy"
     referrerpolicy="no-referrer-when-downgrade"
-    :src="'https://www.google.com/maps/embed/v1/place?key=AIzaSyDZ8TCwa4tSZdVGqzu7Ez1joVie69QJe64&q=' + place"
+    :src="this.src"
     style="border: 0"
   >
   </iframe>
 </template>
 
 <script>
+import CommonMixin from "~/mixins/common";
+
 export default {
   name: 'MapComponent',
+  mixins: [CommonMixin],
   props: {
-    place: {
+    mode:{
       type: String,
       required: true,
+      default: 'place',
+    },
+    position: {
+      type: String,
+      required: false,
       default: 'Milano',
     },
+    poiList: {
+      type: Array,
+      required: false,
+    },
+  },
+  data(){
+    return {
+      src: 'https://www.google.com/maps/embed/v1/',
+       key: 'AIzaSyDZ8TCwa4tSZdVGqzu7Ez1joVie69QJe64',
+    }},
+  mounted() {
+    this.composeSrc()
   },
   methods: {
+    composeSrc(){
+      this.src+= this.mode + '?key=' + this.key
+      console.log(this.src)
+      if(this.mode==="place"){
+        this.src+= '&q=place_id:' + this.position
+      }else{
+        const len = this.poiList.length
+        this.src+= '&mode=driving'
+        this.src+= '&zoom=12'
+        this.src+= '&origin=place_id:' + (this.poiList[0].place_id)
+        this.src+= '&destination=place_id:' + (this.poiList[len-1].place_id)
+        if(len>2){
+          this.src+= '&waypoints=place_id:' + (this.poiList[1].place_id)
+        }
+        for(let i = 2; i < len-1; i++){
+          this.src+= '|place_id:' + this.poiList[i].place_id
+        }
+      }
+
+      console.log(this.src)
+
+
+    },
     goToDetails() {
       this.$router.push(`/${this.category}/${this.id}`)
     },

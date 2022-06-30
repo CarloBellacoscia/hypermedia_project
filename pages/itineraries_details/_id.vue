@@ -12,7 +12,7 @@
     <div class="container mt-5">
       <div class="grid-container">
         <div class="map-item">
-          <map-component :place="formatPosition(poiList[0].name)" />
+          <map-component :mode="'directions'" :poi-list="poiList" />
         </div>
         <div class="grid-item">
           <join-component :poi-list="poiList" />

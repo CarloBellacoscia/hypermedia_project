@@ -2,7 +2,7 @@
   <div class="container mt-5">
     <div class="details-page">
       <h1 class="page">
-        <span class="low-highlight">{{ name }}</span>
+        {{ name }}
       </h1>
       <div class="first-row">
         <img :src="image" :alt="alt_image" />
@@ -75,11 +75,6 @@ export default {
       required: false,
       default: '',
     },
-    gps: {
-      type: String,
-      required: false,
-      default: '',
-    },
     neigh: {
       type: String,
       required: false,
@@ -99,18 +94,6 @@ img {
 }
 .details {
   padding-left: 55%;
-}
-
-.page {
-  text-align: center;
-  max-width: 800px;
-  color: black;
-  font-family: 'Archivo Narrow', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 55px;
-  line-height: 74px;
-  display: flex;
 }
 
 .first-row {

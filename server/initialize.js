@@ -9,7 +9,7 @@ export default async (models) => {
         " di fama nazionale ed internazionale. Prendete in mano la programmazione invernale o estiva del circolo e mettetela " +
         "di fianco ai più blasonati club di Berlino," +
         " Londra, Amsterdam, Barcellona. Scoprirete con sommo stupore che si assomigliano terribilmente. ",
-      gps: "2131' 14315'' ",
+      place_id: "ChIJTS-qcR3GhkcRczwkCGKk89Y",
       neigh: "Idroscalo",
       site: 'http://www.circolomagnolia.it/',
       img: 'https://zero-media.s3.amazonaws.com/uploads/2015/05/575491c9-d065-42e2-b1e0-14fcd873a41d.jpg',
@@ -19,7 +19,7 @@ export default async (models) => {
     {
       name: 'Duomo',
       description: "l'èbellalamadunnina",
-      gps: "2131' 14315'' ",
+      place_id: "ChIJoTZGw67GhkcREy4aECdOf6s",
       neigh: "Piazza Duomo",
       site: 'https://www.duomomilano.it/it/',
       img: 'https://duomo.shbcdn.com/blobs/variants/f/8/7/f/f87f8370-813f-459b-a887-fc05029349f0_xl.jpg',
@@ -33,7 +33,7 @@ export default async (models) => {
         'Milano poco fuori dal centro storico della città. Fu eretto nel XV secolo da Francesco Sforza, ' +
         'divenuto da poco Duca di Milano, sui resti di una precedente fortificazione medievale del XIV secolo nota come' +
         ' Castello di Porta Giovia. ',
-      gps: "2131' 14315'' ",
+      place_id: "ChIJPXupDrb8hkcRm8JyxGbdVmU",
       neigh: "Castello",
       site: 'https://www.milanocastello.it/',
       img: 'https://www.milanocastello.it/sites/all/themes/sforzesco/images/sforzesco_edificio.jpg',
@@ -48,7 +48,7 @@ export default async (models) => {
         'la tecnica nuova trovano un punto di contatto' +
         ' Esile e trasparente, vera “sfida” architettonica, viene eretta a tempo di record, in soli due mesi e mezzo nel 1933,' +
         ' in occasione della V mostra Triennale, insieme a sei grandi “archi isolati”, temporanei, progettati da Sironi. Milano acquista così l’esclusiva europea di una “esposizione internazionale triennale delle arti decorative e industriali moderne e della architettura moderna”. ',
-      gps: "2131' 14315'' ",
+      place_id: "ChIJrxs7lEXBhkcR4V5LMTSeSyQ",
       neigh: "Sempione",
       site: 'https://museobranca.it/torre-branca-2/',
       img: 'https://museobranca.it/wp-content/uploads/2014/01/Torre-Branca-A4-345x230.jpg',
@@ -56,14 +56,14 @@ export default async (models) => {
 
     },
     {
-      name: 'Torre 5',
+      name: 'Torre Velasca X',
       description:
         'Negli anni ‘30 la città che sale costruisce il suo totem nella radura del Parco Sempione ' +
         'Disegnata da Gio Ponti, la torre è considerata una vera opera d’arte, “in cui l’architettura moderna e ' +
         'la tecnica nuova trovano un punto di contatto' +
         ' Esile e trasparente, vera “sfida” architettonica, viene eretta a tempo di record, in soli due mesi e mezzo nel 1933,' +
         ' in occasione della V mostra Triennale, insieme a sei grandi “archi isolati”, temporanei, progettati da Sironi. Milano acquista così l’esclusiva europea di una “esposizione internazionale triennale delle arti decorative e industriali moderne e della architettura moderna”. ',
-      gps: "2131' 14315'' ",
+      place_id: "ChIJCbcsr6nGhkcRS7kfPh2JCGQ",
       neigh: "Sempione",
       site: 'https://museobranca.it/torre-branca-2/',
       img: 'https://museobranca.it/wp-content/uploads/2014/01/Torre-Branca-A4-345x230.jpg',
@@ -71,14 +71,14 @@ export default async (models) => {
 
     },
     {
-      name: 'Torre 6',
+      name: 'Triennale Milano X',
       description:
         'Negli anni ‘30 la città che sale costruisce il suo totem nella radura del Parco Sempione ' +
         'Disegnata da Gio Ponti, la torre è considerata una vera opera d’arte, “in cui l’architettura moderna e ' +
         'la tecnica nuova trovano un punto di contatto' +
         ' Esile e trasparente, vera “sfida” architettonica, viene eretta a tempo di record, in soli due mesi e mezzo nel 1933,' +
         ' in occasione della V mostra Triennale, insieme a sei grandi “archi isolati”, temporanei, progettati da Sironi. Milano acquista così l’esclusiva europea di una “esposizione internazionale triennale delle arti decorative e industriali moderne e della architettura moderna”. ',
-      gps: "2131' 14315'' ",
+      place_id: "ChIJRwVc7UXBhkcRIlGMal_aWHU",
       neigh: "Sempione",
       site: 'https://museobranca.it/torre-branca-2/',
       img: 'https://museobranca.it/wp-content/uploads/2014/01/Torre-Branca-A4-345x230.jpg',
@@ -86,14 +86,14 @@ export default async (models) => {
 
     },
     {
-      name: 'Torre 7',
+      name: 'Politecnico Di Milano X',
       description:
         'Negli anni ‘30 la città che sale costruisce il suo totem nella radura del Parco Sempione ' +
         'Disegnata da Gio Ponti, la torre è considerata una vera opera d’arte, “in cui l’architettura moderna e ' +
         'la tecnica nuova trovano un punto di contatto' +
         ' Esile e trasparente, vera “sfida” architettonica, viene eretta a tempo di record, in soli due mesi e mezzo nel 1933,' +
         ' in occasione della V mostra Triennale, insieme a sei grandi “archi isolati”, temporanei, progettati da Sironi. Milano acquista così l’esclusiva europea di una “esposizione internazionale triennale delle arti decorative e industriali moderne e della architettura moderna”. ',
-      gps: "2131' 14315'' ",
+      place_id: "ChIJUxfRffbGhkcRdzNKd-H6MI4",
       neigh: "Sempione",
       site: 'https://museobranca.it/torre-branca-2/',
       img: 'https://museobranca.it/wp-content/uploads/2014/01/Torre-Branca-A4-345x230.jpg',
@@ -223,9 +223,9 @@ export default async (models) => {
 
   const serviceList = [
     {
-      name: 'Farmacia Ambreck',
+      name: 'Farmacia Bramante',
       description: 'curiamo le coltellate di piazzale Loreto',
-      gps: "246' 2414'' ",
+      place_id: "ChIJcTTWtvDGhkcRkEoF5-QCYkQ",
       neigh: "Loreto",
       site: 'lame.net',
       img: 'https://besport.org/sportmedicina/wp-content/uploads/2010/09/1440267109puertas-de-farmacia.jpg',
@@ -237,31 +237,19 @@ export default async (models) => {
   const joinList = [
     {
       itineraryId: arteIt1.id,
-      pointOfInterestId: torrePoi.id,
-    },
-    {
-      itineraryId: arteIt1.id,
       pointOfInterestId: magnoliaPoi.id,
     },
     {
       itineraryId: arteIt1.id,
-      pointOfInterestId: gen1.id,
-    },
-    {
-      itineraryId: arteIt1.id,
-      pointOfInterestId: gen2.id,
-    },
-    {
-      itineraryId: arteIt1.id,
-      pointOfInterestId: gen3.id,
-    },
-    {
-      itineraryId: arteIt1.id,
-      pointOfInterestId: gen4.id,
-    },
-    {
-      itineraryId: arteIt1.id,
       pointOfInterestId: duomoPoi.id,
+    },
+    {
+      itineraryId: arteIt1.id,
+      pointOfInterestId: torrePoi.id,
+    },
+    {
+      itineraryId: arteIt1.id,
+      pointOfInterestId: gen1.id,
     },
     {
       itineraryId: arteIt2.id,

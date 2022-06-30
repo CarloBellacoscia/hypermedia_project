@@ -13,7 +13,7 @@
     <div class="container mt-5">
       <div class="grid-container">
         <div class="map-item">
-          <map-component :place="formatPosition(position)" />
+          <map-component :position="position" :mode="'place'" />
         </div>
         <div class="grid-item">
           <join-component :poi-item="poi" />
@@ -48,7 +48,7 @@ export default {
       start_date: data.start_date,
       end_date: data.end_date,
       neigh: data.neigh,
-      position: data.point_of_interest.name,
+      position: data.point_of_interest.place_id,
       poi: data.point_of_interest,
     }
   },

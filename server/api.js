@@ -40,7 +40,7 @@ async function initializeDatabaseConnection() {
     {
       name: DataTypes.STRING,
       description: DataTypes.STRING(1024),
-      gps: DataTypes.STRING,
+      place_id: DataTypes.STRING,
       neigh: DataTypes.STRING,
       site: DataTypes.STRING,
       img: DataTypes.STRING,
@@ -54,7 +54,7 @@ async function initializeDatabaseConnection() {
   const Service = database.define('service', {
     name: DataTypes.STRING,
     description: DataTypes.STRING,
-    gps: DataTypes.STRING,
+    place_id: DataTypes.STRING,
     neigh: DataTypes.STRING,
     site: DataTypes.STRING,
     img: DataTypes.STRING,
@@ -164,7 +164,7 @@ async function runMainApi() {
       filtered.push({
         name: element.name,
         description: element.description,
-        gps: element.gps,
+        place_id: element.place_id,
         neigh: element.neigh,
         site: element.site,
         img: element.img,
@@ -191,7 +191,7 @@ async function runMainApi() {
       filtered.push({
         name: element.name,
         description: element.description,
-        gps: element.gps,
+        place_id: element.place_id,
         site: element.site,
         img: element.img,
         alt_img: element.alt_img,
@@ -236,6 +236,7 @@ async function runMainApi() {
       alt_img: result.alt_img,
       neigh: result.neigh,
       itineraries: filtered,
+      place_id: result.place_id,
     }
     // console.log(JSON.stringify(temp, null, 2))
 
@@ -272,6 +273,7 @@ async function runMainApi() {
         img: element.img,
         alt_img: element.alt_img,
         id: element.id,
+        place_id: element.place_id,
       })
     }
 

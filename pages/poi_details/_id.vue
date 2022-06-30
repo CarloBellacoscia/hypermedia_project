@@ -7,12 +7,11 @@
       :neigh="neigh"
       :description="description"
       :site="site"
-      :gps="gps"
     />
     <div class="container mt-5">
       <div class="grid-container">
         <div class="map-item">
-          <map-component :place="formatPosition(name)" />
+          <map-component :mode="'place'" :position="position" />
         </div>
         <div class="grid-item">
           <join-component :it-list="itList" />
@@ -38,15 +37,16 @@ export default {
   async asyncData({ route, $axios }) {
     const { id } = route.params
     const { data } = await $axios.get('/api/poi_details/' + id)
+    console.log(data)
     return {
       name: data.name,
       description: data.description,
-      gps: data.gps,
       site: data.site,
       img: data.img,
       alt_img: data.alt_img,
       neigh: data.neigh,
       itList: data.itineraries,
+      position: data.place_id,
     }
   },
   head() {

@@ -11,7 +11,8 @@
     />
     <div class="container mt-5">
       <map-component
-        :place="formatPosition(name)"
+        :mode="'place'"
+        :position="position"
       />
     </div>
   </div>
@@ -34,7 +35,7 @@ export default {
     return {
       name: data.name,
       description: data.description,
-      gps: data.gps,
+      position: data.place_id,
       site: data.site,
       img: data.img,
       alt_img: data.alt_img,
