@@ -10,9 +10,13 @@
       :duration="duration"
     />
     <div class="container mt-5">
-      <div class="first-row">
-        <map-component :place="formatPosition(poiList[0].name)" />
-        <join-component :poi-list="poiList" />
+      <div class="grid-container">
+        <div class="grid-item">
+          <map-component :place="formatPosition(poiList[0].name)" />
+        </div>
+        <div class="grid-item">
+          <join-component :poi-list="poiList" />
+        </div>
       </div>
     </div>
   </div>
@@ -62,3 +66,14 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.grid-item {
+  text-align: center;
+}
+</style>

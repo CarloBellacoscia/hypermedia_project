@@ -10,9 +10,13 @@
       :gps="gps"
     />
     <div class="container mt-5">
-      <div class="row">
-        <map-component :place="formatPosition(name)" />
-        <join-component :it-list="itList" />
+      <div class="grid-container">
+        <div class="grid-item">
+          <map-component :place="formatPosition(name)" />
+        </div>
+        <div class="grid-item">
+          <join-component :it-list="itList" />
+        </div>
       </div>
     </div>
   </div>
@@ -62,3 +66,14 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.grid-item {
+  text-align: center;
+}
+</style>

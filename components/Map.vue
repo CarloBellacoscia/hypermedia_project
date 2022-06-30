@@ -1,12 +1,11 @@
 <template>
   <iframe
+    class="map"
     allowfullscreen
-    height="450"
     loading="lazy"
     referrerpolicy="no-referrer-when-downgrade"
     :src="'https://www.google.com/maps/embed/v1/place?key=AIzaSyDZ8TCwa4tSZdVGqzu7Ez1joVie69QJe64&q=' + place"
     style="border: 0"
-    width="600"
   >
   </iframe>
 </template>
@@ -29,4 +28,17 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.map {
+  width: 90%;
+  height: 500px;
+  object-fit: cover;
+}
+@media only screen and (max-width: 900px) {
+  .map {
+    width: 50%;
+    height: 300px;
+    object-fit: cover;
+  }
+}
+</style>
