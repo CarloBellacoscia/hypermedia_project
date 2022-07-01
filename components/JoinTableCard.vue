@@ -1,7 +1,7 @@
 <template>
   <div class="small-row">
     <div v-if="poiList" class="page container">
-      <h2 class="label">
+      <h2 v-if="poiList[0]" class="label">
         Traveling Stages:
       </h2>
       <div class="grid-container">
@@ -19,7 +19,7 @@
       </div>
     </div>
     <div v-if="itList" class="page container">
-      <h2 class="label">
+      <h2 v-if="itList[0]" class="label">
         Related Itineraries:
       </h2>
       <div class="grid-container">
@@ -37,7 +37,7 @@
       </div>
     </div>
     <div v-if="evList" class="page container">
-      <h2 class="label">
+      <h2 v-if="evList[0]" class="label">
         Events Hosted:
       </h2>
       <div class="grid-container">

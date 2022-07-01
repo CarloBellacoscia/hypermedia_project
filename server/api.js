@@ -42,7 +42,7 @@ async function initializeDatabaseConnection() {
     'point_of_interest',
     {
       name: DataTypes.STRING,
-      description: DataTypes.STRING(1024),
+      description: DataTypes.STRING(2048),
       place_id: DataTypes.STRING,
       neigh: DataTypes.STRING,
       site: DataTypes.STRING,
