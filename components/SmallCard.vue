@@ -197,5 +197,8 @@ export default {
     bottom: 40px;
     right: 0;
   }
+  .my-card-sub {
+    top: 15px;
+  }
 }
 </style>
