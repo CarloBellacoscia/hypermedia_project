@@ -39,7 +39,7 @@
     "name": "Niguarda hospital",
     "description": "Ospedale Niguarda Ca' Granda, best known simply as Ospedale Niguarda or Niguarda Hospital is largest and one of the most important hospitals in Milan, Italy.\n\nThe hospital was opened on October 3, 1939.\n\n",
     "place_id": "ChIJcRpO8MXAhkcR7SK_NTlIICs",
-    "neigh": "Guastalla",
+    "neigh": "Ca' Granda",
     "site": "https://www.ospedaleniguarda.it/EN/",
     "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Veduta_aerea_Niguarda.jpg/640px-Veduta_aerea_Niguarda.jpg",
     "alt_img": "aerial view of the hospital huge building"
@@ -102,7 +102,7 @@
     "name": "Sormani Library",
     "description": "The library is housed in a prestigious building, which has had a long history and as many names as its owners have been through the centuries. The building was marked by a long and complex story that saw architects such as Francesco Maria Ricchino, Francesco Croce, Benedetto Alfieri and Arrigo Arrighetti among its protagonists.",
     "place_id": "ChIJmdb6KKTGhkcRDh90uSn-R_o",
-    "neigh": "Gustalla",
+    "neigh": "Guastalla",
     "site": "https://milano.biblioteche.it/library/sormani/",
     "img": "https://www.exibart.com/repository/media/formidable/28/img/f86/Sormani.jpg",
     "alt_img": "view of the library building"
