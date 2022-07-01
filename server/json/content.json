@@ -31,8 +31,43 @@
   },
   "faq": {
     "title": "FAQ",
-    "image": "https://www.notiziariochimicofarmaceutico.it/files/2014/05/man-with-question-mark.jpg",
-    "alt_img": "a big question mark",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et tincidunt elit, in finibus elit. Aliquam nec posuere sem, at faucibus erat. Suspendisse iaculis lorem id odio placerat bibendum. Suspendisse potenti. Sed quis efficitur erat. Pellentesque non velit ipsum. Maecenas finibus felis a magna auctor finibus. Mauris tincidunt nibh sit amet ante consectetur, non cursus elit feugiat.Integer vitae elit at nunc lacinia egestas. Etiam nec sagittis lorem. Phasellus consectetur mauris eget neque posuere, vitae sagittis massa congue. Etiam vitae eleifend odio, sit amet tempus ex. Ut semper feugiat erat, id consequat elit volutpat sed. Curabitur vel arcu at risus vehicula blandit in ut nunc. In nec pellentesque tellus. Maecenas vitae purus lacinia, tristique elit vitae, interdum est. Ut feugiat nulla et vestibulum efficitur. Suspendisse potenti. Duis ex dolor, vestibulum a leo eu, dapibus elementum ipsum. Curabitur euismod rhoncus nulla ac interdum. Mauris vulputate viverra scelerisque. Mauris ullamcorper tempus eros."
+    "image": "https://www.studionasca.it/wp-content/uploads/2021/06/image_illustrations_05.png",
+    "alt_img": "a cloud with FAQ written in it",
+    "brief": "A collection of the most frequently asked question about the city of milan",
+    "content": [
+      {
+        "title": "I have to rent a car to visit milan?",
+        "description": "No, you dont have to! Milan is one of the most advanced city in terms of public transport system. You can use the Metro, Buses or the beautiful yellow tram."
+
+      },
+      {
+        "title": "How much does it cost take public transport?",
+        "description": "The standard ticket price is 2€, that you can pay also with your credit card entering the metro. there are discount for daily and montly use. 24h ticket cost 7€, 3 day 12€."
+
+      },
+      {
+        "title": "At what time do public transport close?",
+        "description": "The Milan metro operates every day, from 6:00 to 00:30. On December 25th and May 1st it opens from 7:00 to 19:30. The frequency of the metro lines in the main stations varies between 2 and 4 minutes, depending on the time and month. During night time there are night buses routes"
+
+      },
+      {
+        "title": "There are alternative means of transport?",
+        "description": "Yes! Milan is full of free float transport such as electric scooter, electric bycicle, electric motorbike. You can also rent a car if you want, only for the time you need it."
+
+      },
+      {
+        "title": "How can i reach the airports? ",
+        "description": "There are private and public buses from the main railway stations to the main airport (Linate, Malpensa and Orio al Serio"
+      },
+      {
+        "title": "Can i swim in the canals?",
+        "description": "No, in addition to being strongly discouraged, it is also expressly prohibited by law."
+      },
+      {
+        "title": "I have to wear the mask on public transport system?",
+        "description": "Yes, you must wear an FFP2 mask on the public transport system all the time."
+      }
+    ]
+
   }
 }
