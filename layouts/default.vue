@@ -62,7 +62,13 @@ p {
   font-family: 'Open Sans', sans-serif;
   font-size: 17px;
 }
+@media only screen and (max-width: 900px) {
 
+  h1 {
+    font-size: 25px;
+    line-height: 26px;
+  }
+}
 /*
 *, ::after, ::before {
   box-sizing: inherit;

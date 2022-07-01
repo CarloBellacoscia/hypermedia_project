@@ -163,7 +163,10 @@ export default {
     justify-content: center;
     padding-bottom:30px;
   }
-
+  .copyright{
+    font-size: 10px;
+    line-height: 20px;
+  }
   .my-motto {
     line-height: 15px;
     font-family: 'Archivo Narrow', sans-serif;
@@ -172,7 +175,7 @@ export default {
   .my-footer{
     justify-content: space-between;
     display: table;
-    height: 130px;
+    height: 145px;
   }
 
   .my-item {
