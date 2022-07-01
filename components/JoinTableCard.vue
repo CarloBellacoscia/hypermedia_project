@@ -113,6 +113,7 @@ export default {
   display: grid;
   grid-template-columns: auto auto auto;
   max-width: 100%;
+  margin-left: 30px;
 }
 
 .container{
@@ -138,6 +139,7 @@ export default {
 @media only screen and (max-width: 900px) {
   .grid-container {
     grid-template-columns: auto auto;
+    margin-left: 15px;
   }
 }
 
