@@ -58,15 +58,6 @@ export default {
 
 }
 
-@media only screen and (max-width: 900px) {
- .content-row {
-    display: block;
-    justify-content: center;
-    padding: 10px 10px 10px 10px;
- }
-}
-
-
 
 .my-image {
   position: relative;
@@ -88,5 +79,17 @@ export default {
 .details-box {
   margin: 10px 10px 10px 10px;
 
+}
+
+@media only screen and (max-width: 900px) {
+  .content-row {
+    display: block;
+    justify-content: center;
+    padding: 10px 8px 10px 8px;
+  }
+  .my-image {
+    width: 330px;
+    height: 210px;
+  }
 }
 </style>

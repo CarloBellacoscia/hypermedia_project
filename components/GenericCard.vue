@@ -1,7 +1,6 @@
 <template>
   <div class="my-card">
     <nuxt-link :to="`/${category}/${id}`" style="text-decoration: none">
-      <div class="my-container">
         <img class="my-card-image" :src="img" :alt="alt_img" />
         <div v-if="date" style="width: 270px" class="my-card-date">
           <img
@@ -32,7 +31,6 @@
             </div>
           </div>
         </div>
-      </div>
     </nuxt-link>
   </div>
 </template>
@@ -86,6 +84,7 @@ export default {
 </script>
 
 <style scoped>
+
 .my-card {
   top:0;
   left: 0;
@@ -105,34 +104,15 @@ export default {
   background: rgba(0, 0, 0, 0.7);
 }
 
-.my-container {
-  position: absolute;
-  margin: 4px 10px 10px -10px;
-  height: 390px;
-  width: 390px;
-}
-
 .my-card-image {
   position: absolute;
   z-index: 0;
   bottom: 0;
   left: 0;
-  height: 390px;
-  width: 390px;
+  height: 400px;
+  width: 400px;
   object-fit: cover;
   border: 2px solid lightgray;
-}
-
-@media only screen and (max-width: 990px) {
-  .my-container{
-    height: 240px;
-  }
-  .my-card-image{
-    height: 240px;
-  }
-  .my-card {
-    height: 250px;
-  }
 }
 
 .my-card-title {
@@ -142,9 +122,7 @@ export default {
   left: 10px;
   right: 10px;
   top: 10px;
-
   font-family: 'Archivo', sans-serif;
-  font-weight: 400;
   font-size: 28px;
   line-height: 33px;
   color: #fff;
@@ -152,7 +130,6 @@ export default {
 .my-card-sub {
   position: absolute;
   font-family: 'Archivo', sans-serif;
-  font-weight: 400;
   font-size: 20px;
   line-height: 22px;
   top: 46px;
@@ -189,8 +166,32 @@ export default {
   height: 30px;
   position: absolute;
   bottom: 90px;
-  right: 10px;
+  left: 110px;
   background-color: rgba(217, 217, 217, 0.8);
   text-align: right;
 }
+
+@media only screen and (max-width: 990px) {
+
+  .my-card-title {
+    width: 350px
+  }
+  .my-card-image{
+    height: 250px;
+    width: 350px;
+
+  }
+  .my-card {
+    height: 250px;
+    width: 350px;
+  }
+  .my-card-box-shadow {
+    width: 330px;
+  }
+
+  .my-card-date{
+    left: 70px;
+  }
+}
+
 </style>

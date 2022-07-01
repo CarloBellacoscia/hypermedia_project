@@ -221,7 +221,7 @@ input:hover {
   line-height: 25px;
   position: sticky;
   top: 80px;
-  z-index: 1000;
+  z-index: 900;
   padding: 10px 0 10px 30px;
   margin-left: -30px;
 }

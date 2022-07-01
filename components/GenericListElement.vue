@@ -65,7 +65,7 @@ p{
 }
 
 .my-elem-duration {
-  min-width: 150px;
+  min-width: 100px;
   display: flex;
 }
 

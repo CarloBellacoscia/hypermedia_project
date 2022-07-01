@@ -28,7 +28,6 @@
   </div>
 </template>
 
-.footer { }
 <script>
 export default {
   name: 'TheFooter',
@@ -59,6 +58,7 @@ export default {
   background-color: #252525;
   height: 161px;
   width: 100%;
+  margin:0;
   position: absolute;
   bottom: auto;
 }
@@ -68,7 +68,7 @@ export default {
   padding-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  grid-template-columns: 20% 60% 20%;
+  grid-template-columns: 30% 40% 30%;
 }
 
 .my-logo {
@@ -77,7 +77,6 @@ export default {
   color: white;
   font-family: 'Archivo Narrow', sans-serif;
   font-style: normal;
-  font-weight: 700;
   font-size: 30px;
   line-height: 33px;
   text-decoration: none;
@@ -106,7 +105,7 @@ export default {
   font-style: normal;
   font-weight: 600;
   font-size: 25px;
-  float: left;
+  float: inherit;
   list-style-type: none;
   text-align: center;
   padding-right: 20px;
@@ -158,22 +157,35 @@ export default {
 
 @media only screen and (max-width: 900px) {
   .my-list {
-    width: 200px;
+    width: 150px;
     display: table;
     margin: 0 auto;
     justify-content: center;
-    padding: 0 10px 30px 40px;
+    padding-bottom:30px;
   }
 
+  .my-motto {
+    line-height: 15px;
+    font-family: 'Archivo Narrow', sans-serif;
+    font-size: 15px;
+  }
   .my-footer{
     justify-content: space-between;
     display: table;
+    height: 130px;
   }
 
   .my-item {
-
-    font-size: 20px;
+    font-size: 17px;
   }
 
+  .my-logo{
+    font-size: 20px;
+    line-height: 23px;  }
+
+  .my-language {
+    font-size: 15px;
+    line-height: 17px;
+  }
 }
 </style>

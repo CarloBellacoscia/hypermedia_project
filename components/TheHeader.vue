@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light px-3 header">
+  <nav class="navbar navbar-expand-lg navbar-light  header">
     <a class="navbar-brand mylogo" href="/"
       ><span class="low-highlight"> MI</span>GUARDI</a
     >
@@ -71,16 +71,15 @@ export default {
         },
       ],
     }
-  },
-  methods:{
-      test (){
-        return false
-      }
   }
 }
 </script>
 
 <style scoped>
+
+.navbar-toggler{
+  margin-right: 15px;
+}
 
 .header {
   background-color: #252525;
@@ -98,9 +97,9 @@ export default {
   font-size: 25px;
 }
 
+/*drop down menu style*/
 .navbar-collapse {
-  padding-left: 20px;
-  padding-right: 100px;
+  padding-left: 30px;
   background-color: #252525;
 }
 
@@ -146,9 +145,13 @@ export default {
 }
 
 @media only screen and (max-width: 900px) {
+
   .mylogo{
     font-size: 40px;
     line-height: 54px;
+    margin-right: 0;
+    padding-right:0;
+    padding-left: 7px;
   }
 
 }
