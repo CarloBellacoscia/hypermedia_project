@@ -86,7 +86,7 @@ export default {
 
 .grid-item {
   text-align: center;
-  max-width: 50%;
+  max-width: 100%;
 }
 
 .map-item {

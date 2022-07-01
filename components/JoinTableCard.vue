@@ -38,6 +38,7 @@
     </div>
     <div v-if="evList" class="page container">
       <h2 v-if="evList[0]" class="label">
+        <br>
         Events Hosted:
       </h2>
       <div class="grid-container">
@@ -111,11 +112,13 @@ export default {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  max-width: 50%;
+  max-width: 100%;
 }
 
 .container{
-  max-width: 50%;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
 }
 .grid-item {
   text-align: center;
@@ -123,7 +126,7 @@ export default {
 
 .label {
   text-align: justify;
-  width: 500px;
+  width: 100%;
 }
 
 .small-row{

@@ -1,7 +1,6 @@
 <template>
   <div class="my-card">
     <nuxt-link :to="`/${category}/${id}`" style="text-decoration: none">
-      <div class="my-container">
         <img class="my-card-image" :src="img" :alt="alt_img" />
         <div v-if="date" style="width: 270px" class="my-card-date">
           <img
@@ -32,7 +31,6 @@
             </div>
           </div>
         </div>
-      </div>
     </nuxt-link>
   </div>
 </template>
@@ -90,6 +88,7 @@ export default {
   top:0;
   left: 0;
   position: relative;
+
   width: 200px;
   height: 200px;
 }
@@ -100,16 +99,9 @@ export default {
   position: absolute;
   bottom: 10px;
   left: 10px;
-  width: 160px;
+  width: 188px;
   height: 40px;
   background: rgba(0, 0, 0, 0.7);
-}
-
-.my-container {
-  position: absolute;
-  margin: 4px 10px 10px -10px;
-  height: 200px;
-  width: 200px;
 }
 
 .my-card-image {
@@ -117,28 +109,16 @@ export default {
   z-index: 0;
   bottom: 0;
   left: 0;
-  height: 180px;
-  width: 180px;
+  height: 200px;
+  width: 200px;
   object-fit: cover;
   border: 2px solid lightgray;
-}
-
-@media only screen and (max-width: 990px) {
-  .my-container{
-    height: 100px;
-  }
-  .my-card-image{
-    height: 100px;
-  }
-  .my-card {
-    height: 110px;
-  }
 }
 
 .my-card-title {
   position: absolute;
   text-align: left;
-  width: 380px;
+  width: 90%;
   height: 20px;
   left: 10px;
   right: 10px;
@@ -146,7 +126,7 @@ export default {
 
   font-family: 'Archivo', sans-serif;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 15px;
   line-height: 25px;
   color: #fff;
 }
@@ -191,8 +171,31 @@ export default {
   height: 20px;
   position: absolute;
   bottom: 50px;
-  right: 20px;
+  right: 5px;
   background-color: rgba(217, 217, 217, 0.8);
   text-align: right;
+}
+
+@media only screen and (max-width: 990px) {
+  .my-card-image{
+    height: 150px;
+    width: 150px;
+  }
+  .my-card {
+    width: 150px;
+    height: 150px;
+  }
+  .my-card-box-shadow {
+    width: 140px;
+    height: 30px;
+  }
+  .my-card-title {
+    font-size: 11px;
+  }
+  .my-card-date {
+    height: 20px;
+    bottom: 40px;
+    right: 0;
+  }
 }
 </style>

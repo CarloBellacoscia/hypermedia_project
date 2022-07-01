@@ -4,7 +4,7 @@
       <h1 class="page">
         {{ name }}
       </h1>
-      <div class="first-row">
+      <div class="first-row grid-container">
         <img :src="image" :alt="alt_image" />
         <div class="details">
           <div v-if="start_date" class="grid-container">
@@ -95,25 +95,23 @@ export default {
 
 <style scoped>
 img {
-  width: 200%;
+  width: 100%;
   max-width: 500px;
   height: 300px;
   object-fit: cover;
 }
 .details {
-  padding-left: 55%;
+  padding: 10px 10px 10px 10px;
 }
 
 .first-row {
   display: grid;
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 20px 20px 20px 20px;
   grid-template-columns: 20% 60% 20%;
 }
 
 .details {
-  padding-left: 50%;
+
 }
 
 .text {
@@ -154,5 +152,10 @@ img {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto;
+}
+@media only screen and (max-width: 900px) {
+  .grid-container {
+    grid-template-columns: auto;
+  }
 }
 </style>
