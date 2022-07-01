@@ -10,7 +10,9 @@
       :duration="duration"
     />
     <div class="container mt-5">
-      <div class="grid-container">
+      <div
+        :class="isEmpty(poiList) ? 'grid-container-empty' : 'grid-container'"
+      >
         <div class="map-item">
           <map-component :mode="'directions'" :poi-list="poiList" />
         </div>
@@ -63,6 +65,9 @@ export default {
     backToList() {
       this.$router.push('/itineraries')
     },
+    isEmpty(poiList) {
+      return poiList[0] == null;
+    },
   },
 }
 </script>
@@ -71,6 +76,11 @@ export default {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto;
+}
+
+.grid-container-empty {
+  display: grid;
+  grid-template-columns: auto;
 }
 
 .grid-item {

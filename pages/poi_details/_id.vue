@@ -9,15 +9,16 @@
       :site="site"
     />
     <div class="container mt-5">
-      <div class="grid-container">
+      <div
+        :class="
+          isEmpty(itList, evList) ? 'grid-container-empty' : 'grid-container'
+        "
+      >
         <div class="map-item">
           <map-component :mode="'place'" :position="position" />
         </div>
         <div class="grid-item">
-          <join-component
-            :it-list="itList"
-            :ev-list="evList"
-          />
+          <join-component :it-list="itList" :ev-list="evList" />
         </div>
       </div>
     </div>
@@ -40,7 +41,6 @@ export default {
   async asyncData({ route, $axios }) {
     const { id } = route.params
     const { data } = await $axios.get('/api/poi_details/' + id)
-    console.log(data)
     return {
       name: data.name,
       description: data.description,
@@ -67,6 +67,9 @@ export default {
     backToList() {
       this.$router.push('/poi')
     },
+    isEmpty(itList, evList) {
+      return itList[0] == null && evList[0] == null;
+    },
   },
 }
 </script>
@@ -75,6 +78,10 @@ export default {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto;
+}
+.grid-container-empty {
+  display: grid;
+  grid-template-columns: auto;
 }
 
 .grid-item {
@@ -91,5 +98,7 @@ export default {
   .grid-container {
     grid-template-columns: auto;
   }
+}
+@media {
 }
 </style>

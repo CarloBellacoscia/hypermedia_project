@@ -11,7 +11,9 @@
       :end_date="formatDate(end_date)"
     />
     <div class="container mt-5">
-      <div class="grid-container">
+      <div
+        :class="poiItem ? 'grid-container-empty' : 'grid-container'"
+      >
         <div class="map-item">
           <map-component :position="position" :mode="'place'" />
         </div>
@@ -69,6 +71,11 @@ export default {
 .grid-container {
   display: grid;
   grid-template-columns: auto auto;
+}
+
+.grid-container-empty {
+  display: grid;
+  grid-template-columns: auto;
 }
 
 .grid-item {

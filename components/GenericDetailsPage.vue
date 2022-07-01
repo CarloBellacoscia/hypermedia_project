@@ -19,7 +19,7 @@
             <h2 class="label">Duration:<br /></h2>
             <h3 class="text">{{ duration }}<br /></h3>
           </div>
-          <div v-if="neigh">
+          <div v-if="neigh" class="grid-container">
             <img
               class="position-icon"
               src="https://cdn-icons-png.flaticon.com/512/684/684809.png"
@@ -149,5 +149,10 @@ img {
   color: black;
   max-height: 30px;
   max-width: 30px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
 }
 </style>
