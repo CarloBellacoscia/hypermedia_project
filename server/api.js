@@ -30,7 +30,7 @@ async function initializeDatabaseConnection() {
       name: DataTypes.STRING,
       start_date: DataTypes.DATE,
       end_date: DataTypes.DATE,
-      description: DataTypes.STRING,
+      description: DataTypes.STRING(2048),
       site: DataTypes.STRING,
       img: DataTypes.STRING,
       alt_img: DataTypes.STRING,
