@@ -1,15 +1,51 @@
 [
   {
     "itineraryId": 1,
-    "pointOfInterestId": 1
+    "pointOfInterestId": 10
+  },
+  {
+    "itineraryId": 1,
+    "pointOfInterestId": 13
+  },
+  {
+    "itineraryId": 1,
+    "pointOfInterestId": 14
+  },
+  {
+    "itineraryId": 1,
+    "pointOfInterestId": 15
   },
   {
     "itineraryId": 2,
-    "pointOfInterestId": 2
+    "pointOfInterestId": 3
+  },
+  {
+    "itineraryId": 2,
+    "pointOfInterestId": 4
+  },
+  {
+    "itineraryId": 2,
+    "pointOfInterestId": 19
   },
   {
     "itineraryId": 3,
     "pointOfInterestId": 1
+  },
+  {
+    "itineraryId": 3,
+    "pointOfInterestId": 9
+  },
+  {
+    "itineraryId": 3,
+    "pointOfInterestId": 12
+  },
+  {
+    "itineraryId": 3,
+    "pointOfInterestId": 16
+  },
+  {
+    "itineraryId": 3,
+    "pointOfInterestId": 17
   },
   {
     "itineraryId": 4,
@@ -25,6 +61,46 @@
   },
   {
     "itineraryId": 4,
-    "pointOfInterestId": 4
+    "pointOfInterestId": 5
+  },
+  {
+    "itineraryId": 4,
+    "pointOfInterestId": 6
+  },
+  {
+    "itineraryId": 4,
+    "pointOfInterestId": 7
+  },
+  {
+    "itineraryId": 4,
+    "pointOfInterestId": 8
+  },
+  {
+    "itineraryId": 4,
+    "pointOfInterestId": 9
+  },
+  {
+    "itineraryId": 4,
+    "pointOfInterestId": 18
+  },
+  {
+    "itineraryId": 5,
+    "pointOfInterestId": 1
+  },
+  {
+    "itineraryId": 5,
+    "pointOfInterestId": 2
+  },
+  {
+    "itineraryId": 5,
+    "pointOfInterestId": 5
+  },
+  {
+    "itineraryId": 5,
+    "pointOfInterestId": 6
+  },
+  {
+    "itineraryId": 5,
+    "pointOfInterestId": 7
   }
 ]

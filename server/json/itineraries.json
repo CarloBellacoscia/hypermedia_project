@@ -1,30 +1,37 @@
 [
   {
-    "name": "Tour Arte 1",
-    "description": "fa caldo",
-    "img": "https://libreriamo.it/wp-content/uploads/2018/12/galleria-vittorio-emanuele-1-1.jpg",
-    "alt_img": "vittorio emanuele gallery",
-    "duration": "7 giorni"
+    "name": "Tour of museums",
+    "description": "",
+    "img": "https://www.allafinediunviaggio.com/wp-content/uploads/2020/06/musei-a-milano-300x215.jpg",
+    "alt_img": "room of a generic museum",
+    "duration": "2 days"
   },
   {
-    "name": "Tour Città Architettura 2",
-    "description": "fa caldo",
-    "img": "https://libreriamo.it/wp-content/uploads/2018/12/galleria-vittorio-emanuele-1-1.jpg",
-    "alt_img": "vittorio emanuele gallery",
-    "duration": "1 giorno"
+    "name": "Tour of theaters",
+    "description": "",
+    "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0b/8d/47/bb/teatro-alla-scala.jpg?w=500&h=-1&s=1",
+    "alt_img": "audience of a generic theater",
+    "duration": "1 day"
   },
   {
-    "name": "Tour Futuro e Passato 3",
-    "description": "fa caldo",
-    "img": "https://libreriamo.it/wp-content/uploads/2018/12/galleria-vittorio-emanuele-1-1.jpg",
-    "alt_img": "vittorio emanuele gallery",
-    "duration": "3 giorni"
+    "name": "Tour of churches",
+    "description": "",
+    "img": "https://www.informagiovani-italia.com/chiesa_san_maurizio_al_monastero_maggiore_milano1.jpg",
+    "alt_img": "Image of the entrance of the church of San Maurizio al Monastero Maggiore",
+    "duration": "2 days"
   },
   {
-    "name": "Tour Weekend Al Volo",
-    "description": "fa caldo",
-    "img": "https://libreriamo.it/wp-content/uploads/2018/12/galleria-vittorio-emanuele-1-1.jpg",
-    "alt_img": "vittorio emanuele gallery",
-    "duration": "3 giorno"
+    "name": "Discover MI in a Weekend",
+    "description": "",
+    "img": "https://www.yesmilano.it/sites/default/files/styles/testata_full/public/itinerario/copertina/6298/23579/posti-da-vedere-fotografare-a-milano-di-notte.jpg?itok=wP9aMJ1Z",
+    "alt_img": "Drone photo of the skyline of Milan",
+    "duration": "3 days"
+  },
+  {
+    "name": "Discover MI in a day",
+    "description": "",
+    "img": "https://img.ilgcdn.com/sites/default/files/styles/xl/public/foto/2022/05/02/1651509563-milano-duomo-1.jpg?_=1651509563",
+    "alt_img": "Photo of the entrance of Milan Cathedral",
+    "duration": "1 day"
   }
 ]
