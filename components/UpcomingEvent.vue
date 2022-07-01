@@ -17,9 +17,9 @@
         :img="eventList[i].img"
         :alt_img="eventList[i].alt_img"
         :date="
-          formatDate(eventList[i].start_date) +
+          formatDate(eventList[i].start_date,1) +
           ' - ' +
-          formatDate(eventList[i].end_date)
+          formatDate(eventList[i].end_date,1)
         "
         :position="eventList[i].position"
       />

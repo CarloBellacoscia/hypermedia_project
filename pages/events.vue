@@ -5,22 +5,25 @@
         {{ title }}
       </h1>
       <div class="selector">
-        <button style="margin-right: 20px" @click="all()">All</button>
-        <button @click="today()">Today</button>
-        <button style="margin-right: 20px" @click="tomorrow()">Tomorrow</button>
+        <button style="margin-right: 20px" @click="setAll()">All</button>
+        <button @click="setToday()">Today</button>
+        <button style="margin-right: 20px" @click="setTomorrow()">
+          Tomorrow
+        </button>
 
-        <button @click="season(3, 20, 20, 'This Spring')">Spring</button>
-        <button @click="season(6, 20, 22, 'This Summer')">Summer</button>
-        <button @click="season(9, 22, 21, 'This Fall')">Fall</button>
-        <button @click="season(12, 21, 20, 'This Winter')">Winter</button>
-
-        <p v-show="!showAll" class="filtered-dates">
-          {{
-            formatDate(new Date(initial_date), true) +
-            ' - ' +
-            formatDate(new Date(final_date), true)
-          }}
-        </p>
+        <button @click="season([20, 3], [21, 6], 'This Spring')">Spring</button>
+        <button @click="season([21, 6], [22, 9], 'This Summer')">Summer</button>
+        <button @click="season([22, 9], [21, 12], 'This Fall')">Fall</button>
+        <button @click="season([21, 12], [19, 3], 'This Winter', true)">
+          Winter
+        </button>
+        <div v-show="!showAll">
+          <input v-model="init" :placeholder="init" />-<input
+            v-model="fin"
+            :placeholder="fin"
+          />
+          <button @click="parseDates()">Filter</button>
+        </div>
       </div>
 
       <div class="row mt-3">
@@ -77,19 +80,112 @@ export default {
       final_date: new Date(),
       title: 'All Events',
       showAll: true,
-      year: new Date().getFullYear(),
       count: 0,
-
+      today: '',
+      init: '',
+      fin: '',
     }
   },
   mounted() {
+    this.initialize()
     this.countCards()
   },
   updated() {
     this.countCards()
-
   },
   methods: {
+    initialize() {
+      const temp = new Date()
+      this.init = ''
+      this.init +=
+        temp.getDate() + '/' + (temp.getMonth() + 1) + '/' + temp.getFullYear()
+      this.fin = ''
+      this.today = ''
+      this.fin += this.init
+      this.today += this.fin
+      console.log(this.fin, this.init)
+    },
+    parseDates() {
+      const inA = this.init.split('/').map((e) => {
+        return parseInt(e)
+      })
+      const finA = this.fin.split('/').map((e) => {
+        return parseInt(e)
+      })
+      console.log(inA, finA)
+      this.setDates(inA, finA)
+    },
+    setDates(inA, finA) {
+      this.showAll = false
+      this.initial_date = new Date(
+        new Date().setFullYear(inA[2], inA[1] - 1, inA[0])
+      ).setHours(0, 0, 0)
+      this.final_date = new Date(
+        new Date().setFullYear(finA[2], finA[1] - 1, finA[0])
+      ).setHours(23, 59, 59)
+      if (!(this.initial_date && this.final_date)) {
+        this.initialize()
+        this.setAll()
+      } else {
+        this.title = 'Custom Dates'
+      }
+      this.log()
+    },
+
+    season(init, fin, title, carry = false) {
+      this.showAll = false
+      let temp = new Date().getFullYear()
+      this.init = ''
+      this.init += init[0] + '/' + init[1] + '/' + temp
+      if (carry) {
+        temp += 1
+      }
+      this.fin = ''
+      this.fin += fin[0] + '/' + fin[1] + '/' + temp
+      this.parseDates()
+      this.title = title
+      this.log()
+    },
+    setAll() {
+      this.showAll = true
+      this.title = 'All Events'
+    },
+    setToday() {
+      this.showAll = false
+      this.init = ''
+      this.init += this.today
+      this.fin = ''
+      this.fin += this.today
+      this.parseDates()
+      this.title = 'Today'
+      this.log()
+    },
+    setTomorrow() {
+      this.showAll = false
+      const temp1 = new Date(new Date().setHours(24, 0, 0))
+      this.init = ''
+      this.init +=
+        temp1.getDate() +
+        '/' +
+        (temp1.getMonth() + 1) +
+        '/' +
+        temp1.getFullYear()
+      const temp2 = new Date(new Date().setHours(48, 0, 0))
+      this.fin = ''
+      this.fin +=
+        temp2.getDate() +
+        '/' +
+        (temp2.getMonth() + 1) +
+        '/' +
+        temp2.getFullYear()
+      this.title = 'Tomorrow'
+      this.log()
+    },
+    log() {
+      console.log(new Date(this.initial_date))
+      console.log(new Date(this.final_date))
+    },
+
     countCards() {
       let j = 0
       const x = document.getElementsByClassName('card-to-count')
@@ -101,53 +197,26 @@ export default {
       }
       this.count = j
     },
-
-    // i compute the seasons summing 3 to the moth i pass to the method
-    season(month, init, fin, title) {
-      this.showAll = false
-      this.initial_date = new Date(
-        new Date().setFullYear(this.year, month - 1, init)
-      ).setHours(0, 0, 0)
-      this.final_date = new Date(
-        new Date().setFullYear(this.year, month + 2, fin - 1)
-      ).setHours(23, 59, 59)
-      this.title = title
-      this.log()
-    },
-    all() {
-      this.showAll = true
-      this.title = 'All Events'
-    },
-    today() {
-      this.showAll = false
-      this.initial_date = new Date().setHours(0, 0, 0)
-      this.final_date = new Date().setHours(24, 0, 0)
-      this.title = 'Today'
-      this.log()
-    },
-    tomorrow() {
-      this.showAll = false
-      this.initial_date = new Date().setHours(24, 0, 0)
-      this.final_date = new Date().setHours(48, 0, 0)
-      this.title = 'Tomorrow'
-      this.log()
-    },
-    log() {
-      console.log(new Date(this.initial_date))
-      console.log(new Date(this.final_date))
-    },
   },
 }
 </script>
 
 <style scoped>
-.filtered-dates {
+button {
+  margin: 0 2px 0 2px;
+}
+input {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  margin: 0 10px 0 0px;
+  text-align: center;
+  width: 100px;
+}
+input:hover {
   background-color: rgba(0, 0, 0, 0.1);
-  margin: 0px 10px 0px 10px;
-  padding: 3px 3px 3px 3px;
 }
 .selector {
-  display: flex;
+  display: block;
   background-color: #cccccc;
   font-size: 20px;
   line-height: 25px;
