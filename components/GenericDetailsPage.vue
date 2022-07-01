@@ -20,10 +20,15 @@
             <h3 class="text">{{ duration }}<br /></h3>
           </div>
           <div v-if="neigh">
-            <h2 class="label">Neighborhood:<br /></h2>
+            <img
+              class="position-icon"
+              src="https://cdn-icons-png.flaticon.com/512/684/684809.png"
+              alt="position icon"
+            />
             <h3 class="text">{{ neigh }}<br /></h3>
           </div>
           <div v-if="site">
+            <br /><br />
             <button class="button" @click="goToSite(site)">Site</button>
           </div>
         </div>
@@ -139,4 +144,10 @@ img {
   opacity: 80%;
 }
 
+.position-icon {
+  position: relative;
+  color: black;
+  max-height: 30px;
+  max-width: 30px;
+}
 </style>
