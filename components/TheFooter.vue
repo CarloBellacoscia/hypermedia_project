@@ -1,5 +1,5 @@
 <template>
-  <div class="footer">
+  <div class="my-footer">
     <div class="first-row">
       <div class="my-brand">
         <a class="my-logo" href="/"
@@ -55,7 +55,7 @@ export default {
 
 <style scoped>
 
-.footer {
+.my-footer {
   background-color: #252525;
   height: 161px;
   width: 100%;
@@ -100,13 +100,6 @@ export default {
   justify-content: center;
 }
 
-@media only screen and (max-width: 900px) {
-  .my-list {
-    display: block;
-    justify-content: center;
-    padding: 10px 10px 10px 10px;
-  }
-}
 
 .my-item {
   font-family: 'Archivo Narrow', sans-serif;
@@ -134,7 +127,6 @@ export default {
   background-color: rgb(0,0,0,0.3);
   font-family: 'Archivo Narrow', sans-serif;
   font-style: italic;
-  font-weight: 100;
   font-size: 15px;
 
   line-height: 25px;
@@ -148,7 +140,6 @@ export default {
   color: white;
   font-family: 'Archivo Narrow', sans-serif;
   font-style: normal;
-  font-weight: 400;
   font-size: 20px;
   line-height: 22px;
   text-align: right;
@@ -162,5 +153,27 @@ export default {
     #d70000 90%,
     transparent 80%
   );
+}
+
+
+@media only screen and (max-width: 900px) {
+  .my-list {
+    width: 200px;
+    display: table;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 0 10px 30px 40px;
+  }
+
+  .my-footer{
+    justify-content: space-between;
+    display: table;
+  }
+
+  .my-item {
+
+    font-size: 20px;
+  }
+
 }
 </style>

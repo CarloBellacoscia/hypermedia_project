@@ -21,10 +21,7 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Archivo:wght@100&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Archivo:wght@100&family=Open+Sans:wght@300&display=swap');
 
 /*responsive bar*/
 .navbar-toggler-icon {
@@ -45,7 +42,6 @@ button {
 
 h1 {
   font-family: 'Archivo', sans-serif;
-  font-weight: 400;
   font-size: 30px;
   line-height: 33px;
   text-decoration: none;
@@ -53,7 +49,6 @@ h1 {
 }
 h2 {
   font-family: 'Archivo', sans-serif;
-  font-weight: 400;
   font-size: 40px;
   line-height: 45px;
   text-decoration: none;
@@ -63,10 +58,8 @@ h2 {
 p {
   text-decoration: none;
   text-align: left;
-  font-weight: 400;
   color: black;
   font-family: 'Open Sans', sans-serif;
-  font-style: normal;
   font-size: 17px;
 }
 

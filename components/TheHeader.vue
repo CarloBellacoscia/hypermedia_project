@@ -95,8 +95,6 @@ export default {
 
 .nav-item {
   font-family: 'Archivo Narrow', sans-serif;
-  font-style: normal;
-  font-weight: 600;
   font-size: 25px;
 }
 
@@ -140,15 +138,20 @@ export default {
   color: white;
   padding-left: 50px;
   font-family: 'Archivo Narrow', sans-serif;
-  font-style: normal;
-  font-weight: 700;
   font-size: 55px;
   line-height: 74px;
-  display: flex;
+  display: table;
   align-items: center;
   text-align: center;
 }
 
+@media only screen and (max-width: 900px) {
+  .mylogo{
+    font-size: 40px;
+    line-height: 54px;
+  }
+
+}
 
 
 </style>
