@@ -1,5 +1,5 @@
 <template>
-  <custom-page :title="title" :image="image" :description="description" />
+  <custom-page :title="title" :image="image" :brief="brief" :alt-img="altImg" :content="content" />
 </template>
 
 <script>
@@ -9,18 +9,20 @@ export default {
   components: {
     CustomPage,
   },
-  data() {
-    return {}
-  },
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/page-info/about')
     const title = data.title
     const image = data.image
-    const description = data.description
+    const altImg = data.alt_img
+    const brief = data.brief
+    const content = data.content
     return {
       title,
-      description,
+      content,
       image,
+      altImg,
+      brief
+
     }
   },
 }

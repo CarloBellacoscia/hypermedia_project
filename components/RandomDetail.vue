@@ -49,9 +49,6 @@ export default {
 </script>
 
 <style scoped>
-.container {
-
-}
 
 
 .content-row {
@@ -70,8 +67,6 @@ export default {
 }
 
 
-.title-row {
-}
 
 .my-image {
   position: relative;

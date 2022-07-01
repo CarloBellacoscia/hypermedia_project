@@ -51,6 +51,14 @@ h1 {
   text-decoration: none;
   color: black;
 }
+h2 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 45px;
+  text-decoration: none;
+  color: black;
+}
 
 p {
   text-decoration: none;
