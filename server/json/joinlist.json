@@ -9,11 +9,11 @@
   },
   {
     "itineraryId": 1,
-    "pointOfInterestId": 14
+    "pointOfInterestId": 15
   },
   {
     "itineraryId": 1,
-    "pointOfInterestId": 15
+    "pointOfInterestId": 14
   },
   {
     "itineraryId": 2,
@@ -33,7 +33,11 @@
   },
   {
     "itineraryId": 3,
-    "pointOfInterestId": 9
+    "pointOfInterestId": 16
+  },
+  {
+    "itineraryId": 3,
+    "pointOfInterestId": 17
   },
   {
     "itineraryId": 3,
@@ -41,11 +45,7 @@
   },
   {
     "itineraryId": 3,
-    "pointOfInterestId": 16
-  },
-  {
-    "itineraryId": 3,
-    "pointOfInterestId": 17
+    "pointOfInterestId": 9
   },
   {
     "itineraryId": 4,

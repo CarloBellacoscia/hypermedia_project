@@ -7,16 +7,16 @@
       <div class="first-row">
         <img :src="image" :alt="alt_image" />
         <div class="details">
-          <div v-if="start_date">
-            <h2 class="label">Start Date:<br /></h2>
+          <div v-if="start_date" class="grid-container">
+            <h3 class="label">Start Date:<br /></h3>
             <h3 class="text">{{ start_date }}<br /></h3>
           </div>
-          <div v-if="end_date">
-            <h2 class="label">End Date:<br /></h2>
+          <div v-if="end_date" class="grid-container">
+            <h3 class="label">End Date:<br /></h3>
             <h3 class="text">{{ end_date }}<br /></h3>
           </div>
-          <div v-if="duration">
-            <h2 class="label">Duration:<br /></h2>
+          <div v-if="duration" class="grid-container">
+            <h3 class="label">Duration:<br /></h3>
             <h3 class="text">{{ duration }}<br /></h3>
           </div>
           <div v-if="neigh" class="grid-container">

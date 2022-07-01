@@ -146,7 +146,7 @@ export default {
 
   font-family: 'Archivo', sans-serif;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 25px;
   color: #fff;
 }
