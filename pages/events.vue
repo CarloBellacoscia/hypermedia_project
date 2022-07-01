@@ -5,19 +5,24 @@
         {{ title }}
       </h1>
       <div class="selector">
-        <button style="margin-right: 20px" @click="setAll()">All</button>
-        <button @click="setToday()">Today</button>
-        <button style="margin-right: 20px" @click="setTomorrow()">
-          Tomorrow
-        </button>
-
-        <button @click="season([20, 3], [21, 6], 'This Spring')">Spring</button>
-        <button @click="season([21, 6], [22, 9], 'This Summer')">Summer</button>
-        <button @click="season([22, 9], [21, 12], 'This Fall')">Fall</button>
-        <button @click="season([21, 12], [19, 3], 'This Winter', true)">
-          Winter
-        </button>
-        <div v-show="!showAll">
+        <div>
+          <button style="margin-right: 10px" @click="setAll()">All</button>
+          <button @click="setToday()">Today</button>
+          <button style="margin-right: 20px" @click="setTomorrow()">
+            Tomorrow
+          </button>
+          <button @click="season([20, 3], [21, 6], 'This Spring')">
+            Spring
+          </button>
+          <button @click="season([21, 6], [22, 9], 'This Summer')">
+            Summer
+          </button>
+          <button @click="season([22, 9], [21, 12], 'This Fall')">Fall</button>
+          <button @click="season([21, 12], [19, 3], 'This Winter', true)">
+            Winter
+          </button>
+        </div>
+        <div v-show="!showAll" class="data-input">
           <input v-model="init" :placeholder="init" />-<input
             v-model="fin"
             :placeholder="fin"
@@ -103,7 +108,6 @@ export default {
       this.today = ''
       this.fin += this.init
       this.today += this.fin
-      console.log(this.fin, this.init)
     },
     parseDates() {
       const inA = this.init.split('/').map((e) => {
@@ -112,7 +116,6 @@ export default {
       const finA = this.fin.split('/').map((e) => {
         return parseInt(e)
       })
-      console.log(inA, finA)
       this.setDates(inA, finA)
     },
     setDates(inA, finA) {
@@ -129,7 +132,6 @@ export default {
       } else {
         this.title = 'Custom Dates'
       }
-      this.log()
     },
 
     season(init, fin, title, carry = false) {
@@ -144,7 +146,6 @@ export default {
       this.fin += fin[0] + '/' + fin[1] + '/' + temp
       this.parseDates()
       this.title = title
-      this.log()
     },
     setAll() {
       this.showAll = true
@@ -158,7 +159,6 @@ export default {
       this.fin += this.today
       this.parseDates()
       this.title = 'Today'
-      this.log()
     },
     setTomorrow() {
       this.showAll = false
@@ -179,7 +179,6 @@ export default {
         '/' +
         temp2.getFullYear()
       this.title = 'Tomorrow'
-      this.log()
     },
     log() {
       console.log(new Date(this.initial_date))
@@ -203,20 +202,20 @@ export default {
 
 <style scoped>
 button {
-  margin: 0 2px 0 2px;
+  margin: 0 2px 0 0;
 }
 input {
   background-color: rgba(0, 0, 0, 0);
   border: none;
-  margin: 0 10px 0 0px;
   text-align: center;
-  width: 100px;
+  width: 120px;
 }
 input:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 .selector {
-  display: block;
+  display: flex;
+  justify-content: space-between;
   background-color: #cccccc;
   font-size: 20px;
   line-height: 25px;
@@ -225,5 +224,10 @@ input:hover {
   z-index: 1000;
   padding: 10px 0 10px 30px;
   margin-left: -30px;
+}
+
+.data-input{
+  background-color: rgba(0,0,0,0.1);
+  margin-right:20px;
 }
 </style>
