@@ -8,7 +8,7 @@
       </div>
     </div>
     <hr v-if="content" />
-    <div>
+    <div v-if="content" >
       <div v-for="(elem, i) of content" :key="`parag-${i}`">
         <h1 v-if="elem.title">{{ elem.title }}</h1>
         <p v-if="elem.description" style="padding-bottom:20px">{{ elem.description }}</p>
@@ -39,7 +39,7 @@ export default {
     },
     content: {
       type: Array,
-      required: true,
+      required: false,
     },
   },
 }
