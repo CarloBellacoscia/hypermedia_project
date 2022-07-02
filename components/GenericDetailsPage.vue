@@ -29,7 +29,7 @@
           </div>
           <div v-if="site">
             <br /><br />
-            <button class="button" @click="goToSite(site)">Site</button>
+            <button class="button" @click="goToSite(site)">Website</button>
           </div>
         </div>
       </div>
