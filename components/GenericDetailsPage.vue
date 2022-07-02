@@ -140,7 +140,6 @@ img {
   font-family: 'Archivo Narrow', sans-serif;
   background-color: #d9d9d9;
   font-size: 22px;
-  opacity: 80%;
 }
 
 .position-icon {
