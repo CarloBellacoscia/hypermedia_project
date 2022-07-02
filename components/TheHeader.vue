@@ -100,6 +100,7 @@ export default {
 /*drop down menu style*/
 .navbar-collapse {
   padding-left: 30px;
+  padding-right: 30px;
   background-color: #252525;
 }
 
@@ -142,6 +143,9 @@ export default {
   display: table;
   align-items: center;
   text-align: center;
+}
+.mylogo:hover {
+  color: white;
 }
 
 @media only screen and (max-width: 900px) {

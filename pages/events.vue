@@ -6,9 +6,9 @@
       </h1>
       <div class="selector">
         <div>
-          <button style="margin-right: 10px" @click="setAll()">All</button>
+          <button class="sep-button"  @click="setAll()">All</button>
           <button @click="setToday()">Today</button>
-          <button style="margin-right: 20px" @click="setTomorrow()">
+          <button class="sep-button" @click="setTomorrow()">
             Tomorrow
           </button>
           <button @click="season([20, 3], [21, 6], 'This Spring')">
@@ -229,5 +229,28 @@ input:hover {
 .data-input{
   background-color: rgba(0,0,0,0.1);
   margin-right:20px;
+}
+
+.sep-button{
+  margin-right: 10px
+}
+
+@media only screen and (max-width: 900px) {
+button{
+  margin: 0 0 0 0;
+  width: 80px;
+  font-size: 15px;
+  line-height: 15px;
+}
+  .sep-button{
+    margin-right: 0
+  }
+  .selector{
+    display: block;
+  }
+  .data-input{
+    margin-top: 10px;
+    display: flex;
+  }
 }
 </style>
