@@ -128,6 +128,7 @@ export default {
 .label {
   text-align: justify;
   width: 100%;
+  font-size: 32px;
 }
 
 .small-row{
@@ -140,6 +141,9 @@ export default {
   .grid-container {
     grid-template-columns: auto auto;
     margin-left: 15px;
+  }
+  .label{
+    font-size: 22px;
   }
 }
 
