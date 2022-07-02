@@ -74,6 +74,7 @@ export default {
   position: relative;
   width: 360px;
   height: 210px;
+  max-width: 100%;
 }
 
 .details-box {

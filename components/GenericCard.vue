@@ -174,7 +174,8 @@ export default {
 @media only screen and (max-width: 990px) {
 
   .my-card-title {
-    width: 350px
+    width: 350px;
+    max-width: 100%;
   }
   .my-card-image{
     height: 250px;
