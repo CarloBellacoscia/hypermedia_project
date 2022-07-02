@@ -7,7 +7,7 @@
           <img class="my-image" :src="img" :alt="altImg" />
         </div>
         <div class="details-box">
-          <h1 >{{ title }}</h1>
+          <h3 >{{ title }}</h3>
           <p >{{ description }}</p>
         </div>
       </div>

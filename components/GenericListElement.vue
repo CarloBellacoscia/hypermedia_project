@@ -9,7 +9,7 @@
           />
           <p>{{ duration}}</p>
           </div>
-        <h1 class="my-elem-title">{{ name }}</h1>
+        <h3 class="my-elem-title">{{ name }}</h3>
     </div>
   </nuxt-link>
 </template>

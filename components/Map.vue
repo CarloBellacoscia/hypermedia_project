@@ -35,7 +35,7 @@ export default {
   data(){
     return {
       src: '',
-       key: 'AIzaSyDZ8TCwa4tSZdVGqzu7Ez1joVie69QJe64',
+       key: 'AIzaSyBteWhfclgZ7dttnB0WC6zJsITmF2q-o8c',
     }},
   mounted() {
     this.composeSrc()

@@ -90,13 +90,13 @@
     "pointOfInterestId": 11
   },
   {
-    "name": "Fedora",
-    "start_date": "2022-10-15",
-    "end_date": "2022-11-03",
-    "description": "Fedora is an opera in three acts by Umberto Giordano to an Italian libretto by Arturo Colautti, based on the 1882 play Fédora by Victorien Sardou. Along with Andrea Chénier and Siberia, it is one of the most notable works of Giordano.\n\nIt was first performed at the Teatro Lirico in Milan on 17 November 1898 conducted by the composer; Gemma Bellincioni created the role of Fedora with Enrico Caruso as her lover, Loris Ipanov.",
-    "site": "https://www.teatroallascala.org/en/season/2021-2022/opera/fedora.html",
-    "img": "https://www.ticketone.it/obj/media/IT-eventim/teaser/222x222/2021/fedora-scala-biglietti.jpg",
-    "alt_img": "image of the face of opera's director",
+    "name": "Salome",
+    "start_date": "2023-01-14",
+    "end_date": "2023-01-31",
+    "description": "Staged exclusively for the television broadcast in 2021, Damiano Michieletto’s production of Salome finally meets a live audience with Zubin Mehta returning to the podium: indeed the great conductor made his debut in the La Scala orchestra pit precisely with this title in 1974. The rigorous geometrical scenes by Paolo Fantin, overhung by an ill-boding black moon, are populated with references to symbolist painting, becoming the theatre of a murky tragedy of childhood. Vida Miknevičiūtė debuts at La Scala in the title role, while Michael Volle endows Jochanaan with his powerful voice.",
+    "site": "https://www.teatroallascala.org/it/stagione/2022-2023/opera/salome.html",
+    "img": "https://static.teatroallascala.org/static/upload/696/696812badg--ph-brescia-e-amisano---teatro-alla-scala---copia.png",
+    "alt_img": "actors acting a scene of the opera with a big black ball on the roof",
     "pointOfInterestId": 3
   },
   {

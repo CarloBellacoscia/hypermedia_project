@@ -112,7 +112,6 @@ img {
 
 .page {
   font-size: 40px;
-  font-weight: 600;
 }
 
 .text {
