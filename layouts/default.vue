@@ -1,6 +1,7 @@
 <!--suppress CssUnknownTarget -->
 <template>
   <div class="main-page">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Archivo:wght@100&family=Open+Sans:wght@300&display=swap" rel="stylesheet" type="text/css">
     <the-header />
     <nuxt style="padding-top: 60px; min-height: 79vh" />
     <the-footer style="margin-top: 50px" />
@@ -21,7 +22,29 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Archivo:wght@100&family=Open+Sans:wght@300&display=swap');
+/*
+@font-face {
+  font-family: 'Archivo Narrow';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.googleapis.com/css2?family=Archivo+Narrow&subset=latin);
+}
+
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 100;
+  src: url(https://fonts.googleapis.com/css2?family=Archivo&subset=latin);
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.googleapis.com/css2?family=Open+Sans&subset=latin);
+}
+
+/*@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Archivo:wght@100&family=Open+Sans:wght@300&display=swap');*/
 
 /*responsive bar*/
 .navbar-toggler-icon {
