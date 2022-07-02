@@ -25,18 +25,7 @@
           <nuxt-link :to="navItem.path" class="nav-link">
             {{ navItem.name }}
           </nuxt-link>
-        </li>
-        <div style="padding-right: 40px"/>
-        <li>
-          <div class="form-outline">
-            <input
-              id="form1"
-              type="search"
-              class="form-control"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </div> </li>
+          </li>
       </ul>
     </div>
   </nav>
@@ -155,7 +144,7 @@ export default {
     line-height: 54px;
     margin-right: 0;
     padding-right:0;
-    padding-left: 7px;
+    padding-left: 10px;
   }
 
 }

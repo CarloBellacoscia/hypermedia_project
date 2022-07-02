@@ -82,7 +82,7 @@ export default {
     padding: 10px 8px 10px 8px;
   }
   .my-image {
-    max-height: 210px;
+    max-height: 300px;
     max-width: 100%;
     margin-bottom: 10px;
   }
