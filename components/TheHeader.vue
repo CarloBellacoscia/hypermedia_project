@@ -4,6 +4,7 @@
       ><span class="low-highlight"> MI</span>GUARDI</a
     >
     <button
+        id="my-button-fix"
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
@@ -43,7 +44,7 @@ export default {
           path: '/events',
         },
         {
-          name: 'Point Of Interest',
+          name: 'Points Of Interest',
           path: '/poi',
         },
         {
@@ -60,7 +61,16 @@ export default {
         },
       ],
     }
-  }
+  },
+  /* updated(){
+
+    console.log(document.getElementsByClassName("collapse show"),'test')
+
+    if(document.getElementsByClassName("collapse show"));
+          console.log(document.getElementsByClassName("collapse show"), this.$route.path)
+          document.getElementById("my-button-fix").click();
+
+  } */
 }
 </script>
 

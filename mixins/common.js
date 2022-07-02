@@ -32,6 +32,17 @@ export default {
           }
 
       },
+        countCards() {
+            let j = 0
+            const x = document.getElementsByClassName('card-to-count')
+            let el
+            for (el of x) {
+                if (window.getComputedStyle(el).display !== 'none') {
+                    j += 1
+                }
+            }
+            return j
+        },
       formatMyDate(val){
         return  "Date:" + val
       },
