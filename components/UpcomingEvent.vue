@@ -61,8 +61,10 @@ export default {
   );
 }
 .content-row {
-  justify-content: center;
+  justify-content: space-evenly;
   margin: 0 0 0 0;
+  padding: 10px 0 10px 0;
+
   background-color: #d9d9d9;
 }
 </style>

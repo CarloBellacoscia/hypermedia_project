@@ -3,7 +3,7 @@
     <div class="title-row"><h1>Discover MI</h1></div>
     <nuxt-link :to="`/poi_details/${id}`" style="text-decoration: none">
       <div class=" content-row">
-        <div class="img-box">
+        <div style="text-align: center">
           <img class="my-image" :src="img" :alt="altImg" />
         </div>
         <div class="details-box">
@@ -52,7 +52,9 @@ export default {
 
 
 .content-row {
+  padding: 20px 20px 20px 20px;
   display: flex;
+  justify-content: space-evenly;
   background-color: #d9d9d9;
   grid-template-columns: 30% 70%;
 
@@ -62,35 +64,27 @@ export default {
 .my-image {
   position: relative;
   z-index: 0;
-  width: 360px;
-  height: 210px;
+  max-width: 360px;
+  height: 100%;
   border: 3px solid lightgray;
   object-fit: cover;
 }
 
-.img-box {
-  margin: 10px 10px 10px 10px;
-  justify-content: center;
-  position: relative;
-  width: 360px;
-  height: 210px;
-  max-width: 100%;
-}
 
 .details-box {
-  margin: 10px 10px 10px 10px;
-
+  margin-left: 15px;
 }
 
 @media only screen and (max-width: 900px) {
   .content-row {
-    display: block;
+    display: table;
     justify-content: center;
     padding: 10px 8px 10px 8px;
   }
   .my-image {
-    width: 330px;
-    height: 210px;
+    max-height: 210px;
+    max-width: 100%;
+    margin-bottom: 10px;
   }
 }
 </style>
