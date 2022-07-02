@@ -110,8 +110,9 @@ img {
   grid-template-columns: 20% 60% 20%;
 }
 
-.details {
-
+.page {
+  font-size: 40px;
+  font-weight: 600;
 }
 
 .text {
@@ -156,6 +157,9 @@ img {
 @media only screen and (max-width: 900px) {
   .grid-container {
     grid-template-columns: auto;
+  }
+  .page{
+    font-size: 30px;
   }
 }
 </style>
