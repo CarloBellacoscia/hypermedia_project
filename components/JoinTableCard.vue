@@ -47,7 +47,7 @@
           :id="ev.id"
           :key="`it-index-${evIndex}`"
           class="grid-item"
-          :category="'itineraries_details'"
+          :category="'events_details'"
           :name="ev.name"
           :img="ev.img"
           :alt_img="ev.alt_img"
