@@ -1,7 +1,7 @@
 [
   {
     "name": "Centrale Railway Station",
-    "description": "Milano Centrale (Italian: Stazione Milano Centrale) is the main railway station of the city of Milan, Italy, and is the largest railway station in Europe by volume. The station is a terminus and located at the northern end of central Milan. It was officially inaugurated in 1931 to replace the old central station (built 1864), which was a transit station but with a limited number of tracks and space, so could not handle the increased traffic caused by the opening of the Simplon Tunnel in 1906.\n\nMilano Centrale has high-speed connections to Turin in the west, Venice via Verona in the east and on the north-south mainline to Bologna, Rome, Naples and Salerno. The Simplon and Gotthard railway lines connect Milano Centrale to Bern and Geneva via Domodossola and Zürich via Chiasso in Switzerland.\n\nDestinations of inter-city and regional railways radiate from Milano Centrale to Ventimiglia (border of France), Genova, Turin, Domodossola (border of Swiss Canton of Valais/Wallis), Tirano (border of Swiss Canton of Graubünden/Grisons), Bergamo, Verona, Mantova, Bologna and La Spezia.\n\n",
+    "description": "OPEN 24/7 | Phone: +390288453900",
     "place_id": "ChIJxZ4yQ8XGhkcRPXLnUM41jos",
     "category": "stations",
     "neigh": "Centrale",
@@ -11,7 +11,7 @@
   },
   {
     "name": "Lambrate Railway Station",
-    "description": "Milano Lambrate railway station (Italian: Stazione di Milano Lambrate) is one of the main stations serving the city and comune of Milan, Italy.\n\nOpened in 1931, the station is the third largest in Milan in terms of number of tracks, after Milano Centrale and Milano Porta Garibaldi. It is part of the Milan belt railway as well as of the railways linking Milan with Genoa, Venice, Bologna and Mantua.\n\nThe station is managed by Rete Ferroviaria Italiana (RFI), while the commercial area of the passenger building is managed by Centostazioni. The train services are operated by Trenitalia and Trenord.\n\nUnderneath the station, and connected with it, is a Milan Metro station of the same name on Line 2.",
+    "description": "OPEN 24/7 | Phone: +390358223502",
     "category": "stations",
     "place_id": "ChIJzaONRvjGhkcRkLQ2JiVixaA",
     "neigh": "Lambrate",
@@ -21,7 +21,7 @@
   },
   {
     "name": "Garibaldi Railway Station",
-    "description": "Milano Porta Garibaldi (IATA: IPR) is a major railway station in the Italian city of Milan, located just to the north of the neighbourhood known as Porta Garibaldi. Porta Garibaldi is the city's main station for commuter traffic with 25 million passengers annually,although it is second to Centrale station considering total passenger traffic. The station is located on Piazza Sigmund Freud.",
+    "description": "OPEN 24/7 | Phone: +39028234543",
     "place_id": "ChIJB3AVML_FhkcRO2w7-mqYmFk",
     "category": "stations",
     "neigh": "Porta Garibaldi",
@@ -31,7 +31,7 @@
   },
   {
     "name": "Policlinico of Milan",
-    "description": "The Policlinico of Milan (Italian: Policlinico di Milano) also known as Ospedale Maggiore di Milano or Ca' Granda Ospedale Maggiore Policlinico, is one of the oldest hospitals in Italy, founded by Duke Francesco Sforza in 1456. Today it is a modern hospital with 900 beds, with wards for adults, pregnant women and children. During the first COVID-19 breakout in March 2020, 300 of those beds were readapted for COVID-19 patients.\n\nThere are three emergency rooms for different categories of patients. The maternity ward (Mangiagalli Clinic) has the highest number of births in Lombardy.\n\nThe Foundation is a scientific Institute for Research, Hospitalization and Health Care (IRCCS), which means that, alongside clinical activity, it promotes research programs with predominantly translational purposes. The programs are concerned with the rapid transfer of therapies from the laboratory to patients.",
+    "description": "OPEN 24/7 | Phone: 02 55031",
     "place_id": "ChIJ9RrHu6fGhkcRcawaBawwpqI",
     "category": "health-services",
     "neigh": "Guastalla",
@@ -41,7 +41,7 @@
   },
   {
     "name": "Niguarda hospital",
-    "description": "Ospedale Niguarda Ca' Granda, best known simply as Ospedale Niguarda or Niguarda Hospital is largest and one of the most important hospitals in Milan, Italy.\n\nThe hospital was opened on October 3, 1939.\n\n",
+    "description": "OPEN 24/7 | Phone: 02 23435",
     "place_id": "ChIJcRpO8MXAhkcR7SK_NTlIICs",
     "category": "health-services",
     "neigh": "Ca' Granda",
@@ -51,7 +51,7 @@
   },
   {
     "name": "Bramante Pharmacy",
-    "description": "The Bramante Pharmacy in Milan boasts an experience of over 60 years in the sector of the sale of pharmaceutical products. The goal of the pharmacy is the health and well-being of its customers. At the store, customers will find a large and assorted department of cosmetic products for all types of problems, a vast assortment of sugar-free and gluten-free, frozen and fresh foods, the most prestigious lines to help you lose weight, a modern and efficient laboratory, a wide choice of homeopathic and phytotherapeutic products, many orthopedic aids, numerous tests useful for the prevention of various diseases. The professionalism and courtesy of the staff make the Bramante pharmacy a point of reference for all those who care about their health and well-being. Pharmacy Bramante is also a member of the Satispay payment network",
+    "description": "MON: CLOSED - ALL  10:30-19:30 | Phone: 02 2663818",
     "place_id": "ChIJcTTWtvDGhkcRkEoF5-QCYkQ",
     "category": "pharmacies",
     "neigh": "Città Studi",
@@ -61,7 +61,7 @@
   },
   {
     "name": "Broletto Pharmacy",
-    "description": "The Hippocrates pharmacy chain has fully bet on AMlab for the creation and definition of an innovative and distinctive format capable of restoring uniqueness and authenticity to the Lafarmacia brand. Not a simple entrepreneurial initiative, but a bold undertaking aimed at positioning itself on the market with a strong image and a clear objective: to propose a place where people experience the pharmacy as well as for its traditional role as the first health center, also as a point of reference for health at 360 degrees.\n\nA new vision capable of involving the consumer in an immersive and attractive context, with attention to the smallest details, to return feelings of amazement and wonder between attention and advice, dedicated spaces, professional consultancy, technological services and events. An extremely distinctive, unique and identifying pharmacy model, in the name of prevention and care, well-being and beauty.",
+    "description": "MON: CLOSED - ALL  8:30-19:30 | Phone: 02 2343811",
     "place_id": "ChIJraruWK3GhkcRg_KMRzcXGOc",
     "category": "pharmacies",
     "neigh": "Duomo",
@@ -71,7 +71,7 @@
   },
   {
     "name": "Fiordalisi Pharmacy",
-    "description": "For years, the Fiordalisi Pharmacy has been taking care of everyone's health by providing the highest quality services, which use the most advanced and widespread technologies, accompanied by the competence and courtesy of the staff, with the main objective that has always been the maximum and real satisfaction. of its customers. At the Pharmacy it is possible to carry out tests for food intolerances, blood pressure measurement, self-analysis of blood (cholesterol, glycemia, triglycerides, potassium, etc.), 24-hour cardiac holter, electrocardiogram with immediate report. There is also a vast assortment of orthopedic products from the best brands. The laboratory of galenic preparations and the personalized preparation of Bach flowers will be able to satisfy any need. The Fiordalisi Pharmacy is located in Via dei Fiordalisi 2 (corner Lorenteggio), in Milan",
+    "description": "TUE: CLOSED - ALL  10:30-18:30 | Phone: 02 2334518",
     "place_id": "ChIJ1-MVy83DhkcR0wVkhySe0l0",
     "category": "pharmacies",
     "neigh": "Lorenteggio",
@@ -81,7 +81,7 @@
   },
   {
     "name": "San Marco Parking",
-    "description": "Autosilo San Marco is located within the Area C or Limited Traffic Zone of Milan. \nBy leaving your car in this parking you can also have a discount on the daily price of the ZTL. You just have to pay 3 euros a day directly at the car park, for each day you drive around Area C. In the center of Milan, and more precisely in the characteristic Brera district, there is the San Marco car park. If art is your passion, this is the car park for you, as it is located just 5 minutes walk from the renowned Pinacoteca di Brera and the Academy of Fine Arts. It is certainly no coincidence that Brera is considered the artists' quarter! If art is not for you, but you go crazy for shopping, the Autosilo Bertani San Marco will allow you to park less than 10 minutes from the so-called Milan fashion district, which with Via Montenapoleone, Via Senato, Via Spiga and Corso Venice is a real paradise for all lovers of luxury and the most famous fashion houses in the world. So art, fashion and culture, since this guarded car park is also located near the Poldi Pezzoli Museum, the Teatro alla Scala and the Indro Montanelli Public Gardens, inside which there are the Planetarium, the Museum of Natural History of Milan and Palazzo Dugnani.",
+    "description": "OPEN 24/7 | Phone: 02 654093",
     "place_id": "ChIJ72jZ3rTGhkcRHoseL8wpAxY",
     "category": "parking",
     "neigh": "San Marco",
@@ -91,7 +91,7 @@
   },
   {
     "name": "Pacini Parking",
-    "description": "Since 1970 we have been the reference car park for those who do not have a private car / motorbike parking space and want a comfortable and safe parking space where they can leave their vehicle for short or long periods.\nWe also reserve numbered and fixed seats for our customers, just like in a private garage.",
+    "description": "OPEN 24/7 | Phone: 02 266 6373",
     "place_id": "ChIJqYY6xfnGhkcRO_KiaR5vD_0",
     "category": "parking",
     "neigh": "Città Studi",
@@ -101,7 +101,7 @@
   },
   {
     "name": "Valvassori Peroni Library",
-    "description": "It is the youngest of the local libraries and is also the largest with its 2,500 square meters spread over three levels. With over 140 reading places, it is located a stone's throw from Lambrate station and the universities of the scientific and technological center of Città Studi.\nTo reach it: bus 54, 93 / tram 19, 33 / M2 (Lambrate), FS Lambrate",
+    "description": "SUN: CLOSED - ALL  10:00-18:00 | Phone: 02 88465095",
     "place_id": "ChIJsayL8FjGhkcRSDgtT6mMhJM",
     "category": "libraries",
     "neigh": "Città Studi",
@@ -111,7 +111,7 @@
   },
   {
     "name": "Sormani Library",
-    "description": "The library is housed in a prestigious building, which has had a long history and as many names as its owners have been through the centuries. The building was marked by a long and complex story that saw architects such as Francesco Maria Ricchino, Francesco Croce, Benedetto Alfieri and Arrigo Arrighetti among its protagonists.",
+    "description": "SUN: CLOSED - ALL  10:00-18:00 | Phone: 800 880066",
     "place_id": "ChIJmdb6KKTGhkcRDh90uSn-R_o",
     "category": "libraries",
     "neigh": "Guastalla",
