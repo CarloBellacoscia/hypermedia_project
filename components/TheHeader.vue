@@ -62,15 +62,12 @@ export default {
       ],
     }
   },
-  /* updated(){
+   updated(){
 
-    console.log(document.getElementsByClassName("collapse show"),'test')
-
-    if(document.getElementsByClassName("collapse show"));
-          console.log(document.getElementsByClassName("collapse show"), this.$route.path)
-          document.getElementById("my-button-fix").click();
-
-  } */
+    if(document.getElementsByClassName("collapse show").length>0) {
+      document.getElementById("my-button-fix").click();
+    }
+  }
 }
 </script>
 
