@@ -6,7 +6,7 @@
       </h1>
       <div class="selector">
         <div>
-          <button class="sep-button"  @click="setAll()">All</button>
+          <button class="sep-button"  @click="setAll()" style="background-color: rgba(255,0,0,0.1)">All</button>
           <button @click="setToday()">Today</button>
           <button class="sep-button" @click="setTomorrow()">
             Tomorrow
@@ -93,10 +93,10 @@ export default {
   },
   mounted() {
     this.initialize()
-    this.countCards()
+    this.count = this.countCards()
   },
   updated() {
-    this.countCards()
+    this.count = this.countCards()
   },
   methods: {
     initialize() {
@@ -185,17 +185,6 @@ export default {
       console.log(new Date(this.final_date))
     },
 
-    countCards() {
-      let j = 0
-      const x = document.getElementsByClassName('card-to-count')
-      let el
-      for (el of x) {
-        if (window.getComputedStyle(el).display !== 'none') {
-          j += 1
-        }
-      }
-      this.count = j
-    },
   },
 }
 </script>

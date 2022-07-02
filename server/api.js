@@ -57,6 +57,7 @@ async function initializeDatabaseConnection() {
 
   const Service = database.define('service', {
     name: DataTypes.STRING,
+    category: DataTypes.STRING,
     description: DataTypes.STRING(2048),
     place_id: DataTypes.STRING,
     neigh: DataTypes.STRING,
@@ -143,6 +144,7 @@ async function runMainApi() {
       filtered.push({
         name: element.name,
         description: element.description,
+        category: element.category,
         place_id: element.place_id,
         neigh: element.neigh,
         site: element.site,
