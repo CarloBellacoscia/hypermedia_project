@@ -98,7 +98,7 @@ export default {
 .my-card-box-shadow {
   position: absolute;
   bottom: 10px;
-  left: 10px;
+  left: 8px;
   width: 188px;
   height: 40px;
   background: rgba(0, 0, 0, 0.7);
@@ -135,18 +135,18 @@ export default {
   font-family: 'Archivo', sans-serif;
   text-align: left;
   font-weight: 400;
-  font-size: 9px;
+  font-size: 12px;
   line-height: 15px;
   top: 20px;
-  left: 10px;
+  left: 25px;
   color: #d9d9d9;
 }
 
 .my-card-position-icon {
   position: absolute;
-  top: 47px;
+  top: 20px;
   left: 10px;
-  max-height: 18px;
+  max-height: 12px;
   filter: invert(100%);
 }
 
@@ -199,6 +199,11 @@ export default {
   }
   .my-card-sub {
     top: 15px;
+    font-size: 9px;
+  }
+  .my-card-position-icon {
+    top: 18px;
+    max-height: 9px;
   }
 }
 </style>
