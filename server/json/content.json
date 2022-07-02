@@ -26,13 +26,26 @@
   "contact": {
     "title": "Contact",
     "image": "https://fs.i3lab.group/hypermedia/images/about.jpeg",
-    "alt_img": "skyline of the city of milan",
-    "brief": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et tincidunt elit, in finibus elit. Aliquam nec posuere sem, at faucibus erat. Suspendisse iaculis lorem id odio placerat bibendum. Suspendisse potenti. Sed quis efficitur erat. Pellentesque non velit ipsum. Maecenas finibus felis a magna auctor finibus. Mauris tincidunt nibh sit amet ante consectetur, non cursus elit feugiat.Integer vitae elit at nunc lacinia egestas. Etiam nec sagittis lorem. Phasellus consectetur mauris eget neque posuere, vitae sagittis massa congue. Etiam vitae eleifend odio, sit amet tempus ex. Ut semper feugiat erat, id consequat elit volutpat sed. Curabitur vel arcu at risus vehicula blandit in ut nunc. In nec pellentesque tellus. Maecenas vitae purus lacinia, tristique elit vitae, interdum est. Ut feugiat nulla et vestibulum efficitur. Suspendisse potenti. Duis ex dolor, vestibulum a leo eu, dapibus elementum ipsum. Curabitur euismod rhoncus nulla ac interdum. Mauris vulputate viverra scelerisque. Mauris ullamcorper tempus eros."
-  },
+    "alt_img": "",
+    "brief": "Contact us to ask questions or to host your event on our website!",
+    "content": [
+      {
+        "title": "Address",
+        "description": "Via Oreste Cappelli 12, Milano (MI) 20130"
+      },
+      {  "title": "Telephone",
+        "description": "+39 8405349481"
+      },
+      {  "title": "E-mail",
+        "description": "info@mi-guardi.it"
+      }
+    ]
+      },
+
   "faq": {
     "title": "FAQ",
     "image": "https://www.studionasca.it/wp-content/uploads/2021/06/image_illustrations_05.png",
-    "alt_img": "a cloud with FAQ written in it",
+    "alt_img": "",
     "brief": "A collection of the most frequently asked question about the city of milan",
     "content": [
       {
