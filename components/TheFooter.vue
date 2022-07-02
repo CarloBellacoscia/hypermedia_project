@@ -5,7 +5,7 @@
         <a class="my-logo" href="/"
           ><span class="low-highlight"> MI</span>GUARDI</a
         >
-        <p class="my-motto">A City like MI<br />require attention</p>
+        <p class="my-motto">A City like MI<br />requires attention</p>
       </div>
 
       <div class="my-list">
