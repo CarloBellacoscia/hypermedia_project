@@ -65,6 +65,21 @@ p {
   font-family: 'Open Sans', sans-serif;
   font-size: 17px;
 }
+.row{
+  display:grid ;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1400px) {
+
+
+  .row{
+    grid-template-columns: auto auto;
+
+  }
+}
+
 @media only screen and (max-width: 900px) {
 
   h1 {
@@ -74,6 +89,8 @@ p {
 
   .row{
     justify-content: center;
+    grid-template-columns: auto;
+
   }
 }
 /*

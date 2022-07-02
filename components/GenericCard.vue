@@ -6,15 +6,13 @@
           <img
             class="my-card-date-icon"
             src="https://cdn-icons-png.flaticon.com/512/109/109613.png"
-            alt="clock icon"
           />
           <p class="my-card-date-text">{{ date }}</p>
         </div>
-        <div v-if="duration" style="width: 150px" class="my-card-date">
+        <div v-if="duration" style="width: 150px" class="my-card-duration">
           <img
             class="my-card-date-icon"
             src="https://cdn-icons-png.flaticon.com/512/1842/1842869.png"
-            alt="stopwatch icon"
           />
           <p class="my-card-date-text">{{ duration }}</p>
         </div>
@@ -25,7 +23,6 @@
               <img
                 class="my-card-position-icon"
                 src="https://cdn-icons-png.flaticon.com/512/684/684809.png"
-                alt="position icon"
               />
               <p class="my-card-sub">{{ position }}</p>
             </div>
@@ -171,6 +168,16 @@ export default {
   text-align: right;
 }
 
+
+.my-card-duration {
+  height: 30px;
+  position: absolute;
+  bottom: 90px;
+  left: 230px;
+  background-color: rgba(217, 217, 217, 0.8);
+  text-align: right;
+}
+
 @media only screen and (max-width: 990px) {
 
   .my-card-title {
@@ -193,6 +200,9 @@ export default {
   .my-card-date{
     left: 70px;
   }
+.my-card-duration{
+  left: 190px;
+}
 }
 
 </style>
