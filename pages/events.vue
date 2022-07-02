@@ -178,6 +178,7 @@ export default {
         (temp2.getMonth() + 1) +
         '/' +
         temp2.getFullYear()
+      this.parseDates()
       this.title = 'Tomorrow'
     },
     log() {
