@@ -45,10 +45,11 @@ button {
 
 h1 {
   font-family: 'Archivo', sans-serif;
-  font-size: 30px;
+  font-size: 40px;
   line-height: 33px;
   text-decoration: none;
   color: black;
+  font-weight: 600;
 }
 h2 {
   font-family: 'Archivo', sans-serif;
@@ -56,6 +57,15 @@ h2 {
   line-height: 45px;
   text-decoration: none;
   color: black;
+}
+
+h3{
+  font-family: 'Archivo', sans-serif;
+  font-size: 30px;
+  line-height: 45px;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
 }
 
 p {
@@ -85,6 +95,11 @@ p {
   h1 {
     font-size: 25px;
     line-height: 26px;
+  }
+
+  h3 {
+    font-size: 22px;
+    line-height: 23px;
   }
 
   .row{
