@@ -16,6 +16,19 @@ import RandDetail from '~/components/RandomDetail.vue'
 import NewIt from '~/components/ItineraryListComponent.vue'
 import Upcoming from '~/components/UpcomingEvent.vue'
 
+function filterEvents(array){
+  const today = new Date()
+  const filtered =[]
+
+  for(const e of array){
+    console.log(e)
+    if(new Date(e.start_date) >= today){
+       filtered.push(e)
+    }
+  }
+  return filtered.reverse().slice(0,3)
+}
+
 export default {
   name: 'IndexPage',
   components: {
@@ -35,9 +48,9 @@ export default {
     const altImg = data.alt_img
     const description = data.description
 
-    const tempEvent = eventList.data
+    const tempEvent = filterEvents(eventList.data)
     const tempIt = itList.data
-    tempEvent.length=3
+
     tempIt.length=4
 
     return {

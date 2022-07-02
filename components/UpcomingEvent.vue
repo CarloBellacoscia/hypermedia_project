@@ -8,22 +8,23 @@
       </div>
     <div class="row content-row">
       <card
-        v-for="i of [0, 1, 2]"
-        :id="eventList[i].id"
+        v-for="(e,i) of eventList"
+        :id="e.id"
         :key="`event-index-${i}`"
         class="col-sm-2 m-2"
         :category="'events_details'"
-        :name="eventList[i].name"
-        :img="eventList[i].img"
-        :alt_img="eventList[i].alt_img"
+        :name="e.name"
+        :img="e.img"
+        :alt_img="e.alt_img"
         :date="
-          formatDate(eventList[i].start_date,1) +
+          formatDate(e.start_date,1) +
           ' - ' +
-          formatDate(eventList[i].end_date,1)
+          formatDate(e.end_date,1)
         "
-        :position="eventList[i].position"
+        :position="e.position"
       />
-    </div>
+
+    </div><div v-if="!eventList.length"><p style="color:red">There are no upcoming events</p></div>
   </div>
 </template>
 
