@@ -109,7 +109,7 @@ async function runMainApi() {
   app.get('/events', async (req, res) => {
     const result = await models.Event.findAll({
       include: [{ model: models.PointOfInterest }],
-      order: [['start_date', 'DESC']],
+      order: [['start_date', 'ASC']],
     })
     const filtered = []
     // console.log(JSON.stringify(result, null, 2))

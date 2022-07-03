@@ -6,11 +6,16 @@
       </h1>
       <div class="selector">
         <div>
-          <button class="sep-button"  @click="setAll()" style="background-color: rgba(255,0,0,0.1)">All</button>
-          <button @click="setToday()">Today</button>
-          <button class="sep-button" @click="setTomorrow()">
-            Tomorrow
+          <button
+            class="sep-button"
+            @click="setAll()"
+            style="background-color: rgba(255, 0, 0, 0.1)"
+          >
+            All
           </button>
+
+          <button @click="setToday()">Today</button>
+          <button class="sep-button" @click="setTomorrow()">Tomorrow</button>
           <button @click="season([20, 3], [21, 6], 'This Spring')">
             Spring
           </button>
@@ -21,10 +26,20 @@
           <button @click="season([21, 12], [19, 3], 'This Winter', true)">
             Winter
           </button>
+          <span
+            ><input v-model="past" type="checkbox" />
+            <label for="checkbox">Show Past</label></span
+          >
         </div>
         <div v-show="!showAll" class="data-input">
-          <input v-model="init" :placeholder="init" />-<input
+          <input
+            v-show="past"
+            v-model="init"
+            class="text-box"
+            :placeholder="init"
+          /><my v-show="!past" class="text-box">Today</my>-<input
             v-model="fin"
+            class="text-box"
             :placeholder="fin"
           />
           <button @click="parseDates()">Filter</button>
@@ -35,9 +50,10 @@
         <card
           v-for="(event, eventIndex) of eventList"
           v-show="
-            (new Date(event.start_date) >= initial_date &&
+            ((new Date(event.start_date) >= initial_date &&
               new Date(event.start_date) <= final_date) ||
-            showAll
+              showAll) &&
+            (new Date(event.start_date) >= new Date() || past)
           "
           :id="event.id"
           :key="`event-index-${eventIndex}`"
@@ -53,11 +69,11 @@
           "
           :position="event.position"
         />
-        <div v-show="count === 0">
-          <p style="color: darkred">
-            There are no event in MI for the selected date!
-          </p>
-        </div>
+      </div>
+      <div v-show="count === 0">
+        <p style="color: darkred">
+          There are no event in MI for the selected date!
+        </p>
       </div>
     </div>
   </div>
@@ -89,6 +105,7 @@ export default {
       today: '',
       init: '',
       fin: '',
+      past: true,
     }
   },
   mounted() {
@@ -185,7 +202,6 @@ export default {
       console.log(new Date(this.initial_date))
       console.log(new Date(this.final_date))
     },
-
   },
 }
 </script>
@@ -194,13 +210,13 @@ export default {
 button {
   margin: 0 2px 0 0;
 }
-input {
+.text-box {
   background-color: rgba(0, 0, 0, 0);
   border: none;
   text-align: center;
   width: 120px;
 }
-input:hover {
+.text-box:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
 .selector {
@@ -216,29 +232,34 @@ input:hover {
   margin-left: -30px;
 }
 
-.data-input{
-  background-color: rgba(0,0,0,0.1);
-  margin-right:20px;
+.data-input {
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
 }
 
-.sep-button{
-  margin-right: 10px
+.sep-button {
+  margin-right: 10px;
 }
 
 @media only screen and (max-width: 900px) {
-button{
-  margin: 0 0 0 0;
-  width: 80px;
-  font-size: 15px;
-  line-height: 15px;
-}
-  .sep-button{
-    margin-right: 0
+  span {
+    font-size: 15px;
+    line-height: 15px;
+    width: 80px;
   }
-  .selector{
+  button {
+    margin: 0 0 0 0;
+    width: 80px;
+    font-size: 15px;
+    line-height: 15px;
+  }
+  .sep-button {
+    margin-right: 0;
+  }
+  .selector {
     display: block;
   }
-  .data-input{
+  .data-input {
     margin-top: 10px;
     display: flex;
   }

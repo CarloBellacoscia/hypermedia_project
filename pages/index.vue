@@ -26,7 +26,7 @@ function filterEvents(array){
        filtered.push(e)
     }
   }
-  return filtered.reverse().slice(0,3)
+  return filtered.slice(0,3)
 }
 
 export default {
