@@ -1,17 +1,25 @@
+<!-- CUSTOM PAGE COMPONENT -->
+<!-- used as generic information pages composed by optional subparagraph -->
+
 <template>
   <div class="container mt-5">
+    <!-- general info section -->
     <div class="content-row">
       <img class="my-image" :src="image" :alt="altImg" />
       <div class="details-box">
-        <h1 >{{ title }}</h1>
-        <p >{{ brief }}</p>
+        <h1>{{ title }}</h1>
+        <p>{{ brief }}</p>
+        <!-- short text paragraph -->
       </div>
     </div>
+    <!-- optional paragraph section  -->
     <hr v-if="content" />
-    <div v-if="content" >
+    <div v-if="content">
       <div v-for="(elem, i) of content" :key="`parag-${i}`">
         <h2 v-if="elem.title">{{ elem.title }}</h2>
-        <p v-if="elem.description" style="padding-bottom:20px">{{ elem.description }}</p>
+        <p v-if="elem.description" style="padding-bottom: 20px">
+          {{ elem.description }}
+        </p>
       </div>
     </div>
   </div>
@@ -45,15 +53,13 @@ export default {
 }
 </script>
 
+<!-------------------STYLE--------------------->
 <style scoped>
-
 
 .content-row {
   display: flex;
   background-color: #d9d9d9;
-
 }
-
 
 img {
   margin: 10px 10px 10px 10px;
@@ -62,7 +68,11 @@ img {
   object-fit: cover;
   border: 3px solid lightgray;
 }
+.details-box {
+  margin: 10px 10px 10px 10px;
+}
 
+/*make it responsive*/
 @media only screen and (max-width: 1200px) {
   .content-row {
     display: block;
@@ -74,11 +84,5 @@ img {
     height: auto;
     max-height: 400px;
   }
-}
-
-
-.details-box {
-  margin: 10px 10px 10px 10px;
-
 }
 </style>

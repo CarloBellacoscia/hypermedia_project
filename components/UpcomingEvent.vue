@@ -1,11 +1,20 @@
+<!-- UPCOMING EVENTS COMPONENT -->
+<!-- simple div that shows 3 event card -->
+
+
 <template>
+  <!-- main container -->
   <div class="container mt-5">
+
+    <!--first row with title + see more button -->
     <div class="title-row">
       <h1>Upcoming events</h1>
         <nuxt-link style="text-decoration: none" to="/events"
           ><h1 class="see-more">See All ➔</h1></nuxt-link
         >
       </div>
+
+    <!-- show a loop generated list of event cards -->
     <div class="row content-row">
       <card
         v-for="(e,i) of eventList"
@@ -16,7 +25,7 @@
         :name="e.name"
         :img="e.img"
         :alt_img="e.alt_img"
-        :date="
+        :date=" // format the ugly date
           formatDate(e.start_date,1) +
           ' - ' +
           formatDate(e.end_date,1)
@@ -24,7 +33,9 @@
         :position="e.position"
       />
 
-    </div><div v-if="!eventList.length"><p style="color:red">There are no upcoming events</p></div>
+    </div>
+    <!-- disclaimer just in case there are no elements to show here -->
+    <div v-if="!eventList.length"><p style="color:red">There are no upcoming events</p></div>
   </div>
 </template>
 
@@ -45,7 +56,7 @@ export default {
   },
 }
 </script>
-
+<!-------------------STYLE--------------------->
 <style scoped>
 .title-row {
   display: flex;

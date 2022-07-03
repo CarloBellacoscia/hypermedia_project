@@ -1,8 +1,17 @@
+<!-- HEADER COMPONENT -->
+<!-- stays at the top of the page with logo, and landmarks. always on top. uses bootstrap for responsiveness -->
+
+
 <template>
+
+  <!-- main  boostrap container -->
   <nav class="navbar navbar-expand-lg navbar-light  header">
+    <!-- Logo-->
     <a class="navbar-brand mylogo" href="/"
       ><span class="low-highlight"> MI</span>GUARDI</a
     >
+
+    <!--toggle menu button used when mobile -->
     <button
         id="my-button-fix"
       class="navbar-toggler"
@@ -16,6 +25,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <!--landmarks link of the menu -->
     <div id="navbarToggler" class="collapse navbar-collapse">
       <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
         <li
@@ -62,14 +72,20 @@ export default {
       ],
     }
   },
+
+  // in mobile view fixes the toggle button
    updated(){
 
+    // if the menu is open when i update the page, then closes it
     if(document.getElementsByClassName("collapse show").length>0) {
       document.getElementById("my-button-fix").click();
     }
   }
 }
 </script>
+
+
+<!-------------------STYLE--------------------->
 
 <style scoped>
 

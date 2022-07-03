@@ -49,9 +49,7 @@ export default {
     const description = data.description
 
     const tempEvent = filterEvents(eventList.data)
-    const tempIt = itList.data
-
-    tempIt.length=4
+    const tempIt = itList.data.slice(0,4)
 
     return {
       id,

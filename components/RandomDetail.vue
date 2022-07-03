@@ -1,7 +1,16 @@
+<!-- RANDOM DETAIL COMPONENT -->
+<!-- display a single POI, only image description and title -->
+
+
 <template>
+  <!-- main container -->
   <div class="container mt-5">
+
+    <!-- title of the component-->
     <div class="title-row"><h1>Discover MI</h1></div>
     <nuxt-link :to="`/poi_details/${id}`" style="text-decoration: none">
+
+      <!-- main box with image, title of the POI and description-->
       <div class=" content-row">
         <div style="text-align: center">
           <img class="my-image" :src="img" :alt="altImg" />
@@ -48,6 +57,7 @@ export default {
 }
 </script>
 
+<!-------------------STYLE--------------------->
 <style scoped>
 
 

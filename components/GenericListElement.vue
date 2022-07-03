@@ -1,15 +1,23 @@
+<!-- GENERIC LIST ELEMENT COMPONENT -->
+<!-- simple single row element with basic info about an itinerary -->
+
 <template>
   <nuxt-link :to="`/${category}/${id}`" style="text-decoration: none">
+    <!-- main container -->
     <div class="my-elem">
-        <div v-if="duration" class="my-elem-duration">
+
+      <!-- opt duration information with icon -->
+      <div v-if="duration" class="my-elem-duration">
           <img
             class="my-elem-date-icon"
             src="https://cdn-icons-png.flaticon.com/512/1842/1842869.png"
-            alt="stopwatch icon"
+            alt=""
           />
           <p>{{ duration}}</p>
           </div>
-        <h3 class="my-elem-title">{{ name }}</h3>
+
+      <!-- main text of the element -->
+      <h3 class="my-elem-title">{{ name }}</h3>
     </div>
   </nuxt-link>
 </template>
@@ -36,6 +44,8 @@ export default {
       default: '',
     },
   },
+  // changes pages when we click on a row
+
   methods: {
     goToDetails() {
       this.$router.push(`/${this.category}/${this.id}`)
@@ -43,6 +53,8 @@ export default {
   },
 }
 </script>
+
+<!-------------------STYLE--------------------->
 
 <style scoped>
 p{

@@ -1,7 +1,14 @@
+<!-- GENERIC CARD COMPONENT -->
+<!-- simple card displaying image and basic info in lists -->
+
 <template>
+  <!-- main container -->
   <div class="my-card">
     <nuxt-link :to="`/${category}/${id}`" style="text-decoration: none">
-        <img class="my-card-image" :src="img" :alt="alt_img" />
+        <img class="my-card-image" :src="img" :alt="altImg" />
+
+      <!-- Optional attribute section showed outside the shadow box -->
+      <!-- date of events -->
         <div v-if="date" style="width: 270px" class="my-card-date">
           <img
             class="my-card-date-icon"
@@ -9,6 +16,8 @@
           />
           <p class="my-card-date-text">{{ date }}</p>
         </div>
+
+      <!-- duration of an itinerary -->
         <div v-if="duration" style="width: 150px" class="my-card-duration">
           <img
             class="my-card-date-icon"
@@ -16,9 +25,13 @@
           />
           <p class="my-card-date-text">{{ duration }}</p>
         </div>
+
+      <!-- Main text box with black background -->
         <div class="my-card-box-shadow">
           <div class="my-card-body">
             <h5 class="my-card-title">{{ name }}</h5>
+
+            <!-- position information  -->
             <div v-if="position">
               <img
                 class="my-card-position-icon"
@@ -27,7 +40,7 @@
               <p class="my-card-sub">{{ position }}</p>
             </div>
           </div>
-        </div>
+        </div><!-- ed of shadow box-->
     </nuxt-link>
   </div>
 </template>
@@ -52,7 +65,7 @@ export default {
       type: String,
       required: true,
     },
-    alt_img: {
+    altImg: {
       type: String,
       required: true,
     },
@@ -72,6 +85,8 @@ export default {
       default: '',
     },
   },
+
+  // changes pages when we click on a card
   methods: {
     goToDetails() {
       this.$router.push(`/${this.category}/${this.id}`)
@@ -79,6 +94,8 @@ export default {
   },
 }
 </script>
+
+<!-------------------STYLE--------------------->
 
 <style scoped>
 
@@ -177,6 +194,8 @@ export default {
   background-color: rgba(217, 217, 217, 0.8);
   text-align: right;
 }
+
+/*make it responsive*/
 
 @media only screen and (max-width: 990px) {
 

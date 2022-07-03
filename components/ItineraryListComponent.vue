@@ -1,22 +1,33 @@
+<!-- ITINERARY LIST COMPONENT -->
+<!-- a box with a list of GENERIC LIST ELEMENTS -->
+
 <template>
+  <!-- main container -->
   <div class="container mt-5">
+
+    <!--first row with title + see more button -->
     <div class="title-row">
       <h1>New Itineraries</h1>
       <nuxt-link to="/itineraries" style="text-decoration: none" ><h1 class="see-more">See All ➔</h1></nuxt-link>
     </div>
+
+    <!-- show a loop generated list of basic elements -->
     <div class="row content-row" style="list-style-type: none">
       <list-elem
-        v-for="i of [0, 1, 2, 3]"
-        :id="list[i].id"
+        v-for="(e,i) of list"
+        :id="e.id"
         :key="`it-index-${i}`"
         class="col-sm-2 m-2"
         :category="'itineraries_details'"
-        :name="list[i].name"
-        :img="list[i].img"
-        :alt_img="list[i].alt_img"
-        :duration="list[i].duration"
+        :name="e.name"
+        :img="e.img"
+        :alt_img="e.alt_img"
+        :duration="e.duration"
       />
     </div>
+
+    <!-- disclaimer just in case there are no elements to show here -->
+  <div v-if="!list.length"><p style="color:red">There are nothing to show here</p></div>
   </div>
 </template>
 
@@ -35,6 +46,8 @@ export default {
   },
 }
 </script>
+
+<!-------------------STYLE--------------------->
 
 <style scoped>
 .title-row {

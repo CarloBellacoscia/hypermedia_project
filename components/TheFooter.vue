@@ -1,13 +1,23 @@
+<!-- FOOTER COMPONENT -->
+<!-- stays at the bottom of the page with logo, motto, landmarks, copyright and language label -->
+
+
 <template>
+
+  <!-- main container -->
   <div class="my-footer">
+
+    <!-- first row of elements  -->
     <div class="first-row">
+
+      <!-- logo and motto  -->
       <div class="my-brand">
         <a class="my-logo" href="/"
           ><span class="low-highlight"> MI</span>GUARDI</a
-        >
-        <p class="my-motto">A City like MI<br />requires attention</p>
+        ><p class="my-motto">A City like MI<br />requires attention</p>
       </div>
 
+      <!-- list of landmarks link  -->
       <div class="my-list">
         <li
           v-for="(navItem, navItemIndex) of footerList"
@@ -20,8 +30,11 @@
         </li>
       </div>
 
+      <!-- language label -->
       <div class="my-language">English</div>
     </div>
+
+    <!-- copyright information  -->
     <div class="copyright">
       Hypermedia Applications 2022 - Carlo Bellacoscia - Gregorio Barzasi
     </div>
@@ -52,8 +65,8 @@ export default {
 }
 </script>
 
+<!-------------------STYLE--------------------->
 <style scoped>
-
 .my-footer {
   background-color: #252525;
   height: 161px;
