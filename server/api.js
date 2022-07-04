@@ -3,7 +3,7 @@ import contentJson from './json/content.json'
 const express = require('express')
 const app = express()
 const { Sequelize, DataTypes } = require('sequelize')
-const initialize = require('./initialize').default
+// const initialize = require('./initialize').default
 app.use(express.json())
 
 /*
