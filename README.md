@@ -35,14 +35,14 @@ Some functions provided by the framework were crucial like:
 ### Components used
 * [*CustomPage.vue*](components/CustomPage.vue): Used to model simple information pages like About MI, Contact us and FAQ. is composed by two section, one with image and text always present at the top, and an optional one generated at the bottom
 * [*GenericCard.vue*](components/GenericCard.vue): Its a basic card with image as background and information above that. The information inside are displayed according to the props passed, this allow us to reuse this component in multiple pages. It auto resize to better fit mobile view
-* [*GenericDetails.vue*](components/GenericDetails.vue): ;
+* [*GenericDetails.vue*](components/GenericDetails.vue): Used to model in the detail pages the image and infos in the right and the description below;
 * [*UpcomingEvent.vue*](components/UpcomingEvent.vue): Small component used in the homepage, displays 3 GenericCard with the upcoming events information;
 * [*GenericListElement.vue*](components/GenericListElement.vue): Small row that can contain small text and title, used in ItineraryListComponent as building block;
 * [*ItineraryListComponent.vue*](components/ItineraryListComponent.vue): Little box composed of listed GenericListElements. Potentially it can display any number of block.
-* [*JoinTableCard.vue*](components/JoinTableCard.vue): ;
+* [*JoinTableCard.vue*](components/JoinTableCard.vue): Possible multiple row that add in the detail pages traveling stages for itineraries, related itineraries and events hosted for points of interest and position for events;
 * [*Map.vue*](components/Map.vue): As the name suggest, an iframe with an interactive map inside. It contains method used to dynamically build the API query.
 * [*RandomDetail.vue*](components/RandomDetail.vue): A box with and image and a text section on the right. Used to display information about random POI in the homepage
-* [*SmallCard.vue*](components/SmallCard.vue): ;
+* [*SmallCard.vue*](components/SmallCard.vue): Its a small card similar to the [*GenericCard.vue*](components/GenericCard.vue), used in [*JoinTableCard.vue*](components/JoinTableCard.vue) to visualize traveling stages, related itineraries, events hosted and position;
 * [*TheHeader.vue*](components/TheHeader.vue): Component that belongs to the template of each pages ([*default.vue*](layouts/default.vue)). Is the main menu component and allow users to navigate to the group topic pages of the website. Uses the actual route to highlight the current page in the header
 * [*TheFooter.vue*](components/TheFooter.vue): Component that belongs to the template of each pages ([*default.vue*](layouts/default.vue)). Sits at the bottom of the page providing links to About US, Contacts and FAQ
 

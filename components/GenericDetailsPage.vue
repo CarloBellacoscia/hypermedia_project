@@ -1,3 +1,6 @@
+<!-- DETAIL PAGE COMPONENT -->
+<!-- used as details pages composed by an image with some info and a description below -->
+
 <template>
   <div class="container mt-5">
     <div class="details-page">
@@ -7,18 +10,22 @@
       <div class="first-row grid-container">
         <img :src="image" :alt="alt_image" />
         <div class="details">
+          <!-- optional div for the start date of an event -->
           <div v-if="start_date" class="grid-container">
             <h3 class="label">Start Date:<br /></h3>
             <h3 class="text">{{ start_date }}<br /></h3>
           </div>
+          <!-- optional div for the end date of an event -->
           <div v-if="end_date" class="grid-container">
             <h3 class="label">End Date:<br /></h3>
             <h3 class="text">{{ end_date }}<br /></h3>
           </div>
+          <!-- optional div for the duration of an itinerary -->
           <div v-if="duration" class="grid-container">
             <h3 class="label">Duration:<br /></h3>
             <h3 class="text">{{ duration }}<br /></h3>
           </div>
+          <!-- optional div for the neighborhood -->
           <div v-if="neigh" class="grid-container">
             <img
               class="position-icon"
@@ -27,6 +34,7 @@
             />
             <h3 class="text">{{ neigh }}<br /></h3>
           </div>
+          <!-- optional div for the website -->
           <div v-if="site">
             <br /><br />
             <button class="button" @click="goToSite(site)">Website</button>
@@ -87,6 +95,7 @@ export default {
   },
   methods: {
     goToSite(site) {
+      // open the website in another tab
       window.open(site)
     },
   },
@@ -108,10 +117,6 @@ img {
   display: grid;
   padding: 20px 20px 20px 20px;
   grid-template-columns: 20% 60% 20%;
-}
-
-.page {
-  font-size: 40px;
 }
 
 .text {
@@ -148,10 +153,16 @@ img {
   max-width: 30px;
 }
 
+.page {
+  font-size: 40px;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: auto auto;
 }
+
+/* responsiveness */
 @media only screen and (max-width: 900px) {
   .grid-container {
     grid-template-columns: auto;

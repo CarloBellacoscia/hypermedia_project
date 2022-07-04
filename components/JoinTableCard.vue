@@ -1,10 +1,20 @@
+<!-- JOIN TABLE COMPONENT -->
+<!-- used in details pages to show:
+      traveling stages: list of points of interest associated to an itinerary
+      related itineraries: list of itineraries passing throw a specific point of interest
+      events hosted: list of events hosted in a point of interest
+      position: the point of interest where is hosted an event
+-->
+
 <template>
   <div class="small-row">
+    <!-- optional div for the traveling stages of an itinerary -->
     <div v-if="poiList" class="page container">
       <h2 v-if="poiList[0]" class="label">
         Traveling Stages:
       </h2>
       <div class="grid-container">
+        <!-- passing to SmallCard component all the info needed -->
         <card
           v-for="(poi, poiIndex) of poiList"
           :id="poi.id"
@@ -18,11 +28,13 @@
         />
       </div>
     </div>
+    <!-- optional div for the related itineraries of a point of interest -->
     <div v-if="itList" class="page container">
       <h2 v-if="itList[0]" class="label">
         Related Itineraries:
       </h2>
       <div class="grid-container">
+        <!-- passing to SmallCard component all the info needed -->
         <card
           v-for="(it, itIndex) of itList"
           :id="it.id"
@@ -36,12 +48,14 @@
         />
       </div>
     </div>
+    <!-- optional div for the events hosted of a point of interest -->
     <div v-if="evList" class="page container">
       <h2 v-if="evList[0]" class="label">
         <br>
         Events Hosted:
       </h2>
       <div class="grid-container">
+        <!-- passing to SmallCard component all the info needed -->
         <card
           v-for="(ev, evIndex) of evList"
           :id="ev.id"
@@ -51,15 +65,22 @@
           :name="ev.name"
           :img="ev.img"
           :alt_img="ev.alt_img"
-          :duration="ev.duration"
+          :date="
+            formatDate(ev.start_date, true) +
+            ' - ' +
+            formatDate(ev.end_date, true)
+          "
+          :position="ev.neigh"
         />
       </div>
     </div>
+    <!-- optional div for the position of an event -->
     <div v-if="poiItem" class="page container">
       <h2 class="label">
         Position:
       </h2>
       <div class="grid-container">
+        <!-- passing to SmallCard component all the info needed -->
         <card
           :id="poiItem.id"
           :category="'poi_details'"
@@ -137,6 +158,7 @@ export default {
   padding: 10px 10px 10px 10px;
 }
 
+/* responsiveness */
 @media only screen and (max-width: 900px) {
   .grid-container {
     grid-template-columns: auto auto;

@@ -1,5 +1,9 @@
+<!-- EVENTS DETAILS PAGE -->
+<!-- page for the details of an event -->
+
 <template>
   <div>
+    <!-- passing to GenericDetailsPage component all the info needed -->
     <generic-details-page
       :name="name"
       :image="img"
@@ -11,13 +15,16 @@
       :end_date="formatDate(end_date)"
     />
     <div class="container mt-5">
+      <!-- div for the position and the map of an event, if there isn't the position the map go to full width -->
       <div
         :class="poiItem ? 'grid-container-empty' : 'grid-container'"
       >
         <div class="map-item">
+          <!-- passing to Map component all the info needed -->
           <map-component :position="position" :mode="'place'" />
         </div>
         <div class="grid-item">
+          <!-- passing to JoinTableCard component all the info needed -->
           <join-component :poi-item="poi" />
         </div>
       </div>
@@ -38,6 +45,8 @@ export default {
     JoinComponent,
   },
   mixins: [CommonMixin],
+
+  // function to take the info about the event from the backend with an api call
   async asyncData({ route, $axios }) {
     const { id } = route.params
     const { data } = await $axios.get('/api/events_details/' + id)
@@ -61,6 +70,7 @@ export default {
   },
   methods: {
     backToList() {
+      // function to push in the url the link to go back in the list page
       this.$router.push('/events')
     },
   },
@@ -88,6 +98,7 @@ export default {
   min-width: 50%;
 }
 
+/* responsiveness */
 @media only screen and (max-width: 1200px) {
   .grid-container {
     grid-template-columns: auto;

@@ -218,7 +218,6 @@ async function runMainApi() {
         alt_img: element.alt_img,
         start_date: element.start_date,
         end_date: element.end_date,
-        neigh: element.neigh,
         id: element.id,
       })
     }

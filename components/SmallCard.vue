@@ -1,8 +1,17 @@
+<!-- SMALL CARD COMPONENT -->
+<!-- used in details pages to list in JoinTableCard:
+      traveling stages
+      related itineraries
+      events hosted
+      position
+-->
+
 <template>
   <div class="my-card">
     <nuxt-link :to="`/${category}/${id}`" style="text-decoration: none">
         <img class="my-card-image" :src="img" :alt="alt_img" />
-        <div v-if="date" style="width: 270px" class="my-card-date">
+      <!-- optional div for the date over the card -->
+        <div v-if="date" style="width: 170px" class="my-card-date">
           <img
             class="my-card-date-icon"
             src="https://cdn-icons-png.flaticon.com/512/109/109613.png"
@@ -10,6 +19,7 @@
           />
           <p class="my-card-date-text">{{ date }}</p>
         </div>
+      <!-- optional div for the duration over the card -->
         <div v-if="duration" style="width: 150px" class="my-card-date">
           <img
             class="my-card-date-icon"
@@ -21,6 +31,7 @@
         <div class="my-card-box-shadow">
           <div class="my-card-body">
             <h5 class="my-card-title">{{ name }}</h5>
+            <!-- optional div for the position in the subtitle of the card -->
             <div v-if="position">
               <img
                 class="my-card-position-icon"
@@ -77,6 +88,7 @@ export default {
   },
   methods: {
     goToDetails() {
+      // function to push in the url the link to the detail page
       this.$router.push(`/${this.category}/${this.id}`)
     },
   },
@@ -176,6 +188,7 @@ export default {
   text-align: right;
 }
 
+/* responsiveness */
 @media only screen and (max-width: 990px) {
   .my-card-image{
     height: 150px;

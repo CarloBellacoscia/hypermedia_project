@@ -1,5 +1,9 @@
+<!-- SERVICES DETAILS PAGE -->
+<!-- page for the details of a service -->
+
 <template>
   <div>
+    <!-- passing to GenericDetailsPage component all the info needed -->
     <generic-details-page
       :name="name"
       :image="img"
@@ -10,6 +14,7 @@
       :gps="gps"
     />
     <div class="container mt-5">
+      <!-- passing to Map component all the info needed -->
       <map-component
         :mode="'place'"
         :position="position"
@@ -29,6 +34,8 @@ export default {
     MapComponent,
   },
   mixins: [CommonMixin],
+
+  // function to take the info about the service from the backend with an api call
   async asyncData({ route, $axios }) {
     const { id } = route.params
     const { data } = await $axios.get('/api/services_details/' + id)
@@ -47,13 +54,9 @@ export default {
       title: this.name
     }
   },
-  mounted(){
-    const date = new Date()
-    // Example on hwo to use mixinx
-    console.log(this.formatMyDate(date.toLocaleDateString()))
-  },
   methods: {
     backToList() {
+      // function to push in the url the link to go back in the list page
       this.$router.push('/services')
     },
   },

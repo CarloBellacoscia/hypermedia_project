@@ -1,9 +1,13 @@
+<!-- ITINERARIES PAGE -->
+<!-- page for the list of itineraries -->
+
 <template>
   <div class="page container mt-5">
     <h1>
       Itineraries
     </h1>
     <div class="row mt-3">
+      <!-- passing to GenericCard component all the info needed -->
       <card
         v-for="(it, itIndex) of itList"
         :id="it.id"
@@ -26,7 +30,8 @@ export default {
   components: {
     Card,
   },
-  // Note: This happens on backend (server) side
+
+  // function to take the list of all the itineraries from the backend with an api call
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/itineraries')
     return {
@@ -36,7 +41,3 @@ export default {
 
 }
 </script>
-
-<style scoped>
-
-</style>

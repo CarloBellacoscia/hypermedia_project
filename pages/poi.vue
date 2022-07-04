@@ -1,9 +1,13 @@
+<!-- POINTS OF INTEREST PAGE -->
+<!-- page for the list of points of interest -->
+
 <template>
   <div class="page container mt-5">
     <h1>
       Points of Interest
     </h1>
     <div class="row mt-3">
+      <!-- passing to GenericCard component all the info needed -->
       <card
         v-for="(poi, poiIndex) of poiList"
         :id="poi.id"
@@ -26,30 +30,13 @@ export default {
   components: {
     Card,
   },
-  // Note: This happens on backend (server) side
+
+  // function to take the list of all the points of interest from the backend with an api call
   async asyncData({ $axios }) {
-    // const { data } = await $axios.get('http://localhost:3000/api/cats')
     const { data } = await $axios.get('/api/poi')
     return {
       poiList: data,
     }
   },
-  data() {
-    return {
-      // catList: []
-    }
-  },
-
-  // Note: This would happen on frontend (client) side
-  // async mounted() {
-  //   const { data } = await this.$axios.get('/api/cats')
-  //   this.catList = data
-  // },
 }
 </script>
-
-<style scoped>
-
-
-
-</style>

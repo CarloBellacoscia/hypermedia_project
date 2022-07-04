@@ -1,5 +1,9 @@
+<!-- POINTS OF INTEREST DETAILS PAGE -->
+<!-- page for the details of a point of interest -->
+
 <template>
   <div>
+    <!-- passing to GenericDetailsPage component all the info needed -->
     <generic-details-page
       :name="name"
       :image="img"
@@ -9,15 +13,19 @@
       :site="site"
     />
     <div class="container mt-5">
+      <!-- div for related itineraries, events hosted and the map of a point of interest,
+       if there aren't related itineraries and events hosted the map go to full width -->
       <div
         :class="
           isEmpty(itList, evList) ? 'grid-container-empty' : 'grid-container'
         "
       >
         <div class="map-item">
+          <!-- passing to Map component all the info needed -->
           <map-component :mode="'place'" :position="position" />
         </div>
         <div class="grid-item">
+          <!-- passing to JoinTableCard component all the info needed -->
           <join-component :it-list="itList" :ev-list="evList" />
         </div>
       </div>
@@ -38,6 +46,8 @@ export default {
     JoinComponent,
   },
   mixins: [CommonMixin],
+
+  // function to take the info about the point of interest from the backend with an api call
   async asyncData({ route, $axios }) {
     const { id } = route.params
     const { data } = await $axios.get('/api/poi_details/' + id)
@@ -58,16 +68,13 @@ export default {
       title: this.name,
     }
   },
-  mounted() {
-    const date = new Date()
-    // Example on hwo to use mixinx
-    console.log(this.formatMyDate(date.toLocaleDateString()))
-  },
   methods: {
     backToList() {
+      // function to push in the url the link to go back in the list page
       this.$router.push('/poi')
     },
     isEmpty(itList, evList) {
+      // check if the lists are empty
       return itList[0] == null && evList[0] == null;
     },
   },
@@ -94,11 +101,11 @@ export default {
   min-width: 100%;
 }
 
+/* responsiveness */
 @media only screen and (max-width: 1200px) {
   .grid-container {
     grid-template-columns: auto;
   }
 }
-@media {
-}
+
 </style>
