@@ -11,7 +11,7 @@
     <nuxt-link :to="`/${category}/${id}`" style="text-decoration: none">
         <img class="my-card-image" :src="img" :alt="alt_img" />
       <!-- optional div for the date over the card -->
-        <div v-if="date" style="width: 170px" class="my-card-date">
+        <div v-if="date" class="my-card-date">
           <img
             class="my-card-date-icon"
             src="https://cdn-icons-png.flaticon.com/512/109/109613.png"
@@ -20,7 +20,7 @@
           <p class="my-card-date-text">{{ date }}</p>
         </div>
       <!-- optional div for the duration over the card -->
-        <div v-if="duration" style="width: 150px" class="my-card-date">
+        <div v-if="duration" class="my-card-date">
           <img
             class="my-card-date-icon"
             src="https://cdn-icons-png.flaticon.com/512/1842/1842869.png"
@@ -180,6 +180,7 @@ export default {
 }
 
 .my-card-date {
+  width: 170px;
   height: 20px;
   position: absolute;
   bottom: 50px;
@@ -206,9 +207,18 @@ export default {
     font-size: 11px;
   }
   .my-card-date {
+    width: 140px;
     height: 20px;
     bottom: 40px;
     right: 0;
+  }
+  .my-card-date-text {
+    font-size: 9px;
+  }
+  .my-card-date-icon {
+    bottom: 2px;
+    left: 13px;
+    max-height: 15px;
   }
   .my-card-sub {
     top: 15px;
