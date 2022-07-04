@@ -80,7 +80,8 @@ async function initializeDatabaseConnection() {
   Itinerary.belongsToMany(PointOfInterest, { through: JoinPoints })
   PointOfInterest.belongsToMany(Itinerary, { through: JoinPoints })
 
-  await database.sync({ force: true })
+  await database.sync({ force: false })
+
   return {
     Event,
     PointOfInterest,
@@ -97,7 +98,7 @@ const pageContentObject = contentJson
 
 async function runMainApi() {
   const models = await initializeDatabaseConnection()
-  await initialize(models)
+  // await initialize(models)
 
   app.get('/page-info/:topic', (req, res) => {
     const { topic } = req.params
