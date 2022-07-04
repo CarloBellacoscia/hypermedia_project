@@ -2,6 +2,7 @@
 <!-- page for the list of points of interest -->
 
 <template>
+  <!-- main container -->
   <div class="page container mt-5">
     <h1>
       Points of Interest

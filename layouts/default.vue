@@ -1,10 +1,16 @@
 <!--suppress CssUnknownTarget -->
+<!--DEFAULT LAYOUT -->
+<!-- default layout of all pages -->
+
 <template>
   <div class="main-page">
+    <!-- import the fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Archivo:wght@100&family=Open+Sans:wght@300&display=swap" rel="stylesheet" type="text/css">
-    <the-header />
-    <nuxt style="min-height: 79vh" />
-    <the-footer style="margin-top: 50px" />
+    <the-header /> <!-- import the header -->
+
+    <nuxt style="min-height: 79vh" /> <!-- set the minimum height for the content-->
+
+    <the-footer style="margin-top: 50px" /><!-- import the footer -->
   </div>
 </template>
 
@@ -20,13 +26,17 @@ export default {
   },
 }
 </script>
+<!-------------------STYLE--------------------->
 
 <style>
+/*pushes the content below the header*/
+
 body{
   margin-top: 100px;
-
 }
-/*responsive bar*/
+
+/*responsive bar styles*/
+
 .navbar-toggler-icon {
   filter: invert(100%);
 }
@@ -38,7 +48,7 @@ div{
   border-radius: 2px;
 }
 
-/*generic style*/
+/* ---------------------------generic style */
 button {
   border-radius: 4px;
 }
@@ -80,6 +90,9 @@ p {
   grid-template-columns: auto auto auto;
   justify-content: center;
 }
+
+/*-----------------------------------------------responsive*/
+
 
 @media only screen and (max-width: 1400px) {
 

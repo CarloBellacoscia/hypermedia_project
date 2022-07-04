@@ -1,3 +1,6 @@
+<!--FAQ PAGE -->
+<!-- page containing frequent questions and answer -->
+
 <template>
   <custom-page :title="title" :image="image" :brief="brief" :alt-img="altImg" :content="content" />
 </template>

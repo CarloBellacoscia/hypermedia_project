@@ -1,12 +1,21 @@
+<!--HOMEPAGE -->
+<!-- landing page of the website -->
+
+
 <template>
   <div class="mt-5">
+    <!-- shows a random point of interest -->
     <rand-detail
       :id="id"
       :title="title"
       :img="image"
       :alt-img="altImg"
       :description="description"
-    /><upcoming :event-list="eventList" />
+    />
+    <!-- shows 3 upcoming events-->
+    <upcoming :event-list="eventList" />
+
+    <!-- shows the 4 least added itineraries -->
     <new-it :list="itList" />
   </div>
 </template>
@@ -16,6 +25,7 @@ import RandDetail from '~/components/RandomDetail.vue'
 import NewIt from '~/components/ItineraryListComponent.vue'
 import Upcoming from '~/components/UpcomingEvent.vue'
 
+// i filter the events to show only the upcoming
 function filterEvents(array){
   const today = new Date()
   const filtered =[]
@@ -25,7 +35,7 @@ function filterEvents(array){
        filtered.push(e)
     }
   }
-  return filtered.slice(0,3)
+  return filtered.slice(0,3) // i decided to show only 3 events
 }
 
 export default {

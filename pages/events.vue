@@ -15,8 +15,8 @@
           <!-- buttons that resets filters-->
           <button
             class="sep-button"
-            @click="setAll()"
             style="background-color: rgba(255, 0, 0, 0.1)"
+            @click="setAll()"
           >
             All
           </button>
@@ -59,15 +59,17 @@
           <!--button that triggers filtering for custom dates -->
           <button @click="parseDates()">Filter</button>
         </div>
-      </div>
+      </div>  <!--end of filter bar -->
+
 
       <!--list container -->
       <div class="row mt-3">
 
-        <!--every card has a condition that displays it only if:
-         *) is in the interval of dates sets OR
-         *) the flag show all is set AND
-         *)-->
+        <!--every card has a condition such that is display only if:
+          (is in the interval of dates sets OR the flag show all is set)
+          AND
+          ( if past flag is not checked, must be also after today date)
+          -->
 
         <card
           v-for="(event, eventIndex) of eventList"
@@ -91,7 +93,10 @@
           "
           :position="event.position"
         />
-      </div>
+      </div><!-- end of list -->
+
+
+      <!-- disclaimer just in case there are no elements to show here. see script section for more details -->
       <div v-show="count === 0">
         <p style="color: darkred">
           There are no event in MI for the selected date!
@@ -118,28 +123,43 @@ export default {
     }
   },
   data() {
+    // Local variables used in filtering
     return {
-      initial_date: new Date(),
-      final_date: new Date(),
+
       title: 'All Events',
-      showAll: true,
-      count: 0,
-      today: '',
+      initial_date: new Date(),   // start date of the interval initialized as "today"
+      final_date: new Date(), // end date of the interval initialized as "today"
+
+      // string version of the dates used for input and labelling purpose
+      today: '', // for simplicity we store the current date
       init: '',
       fin: '',
-      past: true,
+
+      showAll: true, // if set, shows all events
+      past: true, // if set false, shows only upcoming events
+
+      count: 0, // used to check if something is displayed on the page
+
     }
   },
+
+  // when the page is mounted we want to initialize the dates and count the shown cards inside the list
   mounted() {
     this.initialize()
     this.count = this.countCards()
   },
+
+  // when we filter something the page is updated but not re-rendered, so we count again the cards
   updated() {
     this.count = this.countCards()
   },
+
+  // LOCAL METHODS
   methods: {
+
+    // initialize the string version of the dates like DD/MM/YYYY
     initialize() {
-      const temp = new Date()
+      const temp = new Date() // today
       this.init = ''
       this.init +=
         temp.getDate() + '/' + (temp.getMonth() + 1) + '/' + temp.getFullYear()
@@ -148,48 +168,68 @@ export default {
       this.fin += this.init
       this.today += this.fin
     },
+
+    // parses the dates. from string to integer array elements
     parseDates() {
       const inA = this.init.split('/').map((e) => {
-        return parseInt(e)
+        return parseInt(e) // converts into integers
       })
       const finA = this.fin.split('/').map((e) => {
         return parseInt(e)
       })
       this.setDates(inA, finA)
     },
+
+    // from the integer array to DATE datatype
     setDates(inA, finA) {
-      this.showAll = false
+      this.showAll = false // tells that we are not showing all events anymore
+
+      // sets initial date of the interval starting from midnight
       this.initial_date = new Date(
         new Date().setFullYear(inA[2], inA[1] - 1, inA[0])
       ).setHours(0, 0, 0)
+
+      // sets final date of the interval to the last second of the day
       this.final_date = new Date(
         new Date().setFullYear(finA[2], finA[1] - 1, finA[0])
       ).setHours(23, 59, 59)
+
+      // if the date inserted are not correct for any reason we re-initialize the page
       if (!(this.initial_date && this.final_date)) {
         this.initialize()
         this.setAll()
       } else {
+        // else we proceed setting the custom title
         this.title = 'Custom Dates'
       }
     },
 
+    // set the seasons intervals.
+    // the carry flag is used for winter months, when a season overflow in the next year
     season(init, fin, title, carry = false) {
-      this.showAll = false
-      let temp = new Date().getFullYear()
+      this.showAll = false // tells that we are not showing all events anymore
+
+      let temp = new Date().getFullYear() // gets the current year
       this.init = ''
       this.init += init[0] + '/' + init[1] + '/' + temp
+
       if (carry) {
-        temp += 1
+        temp += 1 // if is winter i need to consider also the following year
       }
+
       this.fin = ''
       this.fin += fin[0] + '/' + fin[1] + '/' + temp
       this.parseDates()
       this.title = title
     },
+
+    // set the visualization to all
     setAll() {
       this.showAll = true
       this.title = 'All Events'
     },
+
+    // sets the filter today
     setToday() {
       this.showAll = false
       this.init = ''
@@ -199,6 +239,8 @@ export default {
       this.parseDates()
       this.title = 'Today'
     },
+
+    // sets the filter tomorrow
     setTomorrow() {
       this.showAll = false
       const temp1 = new Date(new Date().setHours(24, 0, 0))
@@ -209,6 +251,8 @@ export default {
         (temp1.getMonth() + 1) +
         '/' +
         temp1.getFullYear()
+
+
       const temp2 = new Date(new Date().setHours(48, 0, 0))
       this.fin = ''
       this.fin +=
@@ -220,13 +264,10 @@ export default {
       this.parseDates()
       this.title = 'Tomorrow'
     },
-    log() {
-      console.log(new Date(this.initial_date))
-      console.log(new Date(this.final_date))
-    },
   },
 }
 </script>
+<!-------------------STYLE--------------------->
 
 <style scoped>
 button {
