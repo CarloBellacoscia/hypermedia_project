@@ -16,7 +16,7 @@
         class="col-sm-2 m-2"
         :name="it.name"
         :img="it.img"
-        :alt_img="it.alt_img"
+        :alt-img="it.alt_img"
         :duration="it.duration"
       />
     </div>

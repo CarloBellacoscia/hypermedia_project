@@ -11,7 +11,7 @@
       :neigh="neigh"
       :description="description"
       :site="site"
-      :gps="gps"
+
     />
     <div class="container mt-5">
       <!-- passing to Map component all the info needed -->

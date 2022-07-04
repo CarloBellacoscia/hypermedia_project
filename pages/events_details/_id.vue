@@ -17,7 +17,7 @@
     <div class="container mt-5">
       <!-- div for the position and the map of an event, if there isn't the position the map go to full width -->
       <div
-        :class="poiItem ? 'grid-container-empty' : 'grid-container'"
+        :class="!poi ? 'grid-container-empty' : 'grid-container'"
       >
         <div class="map-item">
           <!-- passing to Map component all the info needed -->

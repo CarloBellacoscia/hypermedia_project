@@ -1,11 +1,18 @@
+<!--ALL EVENTS PAGE -->
+<!-- page displaying a list with all the events. provides also basic filtering capabilities by date -->
+
 <template>
   <div>
+    <!-- main container -->
     <div class="page container mt-5">
       <h1>
         {{ title }}
       </h1>
+
+      <!-- filtering bar -->
       <div class="selector">
         <div>
+          <!-- buttons that resets filters-->
           <button
             class="sep-button"
             @click="setAll()"
@@ -14,6 +21,7 @@
             All
           </button>
 
+          <!-- buttons that filters by date -->
           <button @click="setToday()">Today</button>
           <button class="sep-button" @click="setTomorrow()">Tomorrow</button>
           <button @click="season([20, 3], [21, 6], 'This Spring')">
@@ -26,27 +34,41 @@
           <button @click="season([21, 12], [19, 3], 'This Winter', true)">
             Winter
           </button>
+          <!-- checkbox to force only the display of upcoming events-->
           <span
             ><input v-model="past" type="checkbox" />
             <label for="checkbox">Show Past</label></span
           >
         </div>
+        <!-- if im filtering by date, show the input box for... -->
         <div v-show="!showAll" class="data-input">
+          <!--start date -->
           <input
             v-show="past"
             v-model="init"
             class="text-box"
             :placeholder="init"
-          /><my v-show="!past" class="text-box">Today</my>-<input
+          /><my v-show="!past" class="text-box">Today</my>
+          - <!--separator -->
+          <!--final date -->
+          <input
             v-model="fin"
             class="text-box"
             :placeholder="fin"
           />
+          <!--button that triggers filtering for custom dates -->
           <button @click="parseDates()">Filter</button>
         </div>
       </div>
 
+      <!--list container -->
       <div class="row mt-3">
+
+        <!--every card has a condition that displays it only if:
+         *) is in the interval of dates sets OR
+         *) the flag show all is set AND
+         *)-->
+
         <card
           v-for="(event, eventIndex) of eventList"
           v-show="
@@ -61,7 +83,7 @@
           :category="'events_details'"
           :name="event.name"
           :img="event.img"
-          :alt_img="event.alt_img"
+          :alt-img="event.alt_img"
           :date="
             formatDate(event.start_date, true) +
             ' - ' +

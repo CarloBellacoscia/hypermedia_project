@@ -1,3 +1,6 @@
+<!--CONTACT US PAGE -->
+<!-- page containing contact information -->
+
 <template>
   <custom-page :title="title" :image="image" :alt-img="altImg" :brief="brief" :content="content" />
 </template>
@@ -9,9 +12,7 @@ export default {
   components: {
     CustomPage,
   },
-  data() {
-    return {}
-  },
+// fetch the info from API
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/page-info/contact')
     const title = data.title

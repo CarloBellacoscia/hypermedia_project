@@ -24,7 +24,7 @@
         :category="'events_details'"
         :name="e.name"
         :img="e.img"
-        :alt_img="e.alt_img"
+        :alt-img="e.alt_img"
         :date=" // format the ugly date
           formatDate(e.start_date,1) +
           ' - ' +

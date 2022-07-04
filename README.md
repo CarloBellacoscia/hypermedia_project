@@ -49,27 +49,27 @@ Some functions provided by the framework were crucial like:
 
 ### Pages contribution
 
-| Barzasi Gregorio                     | Bellacoscia Carlo                                                  |
-|--------------------------------------|--------------------------------------------------------------------|
-| [*index.vue*](pages/index.vue)       | [*events_details/_id.vue*](pages/events_details/_id.vue)           |
+| Gregorio Barzasi                     | Carlo Bellacoscia                                                 |
+|--------------------------------------|-------------------------------------------------------------------|
+| [*index.vue*](pages/index.vue)       | [*events_details/_id.vue*](pages/events_details/_id.vue)          |
 | [*events.vue*](pages/events.vue)     | [*itineraries_details/_id.vue*](pages/itineraries_details/_id.vue) |
-| [*about.vue*](pages/about.vue)       | [*poi_details/_id.vue*](pages/poi_details/_id.vue)                 |
-| [*faq.vue*](pages/faq.vue)           | [*services_details/_id.vue*](pages/services_details/_id.vue)       |
-| [*contact.vue*](pages/contact.vue)   | [*itineraries.vue*](pages/itineraries.vue)                         |
-| [*services.vue*](pages/services.vue) | [*poi.vue*](pages/poi.vue)                                         |
+| [*about.vue*](pages/about.vue)       | [*poi_details/_id.vue*](pages/poi_details/_id.vue)                |
+| [*faq.vue*](pages/faq.vue)           | [*services_details/_id.vue*](pages/services_details/_id.vue)      |
+| [*contact.vue*](pages/contact.vue)   | [*itineraries.vue*](pages/itineraries.vue)                        |
+| [*services.vue*](pages/services.vue) | [*poi.vue*](pages/poi.vue)                                        |
 
 
 
 ### Back-end contribution
 
-| Barzasi Gregorio                             | Bellacoscia Carlo                            |
+| Gregorio Barzasi                              |Carlo Bellacoscia                          |
 |----------------------------------------------|----------------------------------------------|
 | Some API endpoints [*api.js*](server/api.js) | Some APi endpoints [*api.js*](server/api.js) |
 | [*initialize.js*](server/initialize.js)      | Database tables [*api.js*](server/api.js)    |
 
 ### Components contribution
 
-| Barzasi Gregorio                                                    | Bellacoscia Carlo                                     |
+| Gregorio Barzasi                                                    | Carlo Bellacoscia                                   |
 |---------------------------------------------------------------------|-------------------------------------------------------|
 | [*TheHeader.vue*](components/TheHeader.vue)                         | [*TheFooter.vue*](components/TheFooter.vue)           |
 | [*RandomDetail.vue*](components/RandomDetail.vue)                   | [*SmallCard.vue*](components/SmallCard.vue)           |

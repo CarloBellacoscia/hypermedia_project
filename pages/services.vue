@@ -27,7 +27,7 @@
         :name="ser.name"
         :position="ser.neigh"
         :img="ser.img"
-        :alt_img="ser.alt_img"
+        :alt-img="ser.alt_img"
       />
       <div v-show="count === 0">
         <p style="color: darkred">

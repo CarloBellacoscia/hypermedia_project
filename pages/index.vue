@@ -21,7 +21,6 @@ function filterEvents(array){
   const filtered =[]
 
   for(const e of array){
-    console.log(e)
     if(new Date(e.start_date) >= today){
        filtered.push(e)
     }

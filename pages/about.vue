@@ -1,3 +1,6 @@
+<!--ABOUT MI PAGE -->
+<!-- page containing general information about milan -->
+
 <template>
   <custom-page :title="title" :image="image" :brief="brief" :alt-img="altImg" :content="content" />
 </template>
@@ -9,6 +12,8 @@ export default {
   components: {
     CustomPage,
   },
+
+  // fetch information from API
   async asyncData({ $axios }) {
     const { data } = await $axios.get('/api/page-info/about')
     const title = data.title
